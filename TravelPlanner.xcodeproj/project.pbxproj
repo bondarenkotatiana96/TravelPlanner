@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		549184FC287E1A2000A22F5C /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FB287E1A2000A22F5C /* Trip.swift */; };
+		549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FD287E234800A22F5C /* TripListViewModel.swift */; };
+		54918500287E29BB00A22F5C /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FF287E29BA00A22F5C /* TripListView.swift */; };
 		54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */; };
 		54CCEDB1287CFC5000C62679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB0287CFC5000C62679 /* Assets.xcassets */; };
 		54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		549184FB287E1A2000A22F5C /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		549184FD287E234800A22F5C /* TripListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModel.swift; sourceTree = "<group>"; };
+		549184FF287E29BA00A22F5C /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
 		54CCEDA9287CFC4E00C62679 /* TravelPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlannerApp.swift; sourceTree = "<group>"; };
 		54CCEDB0287CFC5000C62679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +48,7 @@
 		549184F8287E164600A22F5C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				549184FB287E1A2000A22F5C /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -49,6 +56,7 @@
 		549184F9287E164B00A22F5C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				549184FD287E234800A22F5C /* TripListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -56,6 +64,7 @@
 		549184FA287E165000A22F5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				549184FF287E29BA00A22F5C /* TripListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,7 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549184FC287E1A2000A22F5C /* Trip.swift in Sources */,
+				549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */,
 				54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */,
+				54918500287E29BB00A22F5C /* TripListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
