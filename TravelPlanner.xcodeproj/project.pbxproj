@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */; };
-		54CCEDAF287CFC4E00C62679 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCEDAE287CFC4E00C62679 /* ContentView.swift */; };
 		54CCEDB1287CFC5000C62679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB0287CFC5000C62679 /* Assets.xcassets */; };
 		54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +15,6 @@
 /* Begin PBXFileReference section */
 		54CCEDA9287CFC4E00C62679 /* TravelPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlannerApp.swift; sourceTree = "<group>"; };
-		54CCEDAE287CFC4E00C62679 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		54CCEDB0287CFC5000C62679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +30,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		549184F7287E15E700A22F5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				54CCEDB0287CFC5000C62679 /* Assets.xcassets */,
+				54CCEDB2287CFC5000C62679 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		549184F8287E164600A22F5C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		549184F9287E164B00A22F5C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		549184FA287E165000A22F5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		54CCEDA0287CFC4E00C62679 = {
 			isa = PBXGroup;
 			children = (
@@ -52,9 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */,
-				54CCEDAE287CFC4E00C62679 /* ContentView.swift */,
-				54CCEDB0287CFC5000C62679 /* Assets.xcassets */,
-				54CCEDB2287CFC5000C62679 /* Preview Content */,
+				549184F7287E15E700A22F5C /* Resources */,
+				549184F8287E164600A22F5C /* Models */,
+				549184F9287E164B00A22F5C /* ViewModels */,
+				549184FA287E165000A22F5C /* Views */,
 			);
 			path = TravelPlanner;
 			sourceTree = "<group>";
@@ -137,7 +166,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54CCEDAF287CFC4E00C62679 /* ContentView.swift in Sources */,
 				54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +294,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TravelPlanner/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TravelPlanner/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = QAY6XTDMYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -295,7 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TravelPlanner/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TravelPlanner/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = QAY6XTDMYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
