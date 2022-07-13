@@ -9,7 +9,9 @@ import Foundation
 
 class TripListViewModel: ObservableObject {
     
-    @Published var trips: [Trip] = [Trip(name: "Moscow", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: ["Bolshoy Theater", "Subway", "MSAL", "Red Square"], thingsToPack: ["Passport", "Vaccination Card", "Warm jacket", "Jeans"]), Trip(name: "Berlin", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: ["Bolshoy Theater", "Subway", "MSAL", "Red Square"], thingsToPack: ["Passport", "Vaccination Card", "Warm jacket", "Jeans"])]
+    @Published var trips: [Trip] = [
+        Trip(name: "Moscow", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: [Place(name: "Bolshoy Theater"), Place(name: "Subway"), Place(name: "MSAL"), Place(name: "Red Square")], thingsToPack: [ThingToPack(name: "Passport", isPacked: false), ThingToPack(name: "Vaccination Card", isPacked: false), ThingToPack(name: "Warm Jacket", isPacked: false), ThingToPack(name: "Jeans", isPacked: false)]),
+        Trip(name: "San Jose", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: [Place(name: "Bolshoy Theater"), Place(name: "Subway"), Place(name: "MSAL"), Place(name: "Red Square")], thingsToPack: [ThingToPack(name: "Passport", isPacked: false), ThingToPack(name: "Vaccination Card", isPacked: false), ThingToPack(name: "Warm Jacket", isPacked: false), ThingToPack(name: "Jeans", isPacked: false)])]
     
     // MARK: - CRUD Functions
     
