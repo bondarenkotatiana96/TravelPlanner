@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "amadeus-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amadeus4dev/amadeus-ios.git",
+      "state" : {
+        "revision" : "d8445e8fe085ed24b6f015e637e35a852a844535",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
+      "state" : {
+        "revision" : "2b6054efa051565954e1d2b9da831680026cd768",
+        "version" : "4.3.0"
+      }
+    }
+  ],
+  "version" : 2
+}

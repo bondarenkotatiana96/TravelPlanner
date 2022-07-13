@@ -9,18 +9,36 @@ import SwiftUI
 
 struct TripListView: View {
     
+    @ObservedObject var tripListVM = TripListViewModel()
+    @StateObject private var cityListVM = CityListViewModel()
+    
     @State var searchText = ""
     @State var searching = false
-    
-    @ObservedObject var viewModel = TripListViewModel()
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
                 SearchBar(searchText: $searchText, searching: $searching)
                 
+                List(cityListVM.cities, id: \.id) { city in
+                    Text(city.name)
+                        .onTapGesture {
+                            tripListVM.createTrip(name: city.name)
+                            searching = false
+                            searchText = ""
+                        }
+                }
+                .listStyle(.plain)
+                .onChange(of: searchText) { value in
+                        if !value.isEmpty && value.count > 2 {
+                            cityListVM.search(name: value)
+                        } else {
+                            cityListVM.cities.removeAll()
+                        }
+                    }
+                
                 List {
-                    ForEach(viewModel.trips) { trip in
+                    ForEach(tripListVM.trips) { trip in
                         NavigationLink {
                             // TRIP DETAILS VIEW
                         } label: {
@@ -33,6 +51,7 @@ struct TripListView: View {
                 }
                 .listStyle(.plain)
                 .navigationTitle(searching ? "Searching" : "My Trips")
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     if searching {
                         Button("Cancel") {
@@ -61,6 +80,7 @@ struct TripListView_Previews: PreviewProvider {
 }
 
 struct SearchBar: View {
+    
     @Binding var searchText: String
     @Binding var searching: Bool
     
@@ -70,7 +90,7 @@ struct SearchBar: View {
                 .fill(.yellow)
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search ..", text: $searchText) { startedEditing in
+                TextField("I want to go to...", text: $searchText) { startedEditing in
                     if startedEditing {
                         withAnimation {
                             searching = true
@@ -79,6 +99,7 @@ struct SearchBar: View {
                 } onCommit: {
                     withAnimation {
                         searching = false
+                        searchText = ""
                     }
                 }
             }
@@ -86,7 +107,7 @@ struct SearchBar: View {
             .padding(.leading, 13)
         }
             .frame(height: 40)
-            .cornerRadius(13)
+            .cornerRadius(20)
             .padding()
     }
 }

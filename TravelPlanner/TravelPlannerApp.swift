@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//import Amadeus
 
 @main
 struct TravelPlannerApp: App {
@@ -15,3 +16,9 @@ struct TravelPlannerApp: App {
         }
     }
 }
+
+//var amadeus:Amadeus = Amadeus(
+//    client_id: "alunTFeJZK9At1ny4KTfaMkqwRD7VEcF",
+//    client_secret: "EQ9uCSLin2dBZs9f"
+//)
+
