@@ -74,16 +74,17 @@ struct TripListView: View {
                                 }
                             }
                         }
+                        .onDelete(perform: tripListVM.deleteTrip(index:))
                     }
                     .listStyle(.plain)
                     .navigationTitle(searching ? "Searching" : "My Trips")
                     .navigationBarTitleDisplayMode(.inline)
-                    .gesture(DragGesture()
-                        .onChanged({ _ in
-                            searchText = ""
-                            UIApplication.shared.dismissKeyboard()
-                        })
-                    )
+//                    .gesture(DragGesture()
+//                        .onChanged({ _ in
+//                            searchText = ""
+//                            UIApplication.shared.dismissKeyboard()
+//                        })
+//                    )
                 }
                 }
             }
