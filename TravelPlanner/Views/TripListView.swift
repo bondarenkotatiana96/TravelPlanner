@@ -52,6 +52,7 @@ struct TripListView: View {
                 }
                 .gesture(DragGesture()
                     .onChanged({ _ in
+                        searchText = ""
                         UIApplication.shared.dismissKeyboard()
                     })
                 )

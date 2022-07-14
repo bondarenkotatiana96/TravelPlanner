@@ -9,7 +9,18 @@ import SwiftUI
 
 struct UserProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            NavigationLink {
+                BucketListView()
+            } label: {
+                HStack {
+                    Image(systemName: "heart")
+                    Text("My Bucket List")
+                }
+            }
+            .navigationTitle("My Profile")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

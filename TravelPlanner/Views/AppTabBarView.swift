@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppTabBarView: View {
     
-    @State private var selection = 2
+    @State private var selection = 1
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor.secondaryLabel
