@@ -19,13 +19,14 @@ struct TripListView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 SearchBar(searchText: $searchText, searching: $searching)
-                
+                if searching {
                 List(cityListVM.cities, id: \.id) { city in
                     Text(city.name)
                         .onTapGesture {
                             tripListVM.createTrip(name: city.name)
                             searching = false
                             searchText = ""
+                            UIApplication.shared.dismissKeyboard()
                         }
                 }
                 .listStyle(.plain)
@@ -36,27 +37,13 @@ struct TripListView: View {
                             cityListVM.cities.removeAll()
                         }
                     }
-                
-                List {
-                    ForEach(tripListVM.trips) { trip in
-                        NavigationLink {
-                            // TRIP DETAILS VIEW
-                        } label: {
-                            HStack {
-                                Image(systemName: "globe.europe.africa")
-                                Text(trip.name)
-                            }
-                        }
-                    }
-                }
-                .listStyle(.plain)
                 .navigationTitle(searching ? "Searching" : "My Trips")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     if searching {
                         Button("Cancel") {
-                            searchText = ""
                             withAnimation {
+                                searchText = ""
                                 searching = false
                                 UIApplication.shared.dismissKeyboard()
                             }
@@ -68,6 +55,36 @@ struct TripListView: View {
                         UIApplication.shared.dismissKeyboard()
                     })
                 )
+                } else {
+                
+                if tripListVM.trips.isEmpty {
+                    EmptyListTile()
+                        .navigationTitle(searching ? "Searching" : "My Trips")
+                        .navigationBarTitleDisplayMode(.inline)
+                } else {
+                    List {
+                        ForEach(tripListVM.trips) { trip in
+                            NavigationLink {
+                                // TRIP DETAILS VIEW
+                            } label: {
+                                HStack {
+                                    Image(systemName: "globe.europe.africa")
+                                    Text(trip.name)
+                                }
+                            }
+                        }
+                    }
+                    .listStyle(.plain)
+                    .navigationTitle(searching ? "Searching" : "My Trips")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .gesture(DragGesture()
+                        .onChanged({ _ in
+                            searchText = ""
+                            UIApplication.shared.dismissKeyboard()
+                        })
+                    )
+                }
+                }
             }
         }
     }
@@ -109,6 +126,23 @@ struct SearchBar: View {
             .frame(height: 40)
             .cornerRadius(20)
             .padding()
+    }
+}
+
+struct EmptyListTile: View {
+    var body: some View {
+        VStack {
+            Divider()
+        ZStack {
+            Rectangle().fill(Color.pink)
+            Text("Search for a destination and plan your next trip")
+                .font(.system(.caption, design: .monospaced))
+                    .padding()
+        }.cornerRadius(12)
+            .frame(width: UIScreen.main.bounds.width - 50)
+            .padding(.top)
+            .padding(.bottom, 250)
+        }
     }
 }
 
