@@ -12,7 +12,7 @@ import SwiftUI
 struct TravelPlannerApp: App {
     var body: some Scene {
         WindowGroup {
-            TripListView()
+            AppTabBarView()
         }
     }
 }
