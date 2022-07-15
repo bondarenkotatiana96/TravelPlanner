@@ -19,37 +19,45 @@ struct TripDetailView: View {
     @State var searchText = ""
     @State var searching = false
     
+    @State private var dateFrom = Date()
+    @State private var dateTo = Date()
+    
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "globe.europe.africa")
                 Text(trip.name)
+                Button {
+                    // TODO: - SHARE on social media
+                } label: {
+                    HStack {
+                        Image(systemName: "arrowshape.turn.up.forward")
+                        Text("Share")
+                    }
+                }
             }
             ZStack {
                 Rectangle().fill(Color.yellow)
-                VStack {
+                    .frame(width: UIScreen.main.bounds.width - 50)
+                VStack(alignment: .center) {
                     Text("Dates")
-                        .font(.system(.caption, design: .monospaced))
                     HStack {
-                        Text("21.03.2022-30.03.2022")
-                        Button {
-                            // TODO: - Open Calendar for updating dates
-                        } label: {
-                            Text("Edit")
-                                .font(.system(.caption, design: .monospaced))
-                        }
+                        Text("From:")
+                        DatePicker("", selection: $dateFrom, displayedComponents: .date)
+                        .labelsHidden()
+                        .accentColor(.yellow)
                     }
-                    Button {
-                        // TODO: - SHARE on social media
-                    } label: {
-                        HStack {
-                            Image(systemName: "arrowshape.turn.up.forward")
-                            Text("Share")
-                        }
+                    HStack{
+                        Text("To:")
+                        DatePicker("", selection: $dateTo, displayedComponents: .date)
+                            .labelsHidden()
+                            .accentColor(.yellow)
                     }
                 }
             }
             .cornerRadius(15)
+            
+            Text("Notes:")
             TextEditor(text: trip.notes != "" ? $trip.notes : $tripNotesText)
                 .colorMultiply(Color(red: 0.925, green: 0.925, blue: 0.925))
                 .frame(width: UIScreen.main.bounds.width - 50, height: 100)
