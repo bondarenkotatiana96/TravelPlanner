@@ -9,8 +9,6 @@ import Foundation
 
 class ThingToPackViewModel: ObservableObject {
     
-//    @Published var thingsToPack: [ThingToPack] = []
-    
     // MARK: - CRUD
     
     func createThingToPack(thingToPack: ThingToPack, trip: Trip, tripListViewModel: TripListViewModel) {

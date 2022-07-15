@@ -15,6 +15,9 @@ struct TripDetailView: View {
     @StateObject var noteViewModel = NotesViewModel()
     @State var tripNotesText: String = "Enter your trip details here..."
     
+    @StateObject var thingToPackVM = ThingToPackViewModel()
+    @State var thingToPackName: String = ""
+    
     @StateObject var datesViewModel = DatesViewModel()
     @State private var dateFrom = Date()
     @State private var dateTo = Date()
@@ -23,11 +26,6 @@ struct TripDetailView: View {
     
     @State var searchText = ""
     @State var searching = false
-    
-    @StateObject var thingToPackVM = ThingToPackViewModel()
-    @State var thingToPackName: String = ""
-    
-    
     
     var body: some View {
         VStack {
@@ -50,7 +48,7 @@ struct TripDetailView: View {
                     Text("Dates")
                     HStack {
                         Text("From:")
-                        DatePicker("", selection: trip.dates[0] != Date() ? $trip.dates[0] : $dateFrom, displayedComponents: .date)
+                        DatePicker("", selection: $dateFrom, displayedComponents: .date)
                         .labelsHidden()
                         .accentColor(.yellow)
                         .onChange(of: dateFrom) { newDate in
@@ -59,21 +57,26 @@ struct TripDetailView: View {
                     }
                     HStack{
                         Text("To:")
-                        DatePicker("", selection: trip.dates[0] != Date() ? $trip.dates[0] : $dateTo, displayedComponents: .date)
+                        DatePicker("", selection: $dateTo, displayedComponents: .date)
                             .labelsHidden()
                             .accentColor(.yellow)
+                            .onChange(of: dateTo) { newDate in
+                                datesViewModel.updateDate(dates: [dateFrom, newDate], trip: trip, tripListViewModel: tripListVM)
+                            }
                     }
                 }
             }
             .cornerRadius(15)
             
             Text("Notes:")
-            TextEditor(text: trip.notes != "" ? $trip.notes : $tripNotesText)
+            // BUG: - FIX***************************
+//            TextEditor(text: trip.notes != "" ? $trip.notes : $tripNotesText)
+            TextEditor(text: $tripNotesText)
                 .colorMultiply(Color(red: 0.925, green: 0.925, blue: 0.925))
                 .frame(width: UIScreen.main.bounds.width - 50, height: 100)
                 .cornerRadius(15)
             Button {
-                noteViewModel.updateNote(note: tripNotesText, trip: trip, tripListViewModel: tripListVM)
+                noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
             } label: {
                 Text("Save")
             }
@@ -102,7 +105,7 @@ struct TripDetailView: View {
                     }
                 }
                 Section("Places to visit") {
-                    // TODO: - Search for places
+                    // TODO: - Search for places *****************************************
                     SearchBar(searchText: $searchText, searching: $searching)
                     ForEach(trip.placesToVisit) { place in
                         HStack {
@@ -111,7 +114,7 @@ struct TripDetailView: View {
                         }
                     }
                     Button {
-                        // TODO: - Open MAP (Use MapKit)
+                        // TODO: - Open MAP (Use MapKit) *****************************************
                     } label: {
                         Text("See a map")
                             .font(.system(.caption, design: .monospaced))
@@ -119,6 +122,11 @@ struct TripDetailView: View {
                 }
             }
             .listStyle(SidebarListStyle())
+        }
+        .onAppear {
+            tripNotesText = trip.notes
+            dateFrom = trip.dates[0]
+            dateTo = trip.dates[1]
         }
     }
 }
