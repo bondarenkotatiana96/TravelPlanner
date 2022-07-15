@@ -79,13 +79,7 @@ struct TripListView: View {
                     .listStyle(.plain)
                     .navigationTitle(searching ? "Searching" : "My Trips")
                     .navigationBarTitleDisplayMode(.inline)
-//                    .gesture(DragGesture()
-//                        .onChanged({ _ in
-//                            searchText = ""
-//                            UIApplication.shared.dismissKeyboard()
-//                        })
-//                    )
-                }
+                    }
                 }
             }
         }
@@ -95,56 +89,6 @@ struct TripListView: View {
 struct TripListView_Previews: PreviewProvider {
     static var previews: some View {
         TripListView()
-    }
-}
-
-struct SearchBar: View {
-    
-    @Binding var searchText: String
-    @Binding var searching: Bool
-    
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(.yellow)
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("I want to go to...", text: $searchText) { startedEditing in
-                    if startedEditing {
-                        withAnimation {
-                            searching = true
-                        }
-                    }
-                } onCommit: {
-                    withAnimation {
-                        searching = false
-                        searchText = ""
-                    }
-                }
-            }
-            .foregroundColor(.gray)
-            .padding(.leading, 13)
-        }
-            .frame(height: 40)
-            .cornerRadius(20)
-            .padding()
-    }
-}
-
-struct EmptyListTile: View {
-    var body: some View {
-        VStack {
-            Divider()
-        ZStack {
-            Rectangle().fill(Color.pink)
-            Text("Search for a destination and plan your next trip")
-                .font(.system(.caption, design: .monospaced))
-                    .padding()
-        }.cornerRadius(12)
-            .frame(width: UIScreen.main.bounds.width - 50)
-            .padding(.top)
-            .padding(.bottom, 250)
-        }
     }
 }
 

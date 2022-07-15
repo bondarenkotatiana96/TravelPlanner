@@ -12,22 +12,23 @@ struct AppTabBarView: View {
     @State private var selection = 1
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.secondaryLabel
+        UITabBar.appearance().backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
       }
     
     var body: some View {
         TabView(selection:$selection) {
             TripListView()
                 .tabItem {
-                    Image(systemName: selection == 1 ? "house" : "person")
+                    Label("My Trips", systemImage: "map.circle.fill")
                 }
                 .tag(1)
             UserProfileView()
                 .tabItem {
-                    Image(systemName: selection == 2 ? "person" : "house")
+                    Label("Profile", systemImage: "person.circle.fill")
                 }
                 .tag(2)
         }
+        .accentColor(.orange)
     }
 }
 
