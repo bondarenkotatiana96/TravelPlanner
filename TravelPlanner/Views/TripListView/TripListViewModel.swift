@@ -21,12 +21,14 @@ class TripListViewModel: ObservableObject {
         // TODO: - Save to some kind of store or firebase?
     }
     
-    func updateTrip(trip: Trip, name: String, dates: [Date], notes: String) {
+    func updateTrip(trip: Trip) {
         guard let index = trips.firstIndex(of: trip) else { return }
         // Update
-        trips[index].name = name
-        trips[index].dates = dates
-        trips[index].notes = notes
+        trips[index].name = trip.name
+        trips[index].dates = trip.dates
+        trips[index].notes = trip.notes
+        trips[index].placesToVisit = trip.placesToVisit
+        trips[index].thingsToPack = trip.thingsToPack
         // TODO: - Save to some kind of store or firebase?
     }
     

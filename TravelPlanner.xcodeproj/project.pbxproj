@@ -84,10 +84,67 @@
 		541A7B262880DFC00052BD23 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				541A7B272880DFD50052BD23 /* SearchBar.swift */,
-				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
+				541A7B2C2880F0960052BD23 /* SharedViews */,
+				541A7B2B2880F08B0052BD23 /* HelperFunctions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		541A7B2B2880F08B0052BD23 /* HelperFunctions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HelperFunctions;
+			sourceTree = "<group>";
+		};
+		541A7B2C2880F0960052BD23 /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
+				541A7B272880DFD50052BD23 /* SearchBar.swift */,
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
+		541A7B2D2880FC420052BD23 /* TabBarView */ = {
+			isa = PBXGroup;
+			children = (
+				549E6DF7287FB07C00085BDA /* AppTabBarView.swift */,
+			);
+			path = TabBarView;
+			sourceTree = "<group>";
+		};
+		541A7B2E2880FC5A0052BD23 /* BucketListView */ = {
+			isa = PBXGroup;
+			children = (
+				541A7B212880A6050052BD23 /* BucketListViewModel.swift */,
+				541A7B1D2880A52F0052BD23 /* BucketListView.swift */,
+			);
+			path = BucketListView;
+			sourceTree = "<group>";
+		};
+		541A7B2F2880FC7C0052BD23 /* CityListView */ = {
+			isa = PBXGroup;
+			children = (
+				549E6DF3287F7D9500085BDA /* CityListViewModel.swift */,
+			);
+			path = CityListView;
+			sourceTree = "<group>";
+		};
+		541A7B302880FCA20052BD23 /* UserProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				549E6DF9287FB18600085BDA /* UserProfileView.swift */,
+			);
+			path = UserProfileView;
+			sourceTree = "<group>";
+		};
+		541A7B312880FCAF0052BD23 /* TripDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				549E6DF5287FA24100085BDA /* TripDetailView.swift */,
+			);
+			path = TripDetailView;
 			sourceTree = "<group>";
 		};
 		549184F7287E15E700A22F5C /* Resources */ = {
@@ -114,8 +171,6 @@
 		549184F9287E164B00A22F5C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				549E6DF3287F7D9500085BDA /* CityListViewModel.swift */,
-				541A7B212880A6050052BD23 /* BucketListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -123,11 +178,12 @@
 		549184FA287E165000A22F5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				541A7B312880FCAF0052BD23 /* TripDetailView */,
+				541A7B302880FCA20052BD23 /* UserProfileView */,
+				541A7B2F2880FC7C0052BD23 /* CityListView */,
+				541A7B2E2880FC5A0052BD23 /* BucketListView */,
+				541A7B2D2880FC420052BD23 /* TabBarView */,
 				541A7B252880DF720052BD23 /* TripListView */,
-				549E6DF7287FB07C00085BDA /* AppTabBarView.swift */,
-				549E6DF5287FA24100085BDA /* TripDetailView.swift */,
-				549E6DF9287FB18600085BDA /* UserProfileView.swift */,
-				541A7B1D2880A52F0052BD23 /* BucketListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
