@@ -16,7 +16,7 @@ class TripListViewModel: ObservableObject {
     // MARK: - CRUD Functions
     
     func createTrip(name: String) {
-        let newTrip = Trip(name: name, notes: "", placesToVisit: [], thingsToPack: [])
+        let newTrip = Trip(name: name, dates: [Date(), Date()], notes: "", placesToVisit: [], thingsToPack: [])
         trips.append(newTrip)
         // TODO: - Save to some kind of store or firebase?
     }

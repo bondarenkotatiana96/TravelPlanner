@@ -15,6 +15,7 @@
 		541A7B33288104F10052BD23 /* PlaceToVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B32288104F10052BD23 /* PlaceToVisitViewModel.swift */; };
 		541A7B35288105040052BD23 /* ThingToPackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B34288105040052BD23 /* ThingToPackViewModel.swift */; };
 		541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B36288105140052BD23 /* NotesViewModel.swift */; };
+		541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B382881331A0052BD23 /* DatesViewModel.swift */; };
 		549184FC287E1A2000A22F5C /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FB287E1A2000A22F5C /* Trip.swift */; };
 		549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FD287E234800A22F5C /* TripListViewModel.swift */; };
 		54918500287E29BB00A22F5C /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FF287E29BA00A22F5C /* TripListView.swift */; };
@@ -41,6 +42,7 @@
 		541A7B32288104F10052BD23 /* PlaceToVisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceToVisitViewModel.swift; sourceTree = "<group>"; };
 		541A7B34288105040052BD23 /* ThingToPackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingToPackViewModel.swift; sourceTree = "<group>"; };
 		541A7B36288105140052BD23 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		541A7B382881331A0052BD23 /* DatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesViewModel.swift; sourceTree = "<group>"; };
 		549184FB287E1A2000A22F5C /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		549184FD287E234800A22F5C /* TripListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModel.swift; sourceTree = "<group>"; };
 		549184FF287E29BA00A22F5C /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				541A7B32288104F10052BD23 /* PlaceToVisitViewModel.swift */,
 				541A7B34288105040052BD23 /* ThingToPackViewModel.swift */,
 				541A7B36288105140052BD23 /* NotesViewModel.swift */,
+				541A7B382881331A0052BD23 /* DatesViewModel.swift */,
 			);
 			path = TripDetailView;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				541A7B2A2880E1170052BD23 /* EmptyListTile.swift in Sources */,
 				541A7B202880A5700052BD23 /* BucketListDestination.swift in Sources */,
 				541A7B35288105040052BD23 /* ThingToPackViewModel.swift in Sources */,
+				541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */,
 				549E6DFA287FB18600085BDA /* UserProfileView.swift in Sources */,
 				54918500287E29BB00A22F5C /* TripListView.swift in Sources */,
 				541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */,

@@ -9,18 +9,25 @@ import SwiftUI
 
 struct TripDetailView: View {
     
-    @StateObject var noteViewModel = NotesViewModel()
-    
     @Binding var trip: Trip
     var tripListVM: TripListViewModel
     
+    @StateObject var noteViewModel = NotesViewModel()
     @State var tripNotesText: String = "Enter your trip details here..."
+    
+    @StateObject var datesViewModel = DatesViewModel()
+    @State private var dateFrom = Date()
+    @State private var dateTo = Date()
+    
+    @StateObject var placeToVisitVM = PlaceToVisitViewModel()
     
     @State var searchText = ""
     @State var searching = false
     
-    @State private var dateFrom = Date()
-    @State private var dateTo = Date()
+    @StateObject var thingToPackVM = ThingToPackViewModel()
+    @State var thingToPackName: String = ""
+    
+    
     
     var body: some View {
         VStack {
@@ -43,13 +50,16 @@ struct TripDetailView: View {
                     Text("Dates")
                     HStack {
                         Text("From:")
-                        DatePicker("", selection: $dateFrom, displayedComponents: .date)
+                        DatePicker("", selection: trip.dates[0] != Date() ? $trip.dates[0] : $dateFrom, displayedComponents: .date)
                         .labelsHidden()
                         .accentColor(.yellow)
+                        .onChange(of: dateFrom) { newDate in
+                            datesViewModel.updateDate(dates: [newDate, dateTo], trip: trip, tripListViewModel: tripListVM)
+                        }
                     }
                     HStack{
                         Text("To:")
-                        DatePicker("", selection: $dateTo, displayedComponents: .date)
+                        DatePicker("", selection: trip.dates[0] != Date() ? $trip.dates[0] : $dateTo, displayedComponents: .date)
                             .labelsHidden()
                             .accentColor(.yellow)
                     }
@@ -70,11 +80,25 @@ struct TripDetailView: View {
             
             List {
                 Section("Things to pack") {
+                    TextField("Add...", text: $thingToPackName)
+                        .onSubmit {
+                            thingToPackVM.createThingToPack(thingToPack: ThingToPack(name: thingToPackName, isPacked: false), trip: trip, tripListViewModel: tripListVM)
+                            thingToPackName = ""
+                        }
                     ForEach(trip.thingsToPack) { item in
                         HStack {
-                            Image(systemName: "square")
+                            Button {
+                                thingToPackVM.toggleIsPacked(thingToPack: item, trip: trip, tripListViewModel: tripListVM)
+                            } label: {
+                                Image(systemName: item.isPacked ? "checkmark.square" : "square")
+                                    .resizable()
+                                    .frame(width: 23, height: 23)
+                            }
                             Text(item.name)
                         }
+                    }
+                    .onDelete { indexSet in
+                        thingToPackVM.deleteThingToPack(trip: trip, tripListViewModel: tripListVM, at: indexSet)
                     }
                 }
                 Section("Places to visit") {
