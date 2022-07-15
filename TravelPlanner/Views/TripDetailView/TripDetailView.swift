@@ -9,10 +9,12 @@ import SwiftUI
 
 struct TripDetailView: View {
     
+    @StateObject var noteViewModel = NotesViewModel()
+    
     @Binding var trip: Trip
     var tripListVM: TripListViewModel
     
-    @State var tripNotesText: String = ""
+    @State var tripNotesText: String = "Enter your trip details here..."
     
     @State var searchText = ""
     @State var searching = false
@@ -48,10 +50,15 @@ struct TripDetailView: View {
                 }
             }
             .cornerRadius(15)
-            Text("Notes: ")
-            TextEditor(text: $trip.notes)
-                .colorMultiply(.gray)
+            TextEditor(text: trip.notes != "" ? $trip.notes : $tripNotesText)
+                .colorMultiply(Color(red: 0.925, green: 0.925, blue: 0.925))
                 .frame(width: UIScreen.main.bounds.width - 50, height: 100)
+                .cornerRadius(15)
+            Button {
+                noteViewModel.updateNote(note: tripNotesText, trip: trip, tripListViewModel: tripListVM)
+            } label: {
+                Text("Save")
+            }
             
             List {
                 Section("Things to pack") {
