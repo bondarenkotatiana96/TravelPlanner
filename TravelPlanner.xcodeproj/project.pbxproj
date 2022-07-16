@@ -28,6 +28,7 @@
 		549E6DF6287FA24100085BDA /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DF5287FA24100085BDA /* TripDetailView.swift */; };
 		549E6DF8287FB07C00085BDA /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DF7287FB07C00085BDA /* AppTabBarView.swift */; };
 		549E6DFA287FB18600085BDA /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DF9287FB18600085BDA /* UserProfileView.swift */; };
+		54A3EAFD28822F4100A3D1AE /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */; };
 		54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */; };
 		54CCEDB1287CFC5000C62679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB0287CFC5000C62679 /* Assets.xcassets */; };
 		54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		549E6DF5287FA24100085BDA /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		549E6DF7287FB07C00085BDA /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
 		549E6DF9287FB18600085BDA /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		54CCEDA9287CFC4E00C62679 /* TravelPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlannerApp.swift; sourceTree = "<group>"; };
 		54CCEDB0287CFC5000C62679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
 				541A7B272880DFD50052BD23 /* SearchBar.swift */,
+				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
 			);
 			path = SharedViews;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				54918504287E41B500A22F5C /* ThingToPack.swift in Sources */,
 				549E6DF2287F74F600085BDA /* City.swift in Sources */,
 				54918502287E417800A22F5C /* Place.swift in Sources */,
+				54A3EAFD28822F4100A3D1AE /* ShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

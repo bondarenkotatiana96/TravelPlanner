@@ -27,13 +27,15 @@ struct TripDetailView: View {
     @State var searchText = ""
     @State var searching = false
     
+    @State private var showShareSheet = false
+    
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "globe.europe.africa")
                 Text(trip.name)
                 Button {
-                    // TODO: - SHARE on social media
+                    self.showShareSheet = true
                 } label: {
                     HStack {
                         Image(systemName: "arrowshape.turn.up.forward")
@@ -41,6 +43,9 @@ struct TripDetailView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showShareSheet) {
+                ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
+                    }
             ZStack {
                 Rectangle().fill(Color.yellow)
                     .frame(width: UIScreen.main.bounds.width - 50)
@@ -69,8 +74,6 @@ struct TripDetailView: View {
             .cornerRadius(15)
             
             Text("Notes:")
-            // BUG: - FIX***************************
-//            TextEditor(text: trip.notes != "" ? $trip.notes : $tripNotesText)
             TextEditor(text: $tripNotesText)
                 .colorMultiply(Color(red: 0.925, green: 0.925, blue: 0.925))
                 .frame(width: UIScreen.main.bounds.width - 50, height: 100)
