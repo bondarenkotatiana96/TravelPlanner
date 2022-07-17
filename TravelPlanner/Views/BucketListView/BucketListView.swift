@@ -58,7 +58,7 @@ struct BucketListView: View {
             )
             } else {
                 if bucketListVM.destinations.isEmpty {
-                    EmptyListTile()
+                    EmptyListTile(text: "Search for a destination and add it to your bucket list!")
                         .navigationTitle(searching ? "Searching" : "My Bucket List")
                         .navigationBarTitleDisplayMode(.inline)
                 } else {

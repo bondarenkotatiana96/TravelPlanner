@@ -59,7 +59,7 @@ struct TripListView: View {
                 } else {
                 
                 if tripListVM.trips.isEmpty {
-                    EmptyListTile()
+                    EmptyListTile(text: "Search for a destination and plan your next trip!")
                         .navigationTitle(searching ? "Searching" : "My Trips")
                         .navigationBarTitleDisplayMode(.inline)
                 } else {

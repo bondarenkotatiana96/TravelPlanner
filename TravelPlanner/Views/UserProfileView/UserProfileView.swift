@@ -10,16 +10,30 @@ import SwiftUI
 struct UserProfileView: View {
     var body: some View {
         NavigationView {
-            NavigationLink {
-                BucketListView()
-            } label: {
-                HStack {
-                    Image(systemName: "heart")
-                    Text("My Bucket List")
+            VStack(alignment: .center, spacing: 40) {
+                Image("avatar")
+                    .padding(.bottom)
+                NavigationLink {
+                    BucketListView()
+                } label: {
+                    ButtonLabel(text: "My Bucket List", imageName: "heart.circle")
                 }
+                
+                Button {
+                    //
+                } label: {
+                    ButtonLabel(text: "Help & how-to", imageName: "questionmark.circle")
+                }
+                
+                Button {
+                    //
+                } label: {
+                    ButtonLabel(text: "Feedback & support", imageName: "envelope.circle")
+                }
+                    
+                .navigationTitle("My Profile")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("My Profile")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

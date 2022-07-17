@@ -28,7 +28,7 @@ struct AppTabBarView: View {
                 }
                 .tag(2)
         }
-        .accentColor(.orange)
+        .accentColor(Color(red: 1, green: 0.71, blue: 0.541))
     }
 }
 

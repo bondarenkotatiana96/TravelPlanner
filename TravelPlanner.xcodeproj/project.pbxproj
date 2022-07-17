@@ -16,6 +16,8 @@
 		541A7B35288105040052BD23 /* ThingToPackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B34288105040052BD23 /* ThingToPackViewModel.swift */; };
 		541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B36288105140052BD23 /* NotesViewModel.swift */; };
 		541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B382881331A0052BD23 /* DatesViewModel.swift */; };
+		5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58A28838356005E5167 /* ButtonLabel.swift */; };
+		5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58C28838C2B005E5167 /* SupportEmail.swift */; };
 		549184FC287E1A2000A22F5C /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FB287E1A2000A22F5C /* Trip.swift */; };
 		549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FD287E234800A22F5C /* TripListViewModel.swift */; };
 		54918500287E29BB00A22F5C /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FF287E29BA00A22F5C /* TripListView.swift */; };
@@ -44,6 +46,8 @@
 		541A7B34288105040052BD23 /* ThingToPackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingToPackViewModel.swift; sourceTree = "<group>"; };
 		541A7B36288105140052BD23 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		541A7B382881331A0052BD23 /* DatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesViewModel.swift; sourceTree = "<group>"; };
+		5483C58A28838356005E5167 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
+		5483C58C28838C2B005E5167 /* SupportEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportEmail.swift; sourceTree = "<group>"; };
 		549184FB287E1A2000A22F5C /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		549184FD287E234800A22F5C /* TripListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModel.swift; sourceTree = "<group>"; };
 		549184FF287E29BA00A22F5C /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
@@ -91,30 +95,15 @@
 			path = TripListView;
 			sourceTree = "<group>";
 		};
-		541A7B262880DFC00052BD23 /* Helpers */ = {
+		541A7B262880DFC00052BD23 /* Helpers&Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				541A7B2C2880F0960052BD23 /* SharedViews */,
-				541A7B2B2880F08B0052BD23 /* HelperFunctions */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		541A7B2B2880F08B0052BD23 /* HelperFunctions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HelperFunctions;
-			sourceTree = "<group>";
-		};
-		541A7B2C2880F0960052BD23 /* SharedViews */ = {
-			isa = PBXGroup;
-			children = (
-				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
 				541A7B272880DFD50052BD23 /* SearchBar.swift */,
 				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
+				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
+				5483C58A28838356005E5167 /* ButtonLabel.swift */,
 			);
-			path = SharedViews;
+			path = "Helpers&Extensions";
 			sourceTree = "<group>";
 		};
 		541A7B2D2880FC420052BD23 /* TabBarView */ = {
@@ -175,10 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				549E6DF1287F74F600085BDA /* City.swift */,
-				549184FB287E1A2000A22F5C /* Trip.swift */,
 				54918501287E417800A22F5C /* Place.swift */,
+				549184FB287E1A2000A22F5C /* Trip.swift */,
 				54918503287E41B500A22F5C /* ThingToPack.swift */,
 				541A7B1F2880A5700052BD23 /* BucketListDestination.swift */,
+				5483C58C28838C2B005E5167 /* SupportEmail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,9 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */,
-				541A7B262880DFC00052BD23 /* Helpers */,
-				541A7B232880DF3D0052BD23 /* Networking */,
 				549184F7287E15E700A22F5C /* Resources */,
+				541A7B262880DFC00052BD23 /* Helpers&Extensions */,
+				541A7B232880DF3D0052BD23 /* Networking */,
 				549184F8287E164600A22F5C /* Models */,
 				549184FA287E165000A22F5C /* Views */,
 			);
@@ -311,10 +301,12 @@
 			files = (
 				549E6DF8287FB07C00085BDA /* AppTabBarView.swift in Sources */,
 				541A7B33288104F10052BD23 /* PlaceToVisitViewModel.swift in Sources */,
+				5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */,
 				549E6DF6287FA24100085BDA /* TripDetailView.swift in Sources */,
 				549184FC287E1A2000A22F5C /* Trip.swift in Sources */,
 				549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */,
 				549E6DF0287F74A100085BDA /* WebService.swift in Sources */,
+				5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */,
 				541A7B282880DFD50052BD23 /* SearchBar.swift in Sources */,
 				541A7B222880A6050052BD23 /* BucketListViewModel.swift in Sources */,
 				541A7B1E2880A52F0052BD23 /* BucketListView.swift in Sources */,
