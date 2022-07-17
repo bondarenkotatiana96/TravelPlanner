@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    @Environment(\.openURL) var openURL
+    private var email = SupportEmail(toAddress: "96bondarenkotatiana@gmail.com", subject: "Feedback Email", messageHeader: "Please describe your feedback/issue below.")
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 40) {
@@ -26,7 +28,7 @@ struct UserProfileView: View {
                 }
                 
                 Button {
-                    //
+                    email.send(openURL: openURL)
                 } label: {
                     ButtonLabel(text: "Feedback & support", imageName: "envelope.circle")
                 }
