@@ -12,7 +12,7 @@ struct AppTabBarView: View {
     @State private var selection = 1
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
+        UITabBar.appearance().backgroundColor = UIColor(red: 0.925, green: 0.925, blue: 0.925, alpha: 1)
       }
     
     var body: some View {
@@ -28,7 +28,6 @@ struct AppTabBarView: View {
                 }
                 .tag(2)
         }
-        .accentColor(Color(red: 1, green: 0.71, blue: 0.541))
     }
 }
 

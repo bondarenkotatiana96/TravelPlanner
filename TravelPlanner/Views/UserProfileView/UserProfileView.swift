@@ -18,19 +18,19 @@ struct UserProfileView: View {
                 NavigationLink {
                     BucketListView()
                 } label: {
-                    ButtonLabel(text: "My Bucket List", imageName: "heart.circle")
+                    ButtonLabel(text: "My Bucket List", imageName: "heart.circle", width: 300, height: 50, imageSize: 32)
                 }
                 
                 Button {
                     //
                 } label: {
-                    ButtonLabel(text: "Help & how-to", imageName: "questionmark.circle")
+                    ButtonLabel(text: "Help & how-to", imageName: "questionmark.circle", width: 300, height: 50, imageSize: 32)
                 }
                 
                 Button {
                     email.send(openURL: openURL)
                 } label: {
-                    ButtonLabel(text: "Feedback & support", imageName: "envelope.circle")
+                    ButtonLabel(text: "Feedback & support", imageName: "envelope.circle", width: 300, height: 50, imageSize: 32)
                 }
                     
                 .navigationTitle("My Profile")

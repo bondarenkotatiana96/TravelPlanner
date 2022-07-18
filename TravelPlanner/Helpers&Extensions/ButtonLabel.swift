@@ -10,20 +10,22 @@ import SwiftUI
 struct ButtonLabel: View {
     
     var text: String
-    var imageName: String
+    var imageName: String?
+    var width: CGFloat
+    var height: CGFloat
+    var imageSize: CGFloat
     
     var body: some View {
         HStack {
-            Image(systemName: imageName)
-                .foregroundColor(Color(red: 1, green: 0.31, blue: 0.388))
-                .font(.system(size: 32))
+            Image(systemName: imageName ?? "")
+                .foregroundColor(Color("AccentPink"))
+                .font(.system(size: imageSize))
             Text(text)
-                .bold()
-                .foregroundColor(Color(red: 0.302, green: 0.298, blue: 0.298))
-                .padding(.trailing)
+                .fontWeight(.bold)
+                .foregroundColor(Color("SecondaryDark"))
         }
-        .frame(width: 300, height: 50)
-        .background(Color(red: 1, green: 0.71, blue: 0.541))
+        .frame(width: width, height: height)
+        .background(Color.accentColor)
         .clipShape(Capsule())
     }
 }

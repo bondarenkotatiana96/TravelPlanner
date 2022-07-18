@@ -15,10 +15,10 @@ struct SearchBar: View {
     
     var body: some View {
         ZStack {
-            Rectangle().fill(Color(red: 0.976, green: 0.933, blue: 0.718))
+            Rectangle().fill(Color("BackgroundYellow"))
             HStack {
                 Image(systemName: "magnifyingglass")
-                    .foregroundColor(Color(red: 0.192, green: 0.047, blue: 0.024))
+                    .foregroundColor(Color("AccentText"))
                 TextField("I want to go to...", text: $searchText) { startedEditing in
                     if startedEditing {
                         withAnimation {
@@ -33,7 +33,6 @@ struct SearchBar: View {
                 }
                 
             }
-            .foregroundColor(Color(red: 0.651, green: 0.651, blue: 0.651))
             .padding(.leading, 13)
             
         }

@@ -13,7 +13,7 @@ struct TripDetailView: View {
     var tripListVM: TripListViewModel
     
     @StateObject var noteViewModel = NotesViewModel()
-    @State var tripNotesText: String = "Enter your trip details here..."
+    @State var tripNotesText: String = ""
     
     @StateObject var thingToPackVM = ThingToPackViewModel()
     @State var thingToPackName: String = ""
@@ -31,26 +31,27 @@ struct TripDetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "globe.europe.africa")
+            HStack(spacing: 20) {
                 Text(trip.name)
+                    .bold()
+                    .font(.system(size: 32))
+                    .foregroundColor(Color("AccentText"))
                 Button {
                     self.showShareSheet = true
                 } label: {
-                    HStack {
-                        Image(systemName: "arrowshape.turn.up.forward")
-                        Text("Share")
-                    }
+                    ButtonLabel(text: "Share", imageName: "arrowshape.turn.up.forward", width: 110, height: 25, imageSize: 17)
                 }
             }
+            .frame(height: 80)
             .sheet(isPresented: $showShareSheet) {
                 ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
                     }
             ZStack {
-                Rectangle().fill(Color.yellow)
-                    .frame(width: UIScreen.main.bounds.width - 50)
+                Rectangle().fill(Color("BackgroundYellow"))
+                    .frame(width: UIScreen.main.bounds.width - 70)
                 VStack(alignment: .center) {
                     Text("Dates")
+                        .bold()
                     HStack {
                         Text("From:")
                         DatePicker("", selection: $dateFrom, displayedComponents: .date)
@@ -74,14 +75,15 @@ struct TripDetailView: View {
             .cornerRadius(15)
             
             Text("Notes:")
+                .bold()
             TextEditor(text: $tripNotesText)
-                .colorMultiply(Color(red: 0.925, green: 0.925, blue: 0.925))
+                .colorMultiply(Color("SecondaryLight"))
                 .frame(width: UIScreen.main.bounds.width - 50, height: 100)
                 .cornerRadius(15)
             Button {
                 noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
             } label: {
-                Text("Save")
+                ButtonLabel(text: "Save", width: 110, height: 25, imageSize: 17)
             }
             
             List {
@@ -119,8 +121,7 @@ struct TripDetailView: View {
                     Button {
                         // TODO: - Open MAP (Use MapKit) *****************************************
                     } label: {
-                        Text("See a map")
-                            .font(.system(.caption, design: .monospaced))
+                        ButtonLabel(text: "See a map", imageName: "map", width: 150, height: 25, imageSize: 17)
                     }
                 }
             }
