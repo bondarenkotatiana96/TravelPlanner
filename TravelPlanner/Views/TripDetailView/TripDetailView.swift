@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct TripDetailView: View {
     
@@ -28,6 +29,8 @@ struct TripDetailView: View {
     @State var searching = false
     
     @State private var showShareSheet = false
+    
+    @State private var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.75773, longitude: -73.985708), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
     var body: some View {
         VStack {
@@ -52,24 +55,26 @@ struct TripDetailView: View {
                 VStack(alignment: .center) {
                     Text("Dates")
                         .bold()
-                    HStack {
-                        Text("From:")
-                        DatePicker("", selection: $dateFrom, displayedComponents: .date)
-                        .labelsHidden()
-                        .accentColor(.yellow)
-                        .onChange(of: dateFrom) { newDate in
-                            datesViewModel.updateDate(dates: [newDate, dateTo], trip: trip, tripListViewModel: tripListVM)
+                    HStack(spacing: 5) {
+                        VStack(spacing: 16) {
+                            Text("From:")
+                            Text("To:")
                         }
-                    }
-                    HStack{
-                        Text("To:")
-                        DatePicker("", selection: $dateTo, displayedComponents: .date)
+                        VStack {
+                            DatePicker("", selection: $dateFrom, displayedComponents: .date)
                             .labelsHidden()
                             .accentColor(.yellow)
-                            .onChange(of: dateTo) { newDate in
-                                datesViewModel.updateDate(dates: [dateFrom, newDate], trip: trip, tripListViewModel: tripListVM)
+                            .onChange(of: dateFrom) { newDate in
+                                datesViewModel.updateDate(dates: [newDate, dateTo], trip: trip, tripListViewModel: tripListVM)
                             }
-                    }
+                            DatePicker("", selection: $dateTo, displayedComponents: .date)
+                                .labelsHidden()
+                                .accentColor(.yellow)
+                                .onChange(of: dateTo) { newDate in
+                                    datesViewModel.updateDate(dates: [dateFrom, newDate], trip: trip, tripListViewModel: tripListVM)
+                                }
+                            }
+                        }
                 }
             }
             .cornerRadius(15)
@@ -114,7 +119,9 @@ struct TripDetailView: View {
                     SearchBar(searchText: $searchText, searching: $searching)
                     ForEach(trip.placesToVisit) { place in
                         HStack {
-                            Image(systemName: "globe.europe.africa")
+                            Image(systemName: "mappin.and.ellipse")
+                                .foregroundColor(Color("AccentPink"))
+                                .font(.system(size: 20))
                             Text(place.name)
                         }
                     }
@@ -126,11 +133,14 @@ struct TripDetailView: View {
                 }
             }
             .listStyle(SidebarListStyle())
+           
+            Map(coordinateRegion: $region)
         }
         .onAppear {
             tripNotesText = trip.notes
             dateFrom = trip.dates[0]
             dateTo = trip.dates[1]
+            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
         }
     }
 }
@@ -138,7 +148,7 @@ struct TripDetailView: View {
 struct TripDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TripDetailView(trip: .constant(Trip(name: "Moscow", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: [Place(name: "Bolshoy Theater"), Place(name: "Subway"), Place(name: "MSAL"), Place(name: "Red Square")], thingsToPack: [ThingToPack(name: "Passport", isPacked: false), ThingToPack(name: "Vaccination Card", isPacked: false), ThingToPack(name: "Warm Jacket", isPacked: false), ThingToPack(name: "Jeans", isPacked: false)])), tripListVM: TripListViewModel())
+            TripDetailView(trip: .constant(Trip(name: "Moscow", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: [Place(name: "Bolshoy Theater"), Place(name: "Subway"), Place(name: "MSAL"), Place(name: "Red Square")], thingsToPack: [ThingToPack(name: "Passport", isPacked: false), ThingToPack(name: "Vaccination Card", isPacked: false), ThingToPack(name: "Warm Jacket", isPacked: false), ThingToPack(name: "Jeans", isPacked: false)], latitude: 55.741469, longitude: 37.615561)), tripListVM: TripListViewModel())
         }
     }
 }

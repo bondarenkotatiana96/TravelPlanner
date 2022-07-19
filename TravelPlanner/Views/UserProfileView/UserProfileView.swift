@@ -32,7 +32,6 @@ struct UserProfileView: View {
                 } label: {
                     ButtonLabel(text: "Feedback & support", imageName: "envelope.circle", width: 300, height: 50, imageSize: 32)
                 }
-                    
                 .navigationTitle("My Profile")
                 .navigationBarTitleDisplayMode(.inline)
             }

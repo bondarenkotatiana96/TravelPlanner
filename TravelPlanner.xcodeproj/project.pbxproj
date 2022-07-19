@@ -16,6 +16,7 @@
 		541A7B35288105040052BD23 /* ThingToPackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B34288105040052BD23 /* ThingToPackViewModel.swift */; };
 		541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B36288105140052BD23 /* NotesViewModel.swift */; };
 		541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B382881331A0052BD23 /* DatesViewModel.swift */; };
+		543DE0B42886089A00576C1B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DE0B32886089A00576C1B /* Coordinates.swift */; };
 		5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58A28838356005E5167 /* ButtonLabel.swift */; };
 		5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58C28838C2B005E5167 /* SupportEmail.swift */; };
 		5483C58F28838DE1005E5167 /* AppBundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */; };
@@ -47,6 +48,7 @@
 		541A7B34288105040052BD23 /* ThingToPackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingToPackViewModel.swift; sourceTree = "<group>"; };
 		541A7B36288105140052BD23 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		541A7B382881331A0052BD23 /* DatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesViewModel.swift; sourceTree = "<group>"; };
+		543DE0B32886089A00576C1B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		5483C58A28838356005E5167 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		5483C58C28838C2B005E5167 /* SupportEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportEmail.swift; sourceTree = "<group>"; };
 		5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppBundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				54918503287E41B500A22F5C /* ThingToPack.swift */,
 				541A7B1F2880A5700052BD23 /* BucketListDestination.swift */,
 				5483C58C28838C2B005E5167 /* SupportEmail.swift */,
+				543DE0B32886089A00576C1B /* Coordinates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				549E6DF0287F74A100085BDA /* WebService.swift in Sources */,
 				5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */,
 				541A7B282880DFD50052BD23 /* SearchBar.swift in Sources */,
+				543DE0B42886089A00576C1B /* Coordinates.swift in Sources */,
 				541A7B222880A6050052BD23 /* BucketListViewModel.swift in Sources */,
 				541A7B1E2880A52F0052BD23 /* BucketListView.swift in Sources */,
 				549E6DF4287F7D9500085BDA /* CityListViewModel.swift in Sources */,

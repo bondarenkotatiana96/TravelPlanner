@@ -15,6 +15,9 @@ struct TripListView: View {
     @State var searchText = ""
     @State var searching = false
     
+    @State var latitude: Double = 0.0
+    @State var longitude: Double = 0.0
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -23,7 +26,18 @@ struct TripListView: View {
                 List(cityListVM.cities, id: \.id) { city in
                     Text(city.name)
                         .onTapGesture {
-                            tripListVM.createTrip(name: city.name)
+                            WebService().getCoordinates(location: city.name) { result in
+                                DispatchQueue.main.async {
+                                    switch result {
+                                    case .success(let coordinatesResult):
+                                        latitude = coordinatesResult[1]
+                                        longitude = coordinatesResult[0]
+                                    case .failure(let error):
+                                        print(error)
+                                    }
+                                }
+                            }
+                            tripListVM.createTrip(name: city.name, latitude: latitude, longitude: longitude)
                             searching = false
                             searchText = ""
                             UIApplication.shared.dismissKeyboard()
