@@ -12,7 +12,7 @@ class CityListViewModel: ObservableObject {
     @Published var cities: [CityViewModel] = []
     
     func search(name: String) {
-            WebService().fetchCities(searchTerm: name) { result in
+            CitySearchService().fetchCities(searchTerm: name) { result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let cities):

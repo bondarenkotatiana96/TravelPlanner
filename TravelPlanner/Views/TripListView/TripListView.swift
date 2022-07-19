@@ -26,7 +26,7 @@ struct TripListView: View {
                 List(cityListVM.cities, id: \.id) { city in
                     Text(city.name)
                         .onTapGesture {
-                            WebService().getCoordinates(location: city.name) { result in
+                            CitySearchService().getCoordinates(location: city.name) { result in
                                 DispatchQueue.main.async {
                                     switch result {
                                     case .success(let coordinatesResult):

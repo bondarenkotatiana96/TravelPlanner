@@ -26,10 +26,11 @@ struct TripDetailView: View {
     @StateObject var placeToVisitVM = PlaceToVisitViewModel()
     @State var placeToVisitName: String = ""
     
-    @State var searchText = ""
     @State var searching = false
     
     @State private var showShareSheet = false
+    
+    @StateObject private var placeSearchVM = LocalSearchViewModel()
     
     @State private var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.75773, longitude: -73.985708), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
@@ -117,9 +118,15 @@ struct TripDetailView: View {
                 }
                 Section("Places to visit") {
                     // TODO: - Search for places *****************************************
-                    SearchBar(searchText: $searchText, searching: $searching)
+                    SearchBar(searchText: $placeSearchVM.poiText, searching: $searching)
                     if searching {
-                        Text("Searching")
+                        ForEach(placeSearchVM.viewData) { place in
+                            VStack(alignment: .leading) {
+                                Text(place.title)
+                                Text(place.subtitle)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
                     } else {
                         ForEach(trip.placesToVisit) { place in
                             HStack {

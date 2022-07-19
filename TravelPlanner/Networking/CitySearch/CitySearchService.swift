@@ -11,11 +11,11 @@ enum NetworkError: Error {
     case badURL
     case badResponse
     case noData
-    case trownError
+    case thrownError
     case unableToDecode
 }
 
-class WebService {
+class CitySearchService {
     
     func fetchCities(searchTerm: String, completion: @escaping (Result<[City], NetworkError>) -> Void) {
         
@@ -32,7 +32,8 @@ class WebService {
         
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
             if let error = error {
-                completion(.failure(.trownError))
+                completion(.failure(.thrownError))
+                print(error.localizedDescription)
             }
             
             guard let data = data else {
@@ -72,7 +73,8 @@ class WebService {
         
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
             if let error = error {
-                completion(.failure(.trownError))
+                completion(.failure(.thrownError))
+                print(error.localizedDescription)
             }
             
             guard let data = data else {

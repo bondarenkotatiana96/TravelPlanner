@@ -25,8 +25,7 @@
 		54918500287E29BB00A22F5C /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549184FF287E29BA00A22F5C /* TripListView.swift */; };
 		54918502287E417800A22F5C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54918501287E417800A22F5C /* Place.swift */; };
 		54918504287E41B500A22F5C /* ThingToPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54918503287E41B500A22F5C /* ThingToPack.swift */; };
-		549E6DE8287E8F1600085BDA /* Amadeus in Frameworks */ = {isa = PBXBuildFile; productRef = 549E6DE7287E8F1600085BDA /* Amadeus */; };
-		549E6DF0287F74A100085BDA /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DEF287F74A100085BDA /* WebService.swift */; };
+		549E6DF0287F74A100085BDA /* CitySearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DEF287F74A100085BDA /* CitySearchService.swift */; };
 		549E6DF2287F74F600085BDA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DF1287F74F600085BDA /* City.swift */; };
 		549E6DF4287F7D9500085BDA /* CityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DF3287F7D9500085BDA /* CityListViewModel.swift */; };
 		549E6DF6287FA24100085BDA /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E6DF5287FA24100085BDA /* TripDetailView.swift */; };
@@ -36,6 +35,9 @@
 		54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */; };
 		54CCEDB1287CFC5000C62679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB0287CFC5000C62679 /* Assets.xcassets */; };
 		54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */; };
+		54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */; };
+		54E3B48D288723F600CCD9E7 /* LocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48C288723F600CCD9E7 /* LocalSearch.swift */; };
+		54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +59,7 @@
 		549184FF287E29BA00A22F5C /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
 		54918501287E417800A22F5C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		54918503287E41B500A22F5C /* ThingToPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingToPack.swift; sourceTree = "<group>"; };
-		549E6DEF287F74A100085BDA /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		549E6DEF287F74A100085BDA /* CitySearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchService.swift; sourceTree = "<group>"; };
 		549E6DF1287F74F600085BDA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		549E6DF3287F7D9500085BDA /* CityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModel.swift; sourceTree = "<group>"; };
 		549E6DF5287FA24100085BDA /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,9 @@
 		54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlannerApp.swift; sourceTree = "<group>"; };
 		54CCEDB0287CFC5000C62679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
+		54E3B48C288723F600CCD9E7 /* LocalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearch.swift; sourceTree = "<group>"; };
+		54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549E6DE8287E8F1600085BDA /* Amadeus in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +89,8 @@
 		541A7B232880DF3D0052BD23 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				549E6DEF287F74A100085BDA /* WebService.swift */,
+				54E3B48F2887240600CCD9E7 /* MapLocalSearch */,
+				54E3B48E288723FB00CCD9E7 /* CitySearch */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -128,14 +133,6 @@
 			path = BucketListView;
 			sourceTree = "<group>";
 		};
-		541A7B2F2880FC7C0052BD23 /* CityListView */ = {
-			isa = PBXGroup;
-			children = (
-				549E6DF3287F7D9500085BDA /* CityListViewModel.swift */,
-			);
-			path = CityListView;
-			sourceTree = "<group>";
-		};
 		541A7B302880FCA20052BD23 /* UserProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				549E6DF1287F74F600085BDA /* City.swift */,
+				54E3B48C288723F600CCD9E7 /* LocalSearch.swift */,
 				54918501287E417800A22F5C /* Place.swift */,
 				549184FB287E1A2000A22F5C /* Trip.swift */,
 				54918503287E41B500A22F5C /* ThingToPack.swift */,
@@ -184,7 +182,6 @@
 			children = (
 				541A7B312880FCAF0052BD23 /* TripDetailView */,
 				541A7B302880FCA20052BD23 /* UserProfileView */,
-				541A7B2F2880FC7C0052BD23 /* CityListView */,
 				541A7B2E2880FC5A0052BD23 /* BucketListView */,
 				541A7B2D2880FC420052BD23 /* TabBarView */,
 				541A7B252880DF720052BD23 /* TripListView */,
@@ -229,6 +226,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		54E3B48E288723FB00CCD9E7 /* CitySearch */ = {
+			isa = PBXGroup;
+			children = (
+				549E6DEF287F74A100085BDA /* CitySearchService.swift */,
+				549E6DF3287F7D9500085BDA /* CityListViewModel.swift */,
+			);
+			path = CitySearch;
+			sourceTree = "<group>";
+		};
+		54E3B48F2887240600CCD9E7 /* MapLocalSearch */ = {
+			isa = PBXGroup;
+			children = (
+				54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */,
+				54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */,
+			);
+			path = MapLocalSearch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,7 +261,6 @@
 			);
 			name = TravelPlanner;
 			packageProductDependencies = (
-				549E6DE7287E8F1600085BDA /* Amadeus */,
 			);
 			productName = TravelPlanner;
 			productReference = 54CCEDA9287CFC4E00C62679 /* TravelPlanner.app */;
@@ -277,7 +291,6 @@
 			);
 			mainGroup = 54CCEDA0287CFC4E00C62679;
 			packageReferences = (
-				549E6DE6287E8F1600085BDA /* XCRemoteSwiftPackageReference "amadeus-ios" */,
 			);
 			productRefGroup = 54CCEDAA287CFC4E00C62679 /* Products */;
 			projectDirPath = "";
@@ -311,7 +324,8 @@
 				549E6DF6287FA24100085BDA /* TripDetailView.swift in Sources */,
 				549184FC287E1A2000A22F5C /* Trip.swift in Sources */,
 				549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */,
-				549E6DF0287F74A100085BDA /* WebService.swift in Sources */,
+				549E6DF0287F74A100085BDA /* CitySearchService.swift in Sources */,
+				54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */,
 				5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */,
 				541A7B282880DFD50052BD23 /* SearchBar.swift in Sources */,
 				543DE0B42886089A00576C1B /* Coordinates.swift in Sources */,
@@ -322,9 +336,11 @@
 				541A7B2A2880E1170052BD23 /* EmptyListTile.swift in Sources */,
 				541A7B202880A5700052BD23 /* BucketListDestination.swift in Sources */,
 				541A7B35288105040052BD23 /* ThingToPackViewModel.swift in Sources */,
+				54E3B48D288723F600CCD9E7 /* LocalSearch.swift in Sources */,
 				541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */,
 				549E6DFA287FB18600085BDA /* UserProfileView.swift in Sources */,
 				5483C58F28838DE1005E5167 /* AppBundle+Extensions.swift in Sources */,
+				54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */,
 				54918500287E29BB00A22F5C /* TripListView.swift in Sources */,
 				541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */,
 				54918504287E41B500A22F5C /* ThingToPack.swift in Sources */,
@@ -531,25 +547,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		549E6DE6287E8F1600085BDA /* XCRemoteSwiftPackageReference "amadeus-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/amadeus4dev/amadeus-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		549E6DE7287E8F1600085BDA /* Amadeus */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 549E6DE6287E8F1600085BDA /* XCRemoteSwiftPackageReference "amadeus-ios" */;
-			productName = Amadeus;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 54CCEDA1287CFC4E00C62679 /* Project object */;
 }
