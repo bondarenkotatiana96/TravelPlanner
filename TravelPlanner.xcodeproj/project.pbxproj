@@ -38,6 +38,7 @@
 		54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */; };
 		54E3B48D288723F600CCD9E7 /* LocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48C288723F600CCD9E7 /* LocalSearch.swift */; };
 		54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */; };
+		54F6ED4028877570008BF99B /* IsHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6ED3F28877570008BF99B /* IsHidden.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
 		54E3B48C288723F600CCD9E7 /* LocalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearch.swift; sourceTree = "<group>"; };
 		54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchViewModel.swift; sourceTree = "<group>"; };
+		54F6ED3F28877570008BF99B /* IsHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsHidden.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
 				5483C58A28838356005E5167 /* ButtonLabel.swift */,
 				5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */,
+				54F6ED3F28877570008BF99B /* IsHidden.swift */,
 			);
 			path = "Helpers&Extensions";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				549E6DF8287FB07C00085BDA /* AppTabBarView.swift in Sources */,
 				541A7B33288104F10052BD23 /* PlaceToVisitViewModel.swift in Sources */,
 				5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */,
+				54F6ED4028877570008BF99B /* IsHidden.swift in Sources */,
 				549E6DF6287FA24100085BDA /* TripDetailView.swift in Sources */,
 				549184FC287E1A2000A22F5C /* Trip.swift in Sources */,
 				549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */,

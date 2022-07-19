@@ -27,6 +27,7 @@ struct TripDetailView: View {
     @State var placeToVisitName: String = ""
     
     @State var searching = false
+    @State var isHidden = true
     
     @State private var showShareSheet = false
     
@@ -35,6 +36,7 @@ struct TripDetailView: View {
     @State private var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.75773, longitude: -73.985708), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
     var body: some View {
+        ZStack {
         VStack {
             HStack(spacing: 20) {
                 Text(trip.name)
@@ -147,17 +149,28 @@ struct TripDetailView: View {
                     }
                     
                     Button {
-                        // TODO: - Open MAP (Use MapKit) *****************************************
+                        showMap()
                     } label: {
                         ButtonLabel(text: "See a map", imageName: "map", width: 150, height: 25, imageSize: 17)
                     }
                 }
             }
             .listStyle(SidebarListStyle())
-           
-            Map(coordinateRegion: $region, annotationItems: trip.placesToVisit) {
-                MapPin(coordinate: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))
-            }.frame(width: 100, height: 100)
+        }
+            ZStack{
+                Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit) {
+                    MapPin(coordinate: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))
+                }.edgesIgnoringSafeArea(.all)
+                VStack {
+                    Button {
+                        showMap()
+                    } label: {
+                        ButtonLabel(text: "Close", imageName: "xmark.circle.fill", width: 100, height: 30, imageSize: 20)
+                    }
+                    Spacer()
+                }
+            }
+            .isHidden(isHidden, remove: isHidden)
         }
         .onAppear {
             tripNotesText = trip.notes
@@ -165,6 +178,10 @@ struct TripDetailView: View {
             dateTo = trip.dates[1]
             region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
         }
+    }
+    
+    private func showMap() {
+        isHidden.toggle()
     }
 }
 
