@@ -14,6 +14,6 @@ struct Trip: Equatable, Identifiable {
     var placesToVisit: [Place] //  I will probably need a model for a place to visit because I am getting this from an API
     var thingsToPack: [ThingToPack]
     var id = UUID()
-    var latitude: Double
-    var longitude: Double
+    let latitude: Double
+    let longitude: Double
 }

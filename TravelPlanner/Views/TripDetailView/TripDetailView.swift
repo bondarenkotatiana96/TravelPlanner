@@ -24,6 +24,7 @@ struct TripDetailView: View {
     @State private var dateTo = Date()
     
     @StateObject var placeToVisitVM = PlaceToVisitViewModel()
+    @State var placeToVisitName: String = ""
     
     @State var searchText = ""
     @State var searching = false
@@ -117,14 +118,19 @@ struct TripDetailView: View {
                 Section("Places to visit") {
                     // TODO: - Search for places *****************************************
                     SearchBar(searchText: $searchText, searching: $searching)
-                    ForEach(trip.placesToVisit) { place in
-                        HStack {
-                            Image(systemName: "mappin.and.ellipse")
-                                .foregroundColor(Color("AccentPink"))
-                                .font(.system(size: 20))
-                            Text(place.name)
+                    if searching {
+                        Text("Searching")
+                    } else {
+                        ForEach(trip.placesToVisit) { place in
+                            HStack {
+                                Image(systemName: "mappin.and.ellipse")
+                                    .foregroundColor(Color("AccentPink"))
+                                    .font(.system(size: 20))
+                                Text(place.name)
+                            }
                         }
                     }
+                    
                     Button {
                         // TODO: - Open MAP (Use MapKit) *****************************************
                     } label: {
@@ -134,7 +140,9 @@ struct TripDetailView: View {
             }
             .listStyle(SidebarListStyle())
            
-            Map(coordinateRegion: $region)
+            Map(coordinateRegion: $region, annotationItems: trip.placesToVisit) {
+                MapPin(coordinate: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))
+            }.frame(width: 100, height: 100)
         }
         .onAppear {
             tripNotesText = trip.notes
@@ -148,7 +156,7 @@ struct TripDetailView: View {
 struct TripDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TripDetailView(trip: .constant(Trip(name: "Moscow", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: [Place(name: "Bolshoy Theater"), Place(name: "Subway"), Place(name: "MSAL"), Place(name: "Red Square")], thingsToPack: [ThingToPack(name: "Passport", isPacked: false), ThingToPack(name: "Vaccination Card", isPacked: false), ThingToPack(name: "Warm Jacket", isPacked: false), ThingToPack(name: "Jeans", isPacked: false)], latitude: 55.741469, longitude: 37.615561)), tripListVM: TripListViewModel())
+            TripDetailView(trip: .constant(Trip(name: "Moscow", dates: [Date(), Date()], notes: "Flight is at 3 pm. Don't forget to print boarding passes!", placesToVisit: [Place(name: "Bolshoy Theater", latitude: 55.741469, longitude: 37.615561), Place(name: "Subway", latitude: 55.741469, longitude: 37.615561), Place(name: "MSAL", latitude: 55.741469, longitude: 37.615561), Place(name: "Red Square", latitude: 55.741469, longitude: 37.615561)], thingsToPack: [ThingToPack(name: "Passport", isPacked: false), ThingToPack(name: "Vaccination Card", isPacked: false), ThingToPack(name: "Warm Jacket", isPacked: false), ThingToPack(name: "Jeans", isPacked: false)], latitude: 55.741469, longitude: 37.615561)), tripListVM: TripListViewModel())
         }
     }
 }

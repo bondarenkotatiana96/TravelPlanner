@@ -25,6 +25,6 @@ class ThingToPackViewModel: ObservableObject {
     func deleteThingToPack(trip: Trip, tripListViewModel: TripListViewModel, at indexSet: IndexSet) {
       guard let index = tripListViewModel.trips.firstIndex(of: trip) else { return }
         tripListViewModel.trips[index].thingsToPack.remove(atOffsets: indexSet)
-    }
+    } 
     
 }
