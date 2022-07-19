@@ -117,7 +117,6 @@ struct TripDetailView: View {
                     }
                 }
                 Section("Places to visit") {
-                    // TODO: - Search for places *****************************************
                     SearchBar(searchText: $placeSearchVM.poiText, searching: $searching)
                     if searching {
                         ForEach(placeSearchVM.viewData) { place in
@@ -125,6 +124,12 @@ struct TripDetailView: View {
                                 Text(place.title)
                                 Text(place.subtitle)
                                     .foregroundColor(.secondary)
+                            }
+                            .onTapGesture {
+                                placeToVisitVM.createPlaceToVisit(name: place.title, latitude: place.latitude, longitude: place.longitude, trip: trip, tripListViewModel: tripListVM)
+                                placeSearchVM.poiText = ""
+                                searching = false
+                                UIApplication.shared.dismissKeyboard()
                             }
                         }
                     } else {
@@ -135,6 +140,9 @@ struct TripDetailView: View {
                                     .font(.system(size: 20))
                                 Text(place.name)
                             }
+                        }
+                        .onDelete { indexSet in
+                            placeToVisitVM.deletePlaceToVisit(trip: trip, tripListViewModel: tripListVM, at: indexSet)
                         }
                     }
                     
