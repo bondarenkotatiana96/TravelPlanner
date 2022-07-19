@@ -140,7 +140,7 @@ struct TripDetailView: View {
             tripNotesText = trip.notes
             dateFrom = trip.dates[0]
             dateTo = trip.dates[1]
-            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
         }
     }
 }
