@@ -193,10 +193,10 @@
 		549184FA287E165000A22F5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				541A7B2E2880FC5A0052BD23 /* BucketListView */,
 				5485EB1B2888633200A1B608 /* HomeView */,
 				541A7B312880FCAF0052BD23 /* TripDetailView */,
 				541A7B302880FCA20052BD23 /* UserProfileView */,
-				541A7B2E2880FC5A0052BD23 /* BucketListView */,
 				541A7B2D2880FC420052BD23 /* TabBarView */,
 				541A7B252880DF720052BD23 /* TripListView */,
 			);
