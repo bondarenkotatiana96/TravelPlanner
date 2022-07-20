@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BucketListDestination: Equatable, Identifiable {
+struct BucketListDestination: Equatable, Identifiable, Codable {
     var name: String
     var isVisited: Bool = false
     var id = UUID()

@@ -86,6 +86,9 @@ struct BucketListView: View {
                 }
             }
         }
+        .onAppear {
+            bucketListVM.loadFromPersistenceStore()
+        }
     }
 }
 

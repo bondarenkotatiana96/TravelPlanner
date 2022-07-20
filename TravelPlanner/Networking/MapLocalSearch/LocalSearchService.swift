@@ -11,12 +11,12 @@ import MapKit
 
 final class LocalSearchService {
     let localSearchPublisher = PassthroughSubject<[MKMapItem], Never>()
-    private let center: CLLocationCoordinate2D
+//    private let center: CLLocationCoordinate2D
     private let radius: CLLocationDistance
-
-    init(in center: CLLocationCoordinate2D,
-         radius: CLLocationDistance = 350_000) {
-        self.center = center
+//    init(in center: CLLocationCoordinate2D,
+//         radius: CLLocationDistance = 350_000) {
+    init(radius: CLLocationDistance = 350_000) {
+//        self.center = center
         self.radius = radius
     }
     
@@ -30,9 +30,9 @@ final class LocalSearchService {
         request.naturalLanguageQuery = searchText
         request.pointOfInterestFilter = .includingAll
         request.resultTypes = resultType
-        request.region = MKCoordinateRegion(center: center,
-                                            latitudinalMeters: radius,
-                                            longitudinalMeters: radius)
+//        request.region = MKCoordinateRegion(center: center,
+//                                            latitudinalMeters: radius,
+//                                            longitudinalMeters: radius)
         let search = MKLocalSearch(request: request)
 
         search.start { [weak self](response, _) in

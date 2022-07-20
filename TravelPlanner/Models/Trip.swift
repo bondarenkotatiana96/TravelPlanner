@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Trip: Equatable, Identifiable {
+struct Trip: Equatable, Identifiable, Codable {
     var name: String
     var dates: [Date]
     var notes: String

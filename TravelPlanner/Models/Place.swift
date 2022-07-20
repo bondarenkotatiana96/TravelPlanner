@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Place: Equatable, Identifiable {
+struct Place: Equatable, Identifiable, Codable {
     var name: String
     var id = UUID()
     let latitude: Double

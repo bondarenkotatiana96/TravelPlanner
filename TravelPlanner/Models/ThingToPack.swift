@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ThingToPack: Equatable, Identifiable {
+struct ThingToPack: Equatable, Identifiable, Codable {
     var name: String
     var isPacked: Bool
     var id = UUID()

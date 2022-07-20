@@ -23,9 +23,9 @@ final class LocalSearchViewModel: ObservableObject {
     var service: LocalSearchService
     
     init() {
-//        New York
-        let center = CLLocationCoordinate2D(latitude: 55.741469, longitude: 37.615561)
-        service = LocalSearchService(in: center)
+//        let center = CLLocationCoordinate2D(latitude: 55.741469, longitude: 37.615561)
+//        service = LocalSearchService(in: center)
+        service = LocalSearchService()
         
         cancellable = service.localSearchPublisher.sink { mapItems in
             self.viewData = mapItems.map({ LocalSearchData(mapItem: $0) })

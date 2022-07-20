@@ -99,6 +99,9 @@ struct TripListView: View {
                     }
                 }
             }
+            .onAppear {
+                tripListVM.loadFromPersistenceStore()
+            }
         }
     }
 }
