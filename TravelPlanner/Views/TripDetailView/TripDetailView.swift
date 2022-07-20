@@ -37,156 +37,156 @@ struct TripDetailView: View {
     
     var body: some View {
         ZStack {
-        VStack {
-            HStack(spacing: 20) {
-                Text(trip.name)
-                    .bold()
-                    .font(.system(size: 32))
-                    .foregroundColor(Color("AccentText"))
-                Button {
-                    self.showShareSheet = true
-                } label: {
-                    ButtonLabel(text: "Share", imageName: "arrowshape.turn.up.forward", width: 110, height: 25, imageSize: 17)
-                }
-            }
-            .frame(height: 80)
-            .sheet(isPresented: $showShareSheet) {
-                ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
-                    }
-            ZStack {
-                Rectangle().fill(Color("BackgroundYellow"))
-                    .frame(width: UIScreen.main.bounds.width - 70)
-                VStack(alignment: .center) {
-                    Text("Dates")
+            VStack {
+                HStack(spacing: 20) {
+                    Text(trip.name)
                         .bold()
-                    HStack(spacing: 5) {
-                        VStack(spacing: 16) {
-                            Text("From:")
-                            Text("To:")
+                        .font(.system(size: 32))
+                        .foregroundColor(Color("AccentText"))
+                    Button {
+                        self.showShareSheet = true
+                    } label: {
+                        ButtonLabel(text: "Share", imageName: "arrowshape.turn.up.forward", width: 110, height: 25, imageSize: 17)
+                    }
+                }
+                .frame(height: 80)
+                .sheet(isPresented: $showShareSheet) {
+                    ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
                         }
-                        VStack {
-                            DatePicker("", selection: $dateFrom, displayedComponents: .date)
-                            .labelsHidden()
-                            .accentColor(.yellow)
-                            .onChange(of: dateFrom) { newDate in
-                                datesViewModel.updateDate(dates: [newDate, dateTo], trip: trip, tripListViewModel: tripListVM)
+                ZStack {
+                    Rectangle().fill(Color("BackgroundYellow"))
+                        .frame(width: UIScreen.main.bounds.width - 70)
+                    VStack(alignment: .center) {
+                        Text("Dates")
+                            .bold()
+                        HStack(spacing: 5) {
+                            VStack(spacing: 16) {
+                                Text("From:")
+                                Text("To:")
                             }
-                            DatePicker("", selection: $dateTo, displayedComponents: .date)
+                            VStack {
+                                DatePicker("", selection: $dateFrom, displayedComponents: .date)
                                 .labelsHidden()
                                 .accentColor(.yellow)
-                                .onChange(of: dateTo) { newDate in
-                                    datesViewModel.updateDate(dates: [dateFrom, newDate], trip: trip, tripListViewModel: tripListVM)
+                                .onChange(of: dateFrom) { newDate in
+                                    datesViewModel.updateDate(dates: [newDate, dateTo], trip: trip, tripListViewModel: tripListVM)
+                                }
+                                DatePicker("", selection: $dateTo, displayedComponents: .date)
+                                    .labelsHidden()
+                                    .accentColor(.yellow)
+                                    .onChange(of: dateTo) { newDate in
+                                        datesViewModel.updateDate(dates: [dateFrom, newDate], trip: trip, tripListViewModel: tripListVM)
+                                    }
                                 }
                             }
-                        }
+                    }
                 }
-            }
-            .cornerRadius(15)
-            
-            Text("Notes:")
-                .bold()
-            TextEditor(text: $tripNotesText)
-                .colorMultiply(Color("SecondaryLight"))
-                .frame(width: UIScreen.main.bounds.width - 50, height: 100)
                 .cornerRadius(15)
-            Button {
-                noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
-            } label: {
-                ButtonLabel(text: "Save", width: 110, height: 25, imageSize: 17)
-            }
-            
-            List {
-                Section("Things to pack") {
-                    TextField("Add...", text: $thingToPackName)
-                        .onSubmit {
-                            thingToPackVM.createThingToPack(thingToPack: ThingToPack(name: thingToPackName, isPacked: false), trip: trip, tripListViewModel: tripListVM)
-                            thingToPackName = ""
-                        }
-                    ForEach(trip.thingsToPack) { item in
-                        HStack {
-                            Button {
-                                thingToPackVM.toggleIsPacked(thingToPack: item, trip: trip, tripListViewModel: tripListVM)
-                            } label: {
-                                Image(systemName: item.isPacked ? "checkmark.square" : "square")
-                                    .resizable()
-                                    .frame(width: 23, height: 23)
-                            }
-                            Text(item.name)
-                        }
-                    }
-                    .onDelete { indexSet in
-                        thingToPackVM.deleteThingToPack(trip: trip, tripListViewModel: tripListVM, at: indexSet)
-                    }
+                
+                Text("Notes:")
+                    .bold()
+                TextEditor(text: $tripNotesText)
+                    .colorMultiply(Color("SecondaryLight"))
+                    .frame(width: UIScreen.main.bounds.width - 50, height: 100)
+                    .cornerRadius(15)
+                Button {
+                    noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
+                } label: {
+                    ButtonLabel(text: "Save", width: 110, height: 25, imageSize: 17)
                 }
-                Section("Places to visit") {
-                    SearchBar(searchText: $placeSearchVM.poiText, searching: $searching)
-                    if searching {
-                        ForEach(placeSearchVM.viewData) { place in
-                            VStack(alignment: .leading) {
-                                Text(place.title)
-                                Text(place.subtitle)
-                                    .foregroundColor(.secondary)
+                
+                List {
+                    Section("Things to pack") {
+                        TextField("Add...", text: $thingToPackName)
+                            .onSubmit {
+                                thingToPackVM.createThingToPack(thingToPack: ThingToPack(name: thingToPackName, isPacked: false), trip: trip, tripListViewModel: tripListVM)
+                                thingToPackName = ""
                             }
-                            .onTapGesture {
-                                placeToVisitVM.createPlaceToVisit(name: place.title, latitude: place.latitude, longitude: place.longitude, trip: trip, tripListViewModel: tripListVM)
-                                placeSearchVM.poiText = ""
-                                searching = false
-                                UIApplication.shared.dismissKeyboard()
-                            }
-                        }
-                    } else {
-                        ForEach(trip.placesToVisit) { place in
+                        ForEach(trip.thingsToPack) { item in
                             HStack {
-                                Image(systemName: "mappin.and.ellipse")
-                                    .foregroundColor(Color("AccentPink"))
-                                    .font(.system(size: 20))
-                                Text(place.name)
+                                Button {
+                                    thingToPackVM.toggleIsPacked(thingToPack: item, trip: trip, tripListViewModel: tripListVM)
+                                } label: {
+                                    Image(systemName: item.isPacked ? "checkmark.square" : "square")
+                                        .resizable()
+                                        .frame(width: 23, height: 23)
+                                }
+                                Text(item.name)
                             }
                         }
                         .onDelete { indexSet in
-                            placeToVisitVM.deletePlaceToVisit(trip: trip, tripListViewModel: tripListVM, at: indexSet)
+                            thingToPackVM.deleteThingToPack(trip: trip, tripListViewModel: tripListVM, at: indexSet)
                         }
                     }
-                    
-                    Button {
-                        showMap()
-                    } label: {
-                        ButtonLabel(text: "See a map", imageName: "map", width: 150, height: 25, imageSize: 17)
+                    Section("Places to visit") {
+                        SearchBar(searchText: $placeSearchVM.poiText, searching: $searching)
+                        if searching {
+                            ForEach(placeSearchVM.viewData) { place in
+                                VStack(alignment: .leading) {
+                                    Text(place.title)
+                                    Text(place.subtitle)
+                                        .foregroundColor(.secondary)
+                                }
+                                .onTapGesture {
+                                    placeToVisitVM.createPlaceToVisit(name: place.title, latitude: place.latitude, longitude: place.longitude, trip: trip, tripListViewModel: tripListVM)
+                                    placeSearchVM.poiText = ""
+                                    searching = false
+                                    UIApplication.shared.dismissKeyboard()
+                                }
+                            }
+                        } else {
+                            ForEach(trip.placesToVisit) { place in
+                                HStack {
+                                    Image(systemName: "mappin.and.ellipse")
+                                        .foregroundColor(Color("AccentPink"))
+                                        .font(.system(size: 20))
+                                    Text(place.name)
+                                }
+                            }
+                            .onDelete { indexSet in
+                                placeToVisitVM.deletePlaceToVisit(trip: trip, tripListViewModel: tripListVM, at: indexSet)
+                            }
+                        }
+                        
+                        Button {
+                            showMap()
+                        } label: {
+                            ButtonLabel(text: "See a map", imageName: "map", width: 150, height: 25, imageSize: 17)
+                        }
                     }
                 }
+                .listStyle(SidebarListStyle())
             }
-            .listStyle(SidebarListStyle())
-        }
-            
-            ZStack{
-                Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit){
-                    place in
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)) {
-                        Image(systemName: "mappin").foregroundColor(Color("AccentPink"))
-                            .font(.system(size: 30))
-                        Text(place.name)
-                            .font(.subheadline)
-                            .fontWeight(.bold)
+                
+                ZStack{
+                    Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit){
+                        place in
+                        MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)) {
+                            Image(systemName: "mappin").foregroundColor(Color("AccentPink"))
+                                .font(.system(size: 30))
+                            Text(place.name)
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                        }
+                    }.edgesIgnoringSafeArea(.all)
+                    VStack {
+                        Button {
+                            showMap()
+                        } label: {
+                            ButtonLabel(text: "Close", imageName: "xmark.circle.fill", width: 100, height: 30, imageSize: 20)
+                        }
+                        Spacer()
                     }
-                }.edgesIgnoringSafeArea(.all)
-                VStack {
-                    Button {
-                        showMap()
-                    } label: {
-                        ButtonLabel(text: "Close", imageName: "xmark.circle.fill", width: 100, height: 30, imageSize: 20)
-                    }
-                    Spacer()
                 }
+                .isHidden(isHidden, remove: isHidden)
             }
-            .isHidden(isHidden, remove: isHidden)
+            .onAppear {
+                tripNotesText = trip.notes
+                dateFrom = trip.dates[0]
+                dateTo = trip.dates[1]
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
+            }
         }
-        .onAppear {
-            tripNotesText = trip.notes
-            dateFrom = trip.dates[0]
-            dateTo = trip.dates[1]
-            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
-        }
-    }
     
     private func showMap() {
         isHidden.toggle()
