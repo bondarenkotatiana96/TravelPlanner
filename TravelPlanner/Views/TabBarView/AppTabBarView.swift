@@ -17,16 +17,21 @@ struct AppTabBarView: View {
     
     var body: some View {
         TabView(selection:$selection) {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house.circle.fill")
+                }
+                .tag(1)
             TripListView()
                 .tabItem {
                     Label("My Trips", systemImage: "map.circle.fill")
                 }
-                .tag(1)
+                .tag(2)
             UserProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.circle.fill")
                 }
-                .tag(2)
+                .tag(3)
         }
     }
 }
