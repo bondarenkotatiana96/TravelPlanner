@@ -157,9 +157,17 @@ struct TripDetailView: View {
             }
             .listStyle(SidebarListStyle())
         }
+            
             ZStack{
-                Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit) {
-                    MapPin(coordinate: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))
+                Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit){
+                    place in
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)) {
+                        Image(systemName: "mappin").foregroundColor(Color("AccentPink"))
+                            .font(.system(size: 30))
+                        Text(place.name)
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                    }
                 }.edgesIgnoringSafeArea(.all)
                 VStack {
                     Button {
