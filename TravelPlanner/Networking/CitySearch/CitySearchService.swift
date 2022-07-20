@@ -7,14 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case badURL
-    case badResponse
-    case noData
-    case thrownError
-    case unableToDecode
-}
-
 class CitySearchService {
     
     func fetchCities(searchTerm: String, completion: @escaping (Result<[City], NetworkError>) -> Void) {
