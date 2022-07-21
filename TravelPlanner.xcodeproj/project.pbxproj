@@ -20,6 +20,8 @@
 		5462B7E02889D14800D59904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5462B7DF2889D14800D59904 /* LocationManager.swift */; };
 		547EC6B0288A001600593707 /* TopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547EC6AF288A001600593707 /* TopLocation.swift */; };
 		547EC6B3288A00BE00593707 /* TopLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547EC6B2288A00BE00593707 /* TopLocationService.swift */; };
+		547EC6B7288A085000593707 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547EC6B6288A085000593707 /* YelpService.swift */; };
+		547EC6B9288A0F5900593707 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547EC6B8288A0F5900593707 /* Business.swift */; };
 		5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58A28838356005E5167 /* ButtonLabel.swift */; };
 		5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58C28838C2B005E5167 /* SupportEmail.swift */; };
 		5483C58F28838DE1005E5167 /* AppBundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */; };
@@ -62,6 +64,8 @@
 		5462B7DF2889D14800D59904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		547EC6AF288A001600593707 /* TopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLocation.swift; sourceTree = "<group>"; };
 		547EC6B2288A00BE00593707 /* TopLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLocationService.swift; sourceTree = "<group>"; };
+		547EC6B6288A085000593707 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
+		547EC6B8288A0F5900593707 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		5483C58A28838356005E5167 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		5483C58C28838C2B005E5167 /* SupportEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportEmail.swift; sourceTree = "<group>"; };
 		5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppBundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			children = (
 				5485EB1F2888ADF700A1B608 /* RandomDestinationService.swift */,
 				547EC6B2288A00BE00593707 /* TopLocationService.swift */,
+				547EC6B6288A085000593707 /* YelpService.swift */,
 			);
 			path = HomePageData;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				543DE0B32886089A00576C1B /* Coordinates.swift */,
 				5485EB212888AE1900A1B608 /* RandomDestination.swift */,
 				547EC6AF288A001600593707 /* TopLocation.swift */,
+				547EC6B8288A0F5900593707 /* Business.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,8 +407,10 @@
 				547EC6B0288A001600593707 /* TopLocation.swift in Sources */,
 				541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */,
 				549E6DFA287FB18600085BDA /* UserProfileView.swift in Sources */,
+				547EC6B9288A0F5900593707 /* Business.swift in Sources */,
 				5483C58F28838DE1005E5167 /* AppBundle+Extensions.swift in Sources */,
 				54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */,
+				547EC6B7288A085000593707 /* YelpService.swift in Sources */,
 				54918500287E29BB00A22F5C /* TripListView.swift in Sources */,
 				541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */,
 				54918504287E41B500A22F5C /* ThingToPack.swift in Sources */,

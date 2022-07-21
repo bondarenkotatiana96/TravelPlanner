@@ -17,6 +17,7 @@ struct HomeView: View {
     
     @State var randomDestination: RandomDestination = RandomDestination(city: "", country: "", latitude: 0.0, longitude: 0.0)
     @State var topLocations: [TopLocation] = []
+    @State var businesses: [Business] = []
     
     var body: some View {
         
@@ -31,20 +32,22 @@ struct HomeView: View {
                         hueAdjust.toggle()
                     }
                 VStack {
-                    Text("Popular destinations")
-                    ScrollView(.horizontal) {
+                    Text("Popular destinations in the USA")
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
                             ForEach(topLocations) { location in
                                 VStack {
                                     Text("\(location.name)")
                                         .foregroundColor(Color("AccentText"))
-                                        .font(.largeTitle)
+                                        .font(.title)
                                     Text("\(location.snippet)")
                                         .foregroundColor(Color("AccentText"))
                                         .font(.caption)
+                                        .padding(.horizontal)
                                 }
-                                .frame(width: 250, height: 170)
+                                .frame(width: 230, height: 190)
                                 .background(.white)
+                                .cornerRadius(15)
                             }
                         }
                     }
@@ -52,15 +55,17 @@ struct HomeView: View {
                     .padding(.horizontal, 10)
                     
                     Text("Local places")
-                    ScrollView(.horizontal) {
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(0..<10) {
-                                Text("Item \($0)")
+                            ForEach(businesses) { business in
+                                Text("\(business.name)")
                                     .foregroundColor(.white)
-                                    .font(.largeTitle)
+                                    .font(.title)
+                                    .foregroundColor(Color("AccentText"))
                                     .frame(width: 250, height: 170)
                                     .background(Color("BackgroundYellow"))
                             }
+                            .cornerRadius(15)
                         }
                     }
                     .padding(.bottom)
@@ -81,13 +86,11 @@ struct HomeView: View {
                     } label: {
                         ButtonLabel(text: isHidden ? "Get a random destination" : "Close", imageName: "airplane", width: 280, height: 50, imageSize: 25)
                     }
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 50).fill(Color.accentColor).frame(width: UIScreen.main.bounds.width - 70, height: 50)
-                        Text("\(randomDestination.city), \(randomDestination.country)")
-                            .foregroundColor(Color("AccentText"))
-                            .font(.system(size: 20))
-                    }
-                    .isHidden(isHidden, remove: isHidden)
+                        
+                    Text("\(randomDestination.city), \(randomDestination.country)")
+                        .foregroundColor(Color("BackgroundYellow"))
+                        .font(.system(size: 20))
+                        .isHidden(isHidden, remove: isHidden)
                 }
                 .navigationTitle("Explore the world!")
                 .navigationBarTitleDisplayMode(.inline)
@@ -98,6 +101,17 @@ struct HomeView: View {
                         switch result {
                         case .success(let topLocations):
                             self.topLocations = topLocations
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
+                
+                YelpService().fetchYelpData(latitude: coordinate.latitude, longitude: coordinate.longitude) { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let businesses):
+                            self.businesses = businesses
                         case .failure(let error):
                             print(error)
                         }
