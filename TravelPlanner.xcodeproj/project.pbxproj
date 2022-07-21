@@ -17,6 +17,7 @@
 		541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B36288105140052BD23 /* NotesViewModel.swift */; };
 		541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B382881331A0052BD23 /* DatesViewModel.swift */; };
 		543DE0B42886089A00576C1B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DE0B32886089A00576C1B /* Coordinates.swift */; };
+		5462B7E02889D14800D59904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5462B7DF2889D14800D59904 /* LocationManager.swift */; };
 		5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58A28838356005E5167 /* ButtonLabel.swift */; };
 		5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58C28838C2B005E5167 /* SupportEmail.swift */; };
 		5483C58F28838DE1005E5167 /* AppBundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */; };
@@ -56,6 +57,7 @@
 		541A7B36288105140052BD23 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		541A7B382881331A0052BD23 /* DatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesViewModel.swift; sourceTree = "<group>"; };
 		543DE0B32886089A00576C1B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		5462B7DF2889D14800D59904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5483C58A28838356005E5167 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		5483C58C28838C2B005E5167 /* SupportEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportEmail.swift; sourceTree = "<group>"; };
 		5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppBundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -119,12 +121,8 @@
 		541A7B262880DFC00052BD23 /* Helpers&Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				541A7B272880DFD50052BD23 /* SearchBar.swift */,
-				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
-				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
-				5483C58A28838356005E5167 /* ButtonLabel.swift */,
-				5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */,
-				54F6ED3F28877570008BF99B /* IsHidden.swift */,
+				5462B7DC2889C54500D59904 /* HelperFunctions */,
+				5462B7DB2889C51200D59904 /* ViewElements */,
 			);
 			path = "Helpers&Extensions";
 			sourceTree = "<group>";
@@ -164,6 +162,27 @@
 				541A7B382881331A0052BD23 /* DatesViewModel.swift */,
 			);
 			path = TripDetailView;
+			sourceTree = "<group>";
+		};
+		5462B7DB2889C51200D59904 /* ViewElements */ = {
+			isa = PBXGroup;
+			children = (
+				5483C58A28838356005E5167 /* ButtonLabel.swift */,
+				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
+				541A7B272880DFD50052BD23 /* SearchBar.swift */,
+				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
+			);
+			path = ViewElements;
+			sourceTree = "<group>";
+		};
+		5462B7DC2889C54500D59904 /* HelperFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				5483C58E28838DE1005E5167 /* AppBundle+Extensions.swift */,
+				54F6ED3F28877570008BF99B /* IsHidden.swift */,
+				5462B7DF2889D14800D59904 /* LocationManager.swift */,
+			);
+			path = HelperFunctions;
 			sourceTree = "<group>";
 		};
 		5485EB1B2888633200A1B608 /* HomeView */ = {
@@ -366,6 +385,7 @@
 				549E6DF4287F7D9500085BDA /* CityListViewModel.swift in Sources */,
 				54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */,
 				5485EB1D2888634D00A1B608 /* HomeView.swift in Sources */,
+				5462B7E02889D14800D59904 /* LocationManager.swift in Sources */,
 				5485EB242888AF0100A1B608 /* NetworkError.swift in Sources */,
 				541A7B2A2880E1170052BD23 /* EmptyListTile.swift in Sources */,
 				541A7B202880A5700052BD23 /* BucketListDestination.swift in Sources */,
@@ -514,6 +534,7 @@
 				DEVELOPMENT_TEAM = QAY6XTDMYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to see travel places near you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -543,6 +564,7 @@
 				DEVELOPMENT_TEAM = QAY6XTDMYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to see travel places near you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
