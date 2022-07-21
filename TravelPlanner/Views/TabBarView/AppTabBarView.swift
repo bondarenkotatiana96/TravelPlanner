@@ -19,7 +19,7 @@ struct AppTabBarView: View {
         TabView(selection:$selection) {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house.circle.fill")
+                    Label("Explore", systemImage: "globe.europe.africa.fill")
                 }
                 .tag(3)
             TripListView()

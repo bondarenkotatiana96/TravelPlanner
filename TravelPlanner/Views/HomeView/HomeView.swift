@@ -58,31 +58,41 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
                             ForEach(businesses) { business in
-                                Text("\(business.name)")
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .foregroundColor(Color("AccentText"))
+                                ZStack {
+                                    VStack {
+                                        Text("\(business.name)")
+                                            .font(.title)
+                                            .foregroundColor(Color("AccentText"))
+                                        Link("See details", destination: URL(string: business.url)!)
+                                        // TODO: - Add Image
+                                    }
                                     .frame(width: 250, height: 170)
                                     .background(Color("BackgroundYellow"))
+                                }
+                                .cornerRadius(15)
                             }
-                            .cornerRadius(15)
                         }
                     }
                     .padding(.bottom)
                     .padding(.horizontal, 10)
                     
+                    Text("Feeling adventurous?")
                     Button {
-                        RandomDestinationService().getRandomDestination { result in
-                            DispatchQueue.main.async {
-                                switch result {
-                                case .success(let randomDestination):
-                                    self.randomDestination = randomDestination
-                                case .failure(let error):
-                                    print(error)
+                        if isHidden {
+                            RandomDestinationService().getRandomDestination { result in
+                                DispatchQueue.main.async {
+                                    switch result {
+                                    case .success(let randomDestination):
+                                        self.randomDestination = randomDestination
+                                    case .failure(let error):
+                                        print(error)
+                                    }
                                 }
                             }
+                            isHidden.toggle()
+                        } else {
+                            isHidden.toggle()
                         }
-                        isHidden.toggle()
                     } label: {
                         ButtonLabel(text: isHidden ? "Get a random destination" : "Close", imageName: "airplane", width: 280, height: 50, imageSize: 25)
                     }
