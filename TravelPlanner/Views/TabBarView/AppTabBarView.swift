@@ -21,7 +21,7 @@ struct AppTabBarView: View {
                 .tabItem {
                     Label("Home", systemImage: "house.circle.fill")
                 }
-                .tag(1)
+                .tag(3)
             TripListView()
                 .tabItem {
                     Label("My Trips", systemImage: "map.circle.fill")
@@ -31,7 +31,7 @@ struct AppTabBarView: View {
                 .tabItem {
                     Label("Profile", systemImage: "person.circle.fill")
                 }
-                .tag(3)
+                .tag(1)
         }
     }
 }

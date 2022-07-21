@@ -16,6 +16,7 @@ struct HomeView: View {
     @State var isHidden = true
     
     @State var randomDestination: RandomDestination = RandomDestination(city: "", country: "", latitude: 0.0, longitude: 0.0)
+    @State var topLocations: [TopLocation] = []
     
     var body: some View {
         
@@ -30,15 +31,20 @@ struct HomeView: View {
                         hueAdjust.toggle()
                     }
                 VStack {
-                    Text("Popular destinations in the USA")
+                    Text("Popular destinations")
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
-                            ForEach(0..<10) {
-                                Text("Item \($0)")
-                                    .foregroundColor(.white)
-                                    .font(.largeTitle)
-                                    .frame(width: 250, height: 170)
-                                    .background(Color("BackgroundYellow"))
+                            ForEach(topLocations) { location in
+                                VStack {
+                                    Text("\(location.name)")
+                                        .foregroundColor(Color("AccentText"))
+                                        .font(.largeTitle)
+                                    Text("\(location.snippet)")
+                                        .foregroundColor(Color("AccentText"))
+                                        .font(.caption)
+                                }
+                                .frame(width: 250, height: 170)
+                                .background(.white)
                             }
                         }
                     }
@@ -73,7 +79,7 @@ struct HomeView: View {
                         }
                         isHidden.toggle()
                     } label: {
-                        ButtonLabel(text: isHidden ? "Get a random destination" : "Close", imageName: "airplane", width: 320, height: 50, imageSize: 30)
+                        ButtonLabel(text: isHidden ? "Get a random destination" : "Close", imageName: "airplane", width: 280, height: 50, imageSize: 25)
                     }
                     ZStack {
                         RoundedRectangle(cornerRadius: 50).fill(Color.accentColor).frame(width: UIScreen.main.bounds.width - 70, height: 50)
@@ -83,8 +89,20 @@ struct HomeView: View {
                     }
                     .isHidden(isHidden, remove: isHidden)
                 }
-                .navigationTitle("Explore places near you")
+                .navigationTitle("Explore the world!")
                 .navigationBarTitleDisplayMode(.inline)
+            }
+            .onAppear {
+                TopLocationService().getTopLocations() { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let topLocations):
+                            self.topLocations = topLocations
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
             }
         }
     }

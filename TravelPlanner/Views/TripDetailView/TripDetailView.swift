@@ -55,7 +55,7 @@ struct TripDetailView: View {
                         }
                 ZStack {
                     Rectangle().fill(Color("BackgroundYellow"))
-                        .frame(width: UIScreen.main.bounds.width - 70, height: 120)
+                        .frame(width: UIScreen.main.bounds.width - 70, height: 125)
                     VStack(alignment: .center) {
                         Text("Dates")
                             .bold()
@@ -87,7 +87,7 @@ struct TripDetailView: View {
                     .bold()
                 TextEditor(text: $tripNotesText)
                     .colorMultiply(Color("SecondaryLight"))
-                    .frame(width: UIScreen.main.bounds.width - 50, height: 70)
+                    .frame(width: UIScreen.main.bounds.width - 50, height: 80)
                     .cornerRadius(15)
                 Button {
                     noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
