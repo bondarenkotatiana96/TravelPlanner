@@ -9,8 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     
-//    var tripListVM: TripListViewModel
-    
     @State private var hueAdjust = false
     @State var isHidden = true
     
@@ -51,13 +49,13 @@ struct HomeView: View {
                         }
                         .padding(.bottom)
                         .padding(.horizontal, 10)
-                        Button {
+//                        Button {
 //                            tripListVM.createTrip(name: randomDestination.city, latitude: randomDestination.latitude, longitude: randomDestination.longitude)
-                        } label: {
-                            Text("Add to my trip list")
-                        }
-                        .padding(.leading)
-                        .padding(.bottom)
+//                        } label: {
+//                            Text("Add to my trip list")
+//                        }
+//                        .padding(.leading)
+//                        .padding(.bottom)
                     }
                     .isHidden(isHidden, remove: isHidden)
                     
@@ -77,7 +75,6 @@ struct HomeView: View {
                         ButtonLabel(text: isHidden ? "Get a random destination" : "Get another destination", imageName: "airplane", width: 320, height: 50, imageSize: 30)
                     }
                 }
-            
         }
     }
 }

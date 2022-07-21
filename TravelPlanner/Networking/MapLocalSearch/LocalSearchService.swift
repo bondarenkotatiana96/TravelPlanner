@@ -12,13 +12,11 @@ import MapKit
 final class LocalSearchService {
     let localSearchPublisher = PassthroughSubject<[MKMapItem], Never>()
 //    private let center: CLLocationCoordinate2D
-    private let radius: CLLocationDistance
-//    init(in center: CLLocationCoordinate2D,
-//         radius: CLLocationDistance = 350_000) {
-    init(radius: CLLocationDistance = 350_000) {
+//    private let radius: CLLocationDistance
+//    init(in center: CLLocationCoordinate2D, radius: CLLocationDistance = 350_000) {
 //        self.center = center
-        self.radius = radius
-    }
+//        self.radius = radius
+//    }
     
     public func searchPointOfInterests(searchText: String) {
         request(searchText: searchText)
