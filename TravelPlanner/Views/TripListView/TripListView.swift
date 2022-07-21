@@ -78,7 +78,7 @@ struct TripListView: View {
                     List {
                         ForEach(tripListVM.trips) { trip in
                             NavigationLink {
-                                TripDetailView(trip: .constant(trip), tripListVM: tripListVM)
+                                ScrollView { TripDetailView(trip: .constant(trip), tripListVM: tripListVM) }
                             } label: {
                                 HStack(spacing: 22) {
                                     Image(systemName: "globe.europe.africa")

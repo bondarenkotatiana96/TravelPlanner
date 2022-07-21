@@ -41,7 +41,7 @@ struct TripDetailView: View {
                 HStack(spacing: 20) {
                     Text(trip.name)
                         .bold()
-                        .font(.system(size: 32))
+                        .font(.system(size: 25))
                         .foregroundColor(Color("AccentText"))
                     Button {
                         self.showShareSheet = true
@@ -55,7 +55,7 @@ struct TripDetailView: View {
                         }
                 ZStack {
                     Rectangle().fill(Color("BackgroundYellow"))
-                        .frame(width: UIScreen.main.bounds.width - 70)
+                        .frame(width: UIScreen.main.bounds.width - 70, height: 120)
                     VStack(alignment: .center) {
                         Text("Dates")
                             .bold()
@@ -87,14 +87,14 @@ struct TripDetailView: View {
                     .bold()
                 TextEditor(text: $tripNotesText)
                     .colorMultiply(Color("SecondaryLight"))
-                    .frame(width: UIScreen.main.bounds.width - 50, height: 100)
+                    .frame(width: UIScreen.main.bounds.width - 50, height: 70)
                     .cornerRadius(15)
                 Button {
                     noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
                 } label: {
                     ButtonLabel(text: "Save", width: 110, height: 25, imageSize: 17)
                 }
-                
+            
                 List {
                     Section("Things to pack") {
                         TextField("Add...", text: $thingToPackName)
@@ -156,6 +156,8 @@ struct TripDetailView: View {
                     }
                 }
                 .listStyle(SidebarListStyle())
+                .frame(minHeight: 400)
+                .edgesIgnoringSafeArea(.bottom)
             }
                 
                 ZStack{
@@ -186,7 +188,7 @@ struct TripDetailView: View {
                 dateTo = trip.dates[1]
                 region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
             }
-        }
+    }
     
     private func showMap() {
         isHidden.toggle()
