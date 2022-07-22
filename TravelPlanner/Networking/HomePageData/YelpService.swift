@@ -12,7 +12,7 @@ class YelpService {
         
         let apiKey = "3YkhT087O3m7dhuu6LbEYPUX1SO3CnvjxOHCuT9puBI7GmXe4zhrrHJK1EN3hYPecMcAe7o2-SWND57PDKHWPLezT1a1csr5VwsRsmovz0MNu07VHigOAq4JpDrYYnYx"
         
-        guard let baseURL = URL(string: "https://api.yelp.com/v3/businesses/search?latitude=\(latitude)&longitude=\(longitude)&limit=10") else { return completion(.failure(.badURL))}
+        guard let baseURL = URL(string: "https://api.yelp.com/v3/businesses/search?latitude=\(latitude)&longitude=\(longitude)&categories=atvrentals,amusementparks,beaches,boating,bungeejumping,diving,experiences,flyboarding,gliding,hiking,lakes,skydiving,surfing,hotelstravel,festivals,galleries&limit=20") else { return completion(.failure(.badURL))}
         
         var request = URLRequest(url: baseURL)
         request.allHTTPHeaderFields = ["Authorization": "Bearer " + apiKey]
