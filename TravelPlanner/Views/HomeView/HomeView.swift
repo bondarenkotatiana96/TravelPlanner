@@ -46,7 +46,7 @@ struct HomeView: View {
                                         .padding(.horizontal)
                                 }
                                 .frame(width: 230, height: 190)
-                                .background(.white)
+                                .background(.ultraThinMaterial)
                                 .cornerRadius(15)
                             }
                         }
@@ -54,21 +54,25 @@ struct HomeView: View {
                     .padding(.bottom)
                     .padding(.horizontal, 10)
                     
-                    Text("Local places")
+                    Text("Popular local places")
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
                             ForEach(businesses) { business in
                                 ZStack {
-                                    VStack {
+                                    AsyncImage(url: URL(string: business.image_url))
+                                        .overlay(Color("AccentText")).opacity(0.4)
+                                    VStack(spacing: 20) {
                                         Text("\(business.name)")
-                                            .font(.title)
-                                            .foregroundColor(Color("AccentText"))
-                                        Link("See details", destination: URL(string: business.url)!)
-                                        // TODO: - Add Image
+                                            .font(.title2)
+                                            .foregroundColor(Color("BackgroundYellow"))
+                                            .frame(width: 235)
+                                        Link(destination: URL(string: business.url)!, label: {
+                                            Text("See details")
+                                                .underline()
+                                        })
                                     }
-                                    .frame(width: 250, height: 170)
-                                    .background(Color("BackgroundYellow"))
                                 }
+                                .frame(width: 250, height: 170)
                                 .cornerRadius(15)
                             }
                         }
@@ -77,6 +81,7 @@ struct HomeView: View {
                     .padding(.horizontal, 10)
                     
                     Text("Feeling adventurous?")
+                        .foregroundColor(Color("BackgroundYellow"))
                     Button {
                         if isHidden {
                             RandomDestinationService().getRandomDestination { result in
@@ -137,22 +142,3 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-
-//    VStack(alignment: .leading) {
-//        Text("Featured Events")
-//            .italic()
-//            .padding(.leading)
-//        ScrollView(.horizontal) {
-//            HStack(spacing: 20) {
-//                ForEach(0..<10) {
-//                    Text("Item \($0)")
-//                        .foregroundColor(.white)
-//                        .font(.largeTitle)
-//                        .frame(width: 280, height: 200)
-//                        .background(.red)
-//                }
-//            }
-//        }
-//        .padding(.bottom)
-//        .padding(.horizontal, 10)
-//    }
