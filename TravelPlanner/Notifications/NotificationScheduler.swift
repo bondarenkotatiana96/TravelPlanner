@@ -18,8 +18,8 @@ class NotificationScheduler {
 
         var fireDateComponents = Calendar.current.dateComponents(
             [.month, .day, .year], from: trip.dates[0])
-        fireDateComponents.hour = 18
-        fireDateComponents.minute = 16
+        fireDateComponents.hour = 8
+        fireDateComponents.minute = 30
         let trigger = UNCalendarNotificationTrigger(dateMatching: fireDateComponents, repeats: false)
         let request = UNNotificationRequest(
             identifier: "\(trip.id)", content: content, trigger: trigger)

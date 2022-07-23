@@ -53,47 +53,10 @@ struct TripDetailView: View {
                 .sheet(isPresented: $showShareSheet) {
                     ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
                         }
-                ZStack {
-                    Rectangle().fill(Color("BackgroundYellow"))
-                        .frame(width: UIScreen.main.bounds.width - 70, height: 125)
-                    VStack(alignment: .center) {
-                        Text("Dates")
-                            .bold()
-                        HStack(spacing: 5) {
-                            VStack(spacing: 16) {
-                                Text("From:")
-                                Text("To:")
-                            }
-                            VStack {
-                                DatePicker("", selection: $dateFrom, displayedComponents: .date)
-                                .labelsHidden()
-                                .accentColor(.yellow)
-                                .onChange(of: dateFrom) { newDate in
-                                    datesViewModel.updateDate(dates: [newDate, dateTo], trip: trip, tripListViewModel: tripListVM)
-                                }
-                                DatePicker("", selection: $dateTo, displayedComponents: .date)
-                                    .labelsHidden()
-                                    .accentColor(.yellow)
-                                    .onChange(of: dateTo) { newDate in
-                                        datesViewModel.updateDate(dates: [dateFrom, newDate], trip: trip, tripListViewModel: tripListVM)
-                                    }
-                                }
-                            }
-                    }
-                }
-                .cornerRadius(15)
                 
-                Text("Notes:")
-                    .bold()
-                TextEditor(text: $tripNotesText)
-                    .colorMultiply(Color("SecondaryLight"))
-                    .frame(width: UIScreen.main.bounds.width - 50, height: 80)
-                    .cornerRadius(15)
-                Button {
-                    noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
-                } label: {
-                    ButtonLabel(text: "Save", width: 110, height: 25, imageSize: 17)
-                }
+                DatePickerTile(datesViewModel: datesViewModel, dateFrom: dateFrom, dateTo: dateTo, trip: trip, tripListVM: tripListVM)
+                
+                NoteView(trip: trip, tripListVM: tripListVM, noteViewModel: noteViewModel, tripNotesText: tripNotesText)
             
                 List {
                     Section("Things to pack") {
@@ -102,6 +65,7 @@ struct TripDetailView: View {
                                 thingToPackVM.createThingToPack(thingToPack: ThingToPack(name: thingToPackName, isPacked: false), trip: trip, tripListViewModel: tripListVM)
                                 thingToPackName = ""
                             }
+                            .submitLabel(.done)
                         ForEach(trip.thingsToPack) { item in
                             HStack {
                                 Button {
@@ -185,9 +149,6 @@ struct TripDetailView: View {
                 .isHidden(isHidden, remove: isHidden)
             }
             .onAppear {
-                tripNotesText = trip.notes
-                dateFrom = trip.dates[0]
-                dateTo = trip.dates[1]
                 region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: trip.latitude, longitude: trip.longitude), span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8))
             }
     }

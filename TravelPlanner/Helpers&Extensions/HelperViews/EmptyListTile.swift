@@ -16,9 +16,8 @@ struct EmptyListTile: View {
         VStack {
             Divider()
         ZStack {
-            RoundedRectangle(cornerRadius: 50).fill(Color("AccentPink")).opacity(0.3)
-                .position(x: 160, y: 170)
             RoundedRectangle(cornerRadius: 50).fill(Color.accentColor)
+                .shadow(color: Color("AccentPink"), radius: 15, x: -10, y: 15)
             Text(text)
                 .font(.system(.headline, design: .monospaced))
                 .padding()

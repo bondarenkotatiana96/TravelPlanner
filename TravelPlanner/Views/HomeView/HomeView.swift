@@ -133,8 +133,6 @@ struct HomeView: View {
                     }
                 }
             }
-            // 1. Add AppDelegate
-            // 2. Add loaders (activity indicator class by apple)
         }
     }
 }

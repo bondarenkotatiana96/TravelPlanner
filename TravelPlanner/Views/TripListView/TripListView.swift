@@ -77,27 +77,7 @@ struct TripListView: View {
                         .navigationTitle(searching ? "Searching" : "My Trips")
                         .navigationBarTitleDisplayMode(.inline)
                 } else {
-                    List {
-                        ForEach(tripListVM.trips) { trip in
-                            NavigationLink {
-                                ScrollView { TripDetailView(trip: .constant(trip), tripListVM: tripListVM) }
-                            } label: {
-                                HStack(spacing: 22) {
-                                    Image(systemName: "globe.europe.africa")
-                                        .foregroundColor(Color("AccentColor"))
-                                        .font(.system(size: 30))
-                                    Text(trip.name)
-                                }
-                            }
-                        }
-                        .onDelete(perform: tripListVM.deleteTrip(index:))
-                        .frame(minHeight: 50)
-                        .listRowSeparator(.hidden, edges: .top)
-                        .listRowSeparatorTint(Color("AccentColor"), edges: .bottom)
-                    }
-                    .listStyle(.plain)
-                    .navigationTitle(searching ? "Searching" : "My Trips")
-                    .navigationBarTitleDisplayMode(.inline)
+                    TripList(tripListVM: tripListVM, searching: searching)
                     }
                 }
             }

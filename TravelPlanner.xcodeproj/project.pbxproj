@@ -46,6 +46,9 @@
 		54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */; };
 		54DF3C84288B59E000EB6C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF3C83288B59E000EB6C8E /* AppDelegate.swift */; };
 		54DF3C86288B5B8800EB6C8E /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF3C85288B5B8800EB6C8E /* NotificationScheduler.swift */; };
+		54E3AEBB288C757F0027B393 /* DatePickerTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEBA288C757F0027B393 /* DatePickerTile.swift */; };
+		54E3AEBD288C766E0027B393 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEBC288C766E0027B393 /* NoteView.swift */; };
+		54E3AEBF288C78E10027B393 /* TripList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEBE288C78E10027B393 /* TripList.swift */; };
 		54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */; };
 		54E3B48D288723F600CCD9E7 /* LocalSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48C288723F600CCD9E7 /* LocalSearchData.swift */; };
 		54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */; };
@@ -93,6 +96,9 @@
 		54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		54DF3C83288B59E000EB6C8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54DF3C85288B5B8800EB6C8E /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		54E3AEBA288C757F0027B393 /* DatePickerTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTile.swift; sourceTree = "<group>"; };
+		54E3AEBC288C766E0027B393 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		54E3AEBE288C78E10027B393 /* TripList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripList.swift; sourceTree = "<group>"; };
 		54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
 		54E3B48C288723F600CCD9E7 /* LocalSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchData.swift; sourceTree = "<group>"; };
 		54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchViewModel.swift; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
 				541A7B272880DFD50052BD23 /* SearchBar.swift */,
 				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
+				54E3AEBA288C757F0027B393 /* DatePickerTile.swift */,
+				54E3AEBC288C766E0027B393 /* NoteView.swift */,
+				54E3AEBE288C78E10027B393 /* TripList.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -403,6 +412,7 @@
 				549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */,
 				549E6DF0287F74A100085BDA /* CitySearchService.swift in Sources */,
 				54DF3C84288B59E000EB6C8E /* AppDelegate.swift in Sources */,
+				54E3AEBD288C766E0027B393 /* NoteView.swift in Sources */,
 				54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */,
 				5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */,
 				541A7B282880DFD50052BD23 /* SearchBar.swift in Sources */,
@@ -425,6 +435,7 @@
 				549E6DFA287FB18600085BDA /* UserProfileView.swift in Sources */,
 				547EC6B9288A0F5900593707 /* Business.swift in Sources */,
 				5483C58F28838DE1005E5167 /* AppBundle+Extensions.swift in Sources */,
+				54E3AEBF288C78E10027B393 /* TripList.swift in Sources */,
 				54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */,
 				547EC6B7288A085000593707 /* YelpService.swift in Sources */,
 				54918500287E29BB00A22F5C /* TripListView.swift in Sources */,
@@ -433,6 +444,7 @@
 				549E6DF2287F74F600085BDA /* City.swift in Sources */,
 				5485EB202888ADF700A1B608 /* RandomDestinationService.swift in Sources */,
 				547EC6B3288A00BE00593707 /* TopLocationService.swift in Sources */,
+				54E3AEBB288C757F0027B393 /* DatePickerTile.swift in Sources */,
 				54918502287E417800A22F5C /* Place.swift in Sources */,
 				54A3EAFD28822F4100A3D1AE /* ShareSheet.swift in Sources */,
 			);
