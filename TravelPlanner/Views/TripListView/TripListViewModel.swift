@@ -10,7 +10,8 @@ import Foundation
 class TripListViewModel: ObservableObject {
     
     @Published var trips: [Trip] = []
-
+    
+    let scheduler = NotificationScheduler()
     
     // MARK: - CRUD Functions
     
@@ -18,6 +19,7 @@ class TripListViewModel: ObservableObject {
         let newTrip = Trip(name: name, dates: [Date(), Date()], notes: "", placesToVisit: [], thingsToPack: [], latitude: latitude, longitude: longitude)
         trips.append(newTrip)
         saveToPersistenceStore()
+        scheduler.scheduleUserNotification(for: newTrip)
     }
     
     func deleteTrip(index: IndexSet) {

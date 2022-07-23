@@ -11,7 +11,7 @@ struct Trip: Equatable, Identifiable, Codable {
     var name: String
     var dates: [Date]
     var notes: String
-    var placesToVisit: [Place] //  I will probably need a model for a place to visit because I am getting this from an API
+    var placesToVisit: [Place]
     var thingsToPack: [ThingToPack]
     var id = UUID()
     let latitude: Double

@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct TravelPlannerApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             AppTabBarView()

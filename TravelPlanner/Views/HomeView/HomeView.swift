@@ -26,7 +26,7 @@ struct HomeView: View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [Color("AccentText"), Color("AccentPink"), Color("AccentColor")]), startPoint: .bottom, endPoint: .top)
                     .edgesIgnoringSafeArea(.all)
-                    .hueRotation(.degrees(hueAdjust ? 0 : 40))
+                    .hueRotation(.degrees(hueAdjust ? 0 : 60))
                     .animation(Animation.linear(duration: 2.3).repeatForever(autoreverses: true), value: hueAdjust)
                     .onAppear() {
                         hueAdjust.toggle()
@@ -133,6 +133,8 @@ struct HomeView: View {
                     }
                 }
             }
+            // 1. Add AppDelegate
+            // 2. Add loaders (activity indicator class by apple)
         }
     }
 }

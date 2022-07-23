@@ -44,6 +44,8 @@
 		54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */; };
 		54CCEDB1287CFC5000C62679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB0287CFC5000C62679 /* Assets.xcassets */; };
 		54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */; };
+		54DF3C84288B59E000EB6C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF3C83288B59E000EB6C8E /* AppDelegate.swift */; };
+		54DF3C86288B5B8800EB6C8E /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF3C85288B5B8800EB6C8E /* NotificationScheduler.swift */; };
 		54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */; };
 		54E3B48D288723F600CCD9E7 /* LocalSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48C288723F600CCD9E7 /* LocalSearchData.swift */; };
 		54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */; };
@@ -89,6 +91,8 @@
 		54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlannerApp.swift; sourceTree = "<group>"; };
 		54CCEDB0287CFC5000C62679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54DF3C83288B59E000EB6C8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54DF3C85288B5B8800EB6C8E /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
 		54E3B48C288723F600CCD9E7 /* LocalSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchData.swift; sourceTree = "<group>"; };
 		54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchViewModel.swift; sourceTree = "<group>"; };
@@ -130,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5462B7DC2889C54500D59904 /* HelperFunctions */,
-				5462B7DB2889C51200D59904 /* ViewElements */,
+				5462B7DB2889C51200D59904 /* HelperViews */,
 			);
 			path = "Helpers&Extensions";
 			sourceTree = "<group>";
@@ -172,7 +176,7 @@
 			path = TripDetailView;
 			sourceTree = "<group>";
 		};
-		5462B7DB2889C51200D59904 /* ViewElements */ = {
+		5462B7DB2889C51200D59904 /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
 				5483C58A28838356005E5167 /* ButtonLabel.swift */,
@@ -180,7 +184,7 @@
 				541A7B272880DFD50052BD23 /* SearchBar.swift */,
 				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
 			);
-			path = ViewElements;
+			path = HelperViews;
 			sourceTree = "<group>";
 		};
 		5462B7DC2889C54500D59904 /* HelperFunctions */ = {
@@ -271,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */,
+				54DF3C82288B59CB00EB6C8E /* Notifications */,
 				549184F7287E15E700A22F5C /* Resources */,
 				541A7B262880DFC00052BD23 /* Helpers&Extensions */,
 				541A7B232880DF3D0052BD23 /* Networking */,
@@ -286,6 +291,15 @@
 				54CCEDB3287CFC5000C62679 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54DF3C82288B59CB00EB6C8E /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				54DF3C83288B59E000EB6C8E /* AppDelegate.swift */,
+				54DF3C85288B5B8800EB6C8E /* NotificationScheduler.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		54E3B48E288723FB00CCD9E7 /* CitySearch */ = {
@@ -388,6 +402,7 @@
 				549184FC287E1A2000A22F5C /* Trip.swift in Sources */,
 				549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */,
 				549E6DF0287F74A100085BDA /* CitySearchService.swift in Sources */,
+				54DF3C84288B59E000EB6C8E /* AppDelegate.swift in Sources */,
 				54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */,
 				5483C58B28838356005E5167 /* ButtonLabel.swift in Sources */,
 				541A7B282880DFD50052BD23 /* SearchBar.swift in Sources */,
@@ -404,6 +419,7 @@
 				5485EB222888AE1900A1B608 /* RandomDestination.swift in Sources */,
 				541A7B35288105040052BD23 /* ThingToPackViewModel.swift in Sources */,
 				54E3B48D288723F600CCD9E7 /* LocalSearchData.swift in Sources */,
+				54DF3C86288B5B8800EB6C8E /* NotificationScheduler.swift in Sources */,
 				547EC6B0288A001600593707 /* TopLocation.swift in Sources */,
 				541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */,
 				549E6DFA287FB18600085BDA /* UserProfileView.swift in Sources */,

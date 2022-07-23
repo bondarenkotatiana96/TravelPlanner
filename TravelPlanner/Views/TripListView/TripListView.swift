@@ -18,6 +18,8 @@ struct TripListView: View {
     @State private var latitude = 0.0
     @State private var longitude = 0.0
     
+    let scheduler = NotificationScheduler()
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
