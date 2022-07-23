@@ -49,6 +49,11 @@
 		54E3AEBB288C757F0027B393 /* DatePickerTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEBA288C757F0027B393 /* DatePickerTile.swift */; };
 		54E3AEBD288C766E0027B393 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEBC288C766E0027B393 /* NoteView.swift */; };
 		54E3AEBF288C78E10027B393 /* TripList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEBE288C78E10027B393 /* TripList.swift */; };
+		54E3AEC1288C9DBB0027B393 /* BucketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEC0288C9DBB0027B393 /* BucketList.swift */; };
+		54E3AEC3288CA0C00027B393 /* RandomDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AEC2288CA0C00027B393 /* RandomDestinationView.swift */; };
+		54E3AECB288CA2090027B393 /* PopularDestinationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AECA288CA2090027B393 /* PopularDestinationsView.swift */; };
+		54E3AECD288CA33D0027B393 /* PopularLocalPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AECC288CA33D0027B393 /* PopularLocalPlacesView.swift */; };
+		54E3AECF288CA41C0027B393 /* BackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3AECE288CA41C0027B393 /* BackgroundAnimation.swift */; };
 		54E3B48B2887235D00CCD9E7 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */; };
 		54E3B48D288723F600CCD9E7 /* LocalSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B48C288723F600CCD9E7 /* LocalSearchData.swift */; };
 		54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */; };
@@ -99,6 +104,11 @@
 		54E3AEBA288C757F0027B393 /* DatePickerTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTile.swift; sourceTree = "<group>"; };
 		54E3AEBC288C766E0027B393 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		54E3AEBE288C78E10027B393 /* TripList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripList.swift; sourceTree = "<group>"; };
+		54E3AEC0288C9DBB0027B393 /* BucketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketList.swift; sourceTree = "<group>"; };
+		54E3AEC2288CA0C00027B393 /* RandomDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDestinationView.swift; sourceTree = "<group>"; };
+		54E3AECA288CA2090027B393 /* PopularDestinationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationsView.swift; sourceTree = "<group>"; };
+		54E3AECC288CA33D0027B393 /* PopularLocalPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularLocalPlacesView.swift; sourceTree = "<group>"; };
+		54E3AECE288CA41C0027B393 /* BackgroundAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundAnimation.swift; sourceTree = "<group>"; };
 		54E3B48A2887235D00CCD9E7 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
 		54E3B48C288723F600CCD9E7 /* LocalSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchData.swift; sourceTree = "<group>"; };
 		54E3B490288724BC00CCD9E7 /* LocalSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchViewModel.swift; sourceTree = "<group>"; };
@@ -185,13 +195,12 @@
 		5462B7DB2889C51200D59904 /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
-				5483C58A28838356005E5167 /* ButtonLabel.swift */,
-				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
-				541A7B272880DFD50052BD23 /* SearchBar.swift */,
-				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
-				54E3AEBA288C757F0027B393 /* DatePickerTile.swift */,
-				54E3AEBC288C766E0027B393 /* NoteView.swift */,
-				54E3AEBE288C78E10027B393 /* TripList.swift */,
+				54E3AEC9288CA10A0027B393 /* ReusableViews */,
+				54E3AEC8288CA1000027B393 /* UserProfileView */,
+				54E3AEC7288CA0EF0027B393 /* TripDetailsView */,
+				54E3AEC6288CA0E30027B393 /* BucketListView */,
+				54E3AEC5288CA0D60027B393 /* TripListView */,
+				54E3AEC4288CA0C40027B393 /* HomeView */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -311,6 +320,60 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		54E3AEC4288CA0C40027B393 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				54E3AEC2288CA0C00027B393 /* RandomDestinationView.swift */,
+				54E3AECA288CA2090027B393 /* PopularDestinationsView.swift */,
+				54E3AECC288CA33D0027B393 /* PopularLocalPlacesView.swift */,
+				54E3AECE288CA41C0027B393 /* BackgroundAnimation.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		54E3AEC5288CA0D60027B393 /* TripListView */ = {
+			isa = PBXGroup;
+			children = (
+				54E3AEBE288C78E10027B393 /* TripList.swift */,
+			);
+			path = TripListView;
+			sourceTree = "<group>";
+		};
+		54E3AEC6288CA0E30027B393 /* BucketListView */ = {
+			isa = PBXGroup;
+			children = (
+				54E3AEC0288C9DBB0027B393 /* BucketList.swift */,
+			);
+			path = BucketListView;
+			sourceTree = "<group>";
+		};
+		54E3AEC7288CA0EF0027B393 /* TripDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				54E3AEBA288C757F0027B393 /* DatePickerTile.swift */,
+				54E3AEBC288C766E0027B393 /* NoteView.swift */,
+			);
+			path = TripDetailsView;
+			sourceTree = "<group>";
+		};
+		54E3AEC8288CA1000027B393 /* UserProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				54A3EAFC28822F4100A3D1AE /* ShareSheet.swift */,
+			);
+			path = UserProfileView;
+			sourceTree = "<group>";
+		};
+		54E3AEC9288CA10A0027B393 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				541A7B292880E1170052BD23 /* EmptyListTile.swift */,
+				541A7B272880DFD50052BD23 /* SearchBar.swift */,
+				5483C58A28838356005E5167 /* ButtonLabel.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
 		54E3B48E288723FB00CCD9E7 /* CitySearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,10 +468,13 @@
 			files = (
 				549E6DF8287FB07C00085BDA /* AppTabBarView.swift in Sources */,
 				541A7B33288104F10052BD23 /* PlaceToVisitViewModel.swift in Sources */,
+				54E3AEC3288CA0C00027B393 /* RandomDestinationView.swift in Sources */,
+				54E3AEC1288C9DBB0027B393 /* BucketList.swift in Sources */,
 				5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */,
 				54F6ED4028877570008BF99B /* IsHidden.swift in Sources */,
 				549E6DF6287FA24100085BDA /* TripDetailView.swift in Sources */,
 				549184FC287E1A2000A22F5C /* Trip.swift in Sources */,
+				54E3AECD288CA33D0027B393 /* PopularLocalPlacesView.swift in Sources */,
 				549184FE287E234800A22F5C /* TripListViewModel.swift in Sources */,
 				549E6DF0287F74A100085BDA /* CitySearchService.swift in Sources */,
 				54DF3C84288B59E000EB6C8E /* AppDelegate.swift in Sources */,
@@ -438,10 +504,12 @@
 				54E3AEBF288C78E10027B393 /* TripList.swift in Sources */,
 				54E3B491288724BC00CCD9E7 /* LocalSearchViewModel.swift in Sources */,
 				547EC6B7288A085000593707 /* YelpService.swift in Sources */,
+				54E3AECB288CA2090027B393 /* PopularDestinationsView.swift in Sources */,
 				54918500287E29BB00A22F5C /* TripListView.swift in Sources */,
 				541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */,
 				54918504287E41B500A22F5C /* ThingToPack.swift in Sources */,
 				549E6DF2287F74F600085BDA /* City.swift in Sources */,
+				54E3AECF288CA41C0027B393 /* BackgroundAnimation.swift in Sources */,
 				5485EB202888ADF700A1B608 /* RandomDestinationService.swift in Sources */,
 				547EC6B3288A00BE00593707 /* TopLocationService.swift in Sources */,
 				54E3AEBB288C757F0027B393 /* DatePickerTile.swift in Sources */,

@@ -62,27 +62,7 @@ struct BucketListView: View {
                         .navigationTitle(searching ? "Searching" : "My Bucket List")
                         .navigationBarTitleDisplayMode(.inline)
                 } else {
-                    List {
-                        ForEach(bucketListVM.destinations) { destination in
-                            HStack(spacing: 22) {
-                                Button {
-                                    bucketListVM.toggleIsVisited(destination)
-                                } label: {
-                                    Image(systemName: destination.isVisited ? "pin.circle.fill" : "pin.circle")
-                                        .foregroundColor(Color("AccentColor"))
-                                        .font(.system(size: 30))
-                                }
-                                Text(destination.name)
-                            }
-                        }
-                        .onDelete(perform: bucketListVM.deleteDestination(index:))
-                        .frame(minHeight: 50)
-                        .listRowSeparator(.hidden, edges: .top)
-                        .listRowSeparatorTint(Color("AccentColor"), edges: .bottom)
-                    }
-                    .listStyle(.plain)
-                    .navigationTitle(searching ? "Searching" : "My Bucket List")
-                    .navigationBarTitleDisplayMode(.inline)
+                    BucketList(bucketListVM: bucketListVM, searching: searching)
                 }
             }
         }

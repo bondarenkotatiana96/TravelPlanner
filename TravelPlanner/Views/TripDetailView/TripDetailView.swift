@@ -52,7 +52,7 @@ struct TripDetailView: View {
                 .frame(height: 80)
                 .sheet(isPresented: $showShareSheet) {
                     ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
-                        }
+                    }
                 
                 DatePickerTile(datesViewModel: datesViewModel, dateFrom: dateFrom, dateTo: dateTo, trip: trip, tripListVM: tripListVM)
                 
