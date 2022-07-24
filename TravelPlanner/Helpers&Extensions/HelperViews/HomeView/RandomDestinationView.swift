@@ -15,20 +15,22 @@ struct RandomDestinationView: View {
         Text("Feeling adventurous?")
             .foregroundColor(Color("BackgroundYellow"))
         Button {
-            if isHidden {
-                RandomDestinationService().getRandomDestination { result in
-                    DispatchQueue.main.async {
-                        switch result {
-                        case .success(let randomDestination):
-                            self.randomDestination = randomDestination
-                        case .failure(let error):
-                            print(error)
+            withAnimation(.linear.delay(0.3)) {
+                if isHidden {
+                    RandomDestinationService().getRandomDestination { result in
+                        DispatchQueue.main.async {
+                            switch result {
+                            case .success(let randomDestination):
+                                self.randomDestination = randomDestination
+                            case .failure(let error):
+                                print(error)
+                            }
                         }
                     }
+                    isHidden.toggle()
+                } else {
+                    isHidden.toggle()
                 }
-                isHidden.toggle()
-            } else {
-                isHidden.toggle()
             }
         } label: {
             ButtonLabel(text: isHidden ? "Get a random destination" : "Close", imageName: "airplane", width: 280, height: 50, imageSize: 25)

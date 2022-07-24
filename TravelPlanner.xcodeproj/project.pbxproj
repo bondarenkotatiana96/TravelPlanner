@@ -293,12 +293,12 @@
 			isa = PBXGroup;
 			children = (
 				54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */,
-				54DF3C82288B59CB00EB6C8E /* Notifications */,
-				549184F7287E15E700A22F5C /* Resources */,
-				541A7B262880DFC00052BD23 /* Helpers&Extensions */,
-				541A7B232880DF3D0052BD23 /* Networking */,
 				549184F8287E164600A22F5C /* Models */,
 				549184FA287E165000A22F5C /* Views */,
+				541A7B232880DF3D0052BD23 /* Networking */,
+				54DF3C82288B59CB00EB6C8E /* Notifications */,
+				541A7B262880DFC00052BD23 /* Helpers&Extensions */,
+				549184F7287E15E700A22F5C /* Resources */,
 			);
 			path = TravelPlanner;
 			sourceTree = "<group>";
