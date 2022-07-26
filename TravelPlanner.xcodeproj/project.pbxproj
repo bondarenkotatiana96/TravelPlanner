@@ -16,6 +16,7 @@
 		541A7B35288105040052BD23 /* ThingToPackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B34288105040052BD23 /* ThingToPackViewModel.swift */; };
 		541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B36288105140052BD23 /* NotesViewModel.swift */; };
 		541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B382881331A0052BD23 /* DatesViewModel.swift */; };
+		541E815D288F7863008DCFC4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541E815C288F7863008DCFC4 /* OnboardingView.swift */; };
 		543DE0B42886089A00576C1B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DE0B32886089A00576C1B /* Coordinates.swift */; };
 		5462B7E02889D14800D59904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5462B7DF2889D14800D59904 /* LocationManager.swift */; };
 		547EC6B0288A001600593707 /* TopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547EC6AF288A001600593707 /* TopLocation.swift */; };
@@ -70,6 +71,7 @@
 		541A7B34288105040052BD23 /* ThingToPackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingToPackViewModel.swift; sourceTree = "<group>"; };
 		541A7B36288105140052BD23 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		541A7B382881331A0052BD23 /* DatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesViewModel.swift; sourceTree = "<group>"; };
+		541E815C288F7863008DCFC4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		543DE0B32886089A00576C1B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		5462B7DF2889D14800D59904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		547EC6AF288A001600593707 /* TopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLocation.swift; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 			path = TripDetailView;
 			sourceTree = "<group>";
 		};
+		541E815B288F7810008DCFC4 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				541E815C288F7863008DCFC4 /* OnboardingView.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
 		5462B7DB2889C51200D59904 /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +273,7 @@
 		549184FA287E165000A22F5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				541E815B288F7810008DCFC4 /* OnboardingView */,
 				541A7B2E2880FC5A0052BD23 /* BucketListView */,
 				5485EB1B2888633200A1B608 /* HomeView */,
 				541A7B312880FCAF0052BD23 /* TripDetailView */,
@@ -509,6 +520,7 @@
 				541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */,
 				54918504287E41B500A22F5C /* ThingToPack.swift in Sources */,
 				549E6DF2287F74F600085BDA /* City.swift in Sources */,
+				541E815D288F7863008DCFC4 /* OnboardingView.swift in Sources */,
 				54E3AECF288CA41C0027B393 /* BackgroundAnimation.swift in Sources */,
 				5485EB202888ADF700A1B608 /* RandomDestinationService.swift in Sources */,
 				547EC6B3288A00BE00593707 /* TopLocationService.swift in Sources */,

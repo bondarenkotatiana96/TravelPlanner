@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    
     @Environment(\.openURL) var openURL
-    private var email = SupportEmail(toAddress: "96bondarenkotatiana@gmail.com", subject: "Feedback Email", messageHeader: "Please describe your feedback/issue below.")
+    
+    var email = SupportEmail(toAddress: "96bondarenkotatiana@gmail.com", subject: "Feedback Email", messageHeader: "Please describe your feedback/issue below.")
+    
+    @AppStorage var shouldShowOnboarding: Bool
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 40) {
@@ -22,7 +27,7 @@ struct UserProfileView: View {
                 }
                 
                 Button {
-                    //
+                    shouldShowOnboarding.toggle()
                 } label: {
                     ButtonLabel(text: "Help & how-to", imageName: "questionmark.circle", width: 300, height: 50, imageSize: 32)
                 }
@@ -36,11 +41,5 @@ struct UserProfileView: View {
                 .navigationBarTitleDisplayMode(.inline)
             }
         }
-    }
-}
-
-struct UserProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileView()
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AppTabBarView: View {
     
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
+    
     @State private var selection = 1
     
     init() {
@@ -27,12 +29,15 @@ struct AppTabBarView: View {
                     Label("My Trips", systemImage: "map.circle.fill")
                 }
                 .tag(2)
-            UserProfileView()
+            UserProfileView(shouldShowOnboarding: _shouldShowOnboarding)
                 .tabItem {
                     Label("Profile", systemImage: "person.circle.fill")
                 }
                 .tag(1)
         }
+        .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
+            OnboardingView(shouldShowOnboarding: $shouldShowOnboarding)
+        })
     }
 }
 
