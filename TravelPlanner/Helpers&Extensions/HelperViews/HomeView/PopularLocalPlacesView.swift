@@ -16,6 +16,7 @@ struct PopularLocalPlacesView: View {
         let coordinate = self.locationManager.location != nil ? self.locationManager.location!.coordinate : CLLocationCoordinate2D()
         
         Text("Popular local places")
+            .foregroundColor(Color("Background"))
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
                 ForEach(businesses) { business in
@@ -25,11 +26,12 @@ struct PopularLocalPlacesView: View {
                         VStack(spacing: 20) {
                             Text("\(business.name)")
                                 .font(.title2)
-                                .foregroundColor(Color("BackgroundYellow"))
+                                .foregroundColor(Color("Background"))
                                 .frame(width: 235)
                             Link(destination: URL(string: business.url)!, label: {
                                 Text("See details")
                                     .underline()
+                                    .foregroundColor(Color("Background"))
                             })
                         }
                     }

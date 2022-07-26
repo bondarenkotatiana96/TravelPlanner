@@ -15,7 +15,7 @@ struct SearchBar: View {
     
     var body: some View {
         ZStack {
-            Rectangle().fill(Color("BackgroundYellow")).opacity(0.4)
+            Rectangle().fill(Color("CardBackground")).opacity(0.4)
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color("AccentText"))

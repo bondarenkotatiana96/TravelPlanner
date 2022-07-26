@@ -16,15 +16,18 @@ struct DatePickerTile: View {
     
     var body: some View {
         ZStack {
-            Rectangle().fill(Color("BackgroundYellow"))
+            Rectangle().fill(Color("CardBackground"))
                 .frame(width: UIScreen.main.bounds.width - 70, height: 125)
             VStack(alignment: .center) {
                 Text("Dates")
                     .bold()
+                    .foregroundColor(Color("CardText"))
                 HStack(spacing: 5) {
                     VStack(spacing: 16) {
                         Text("From:")
+                            .foregroundColor(Color("CardText"))
                         Text("To:")
+                            .foregroundColor(Color("CardText"))
                     }
                     VStack {
                         DatePicker("", selection: $dateFrom, displayedComponents: .date)

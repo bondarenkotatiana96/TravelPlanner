@@ -18,7 +18,7 @@ struct NoteView: View {
         Text("Notes:")
             .bold()
         TextEditor(text: $tripNotesText)
-            .colorMultiply(Color("SecondaryLight"))
+            .background(Color("SecondaryLight"))
             .frame(width: UIScreen.main.bounds.width - 50, height: 80)
             .cornerRadius(15)
         Button {
@@ -29,6 +29,7 @@ struct NoteView: View {
         }
         .onAppear {
             tripNotesText = trip.notes
+            UITextView.appearance().backgroundColor = .clear
         }
     }
 }

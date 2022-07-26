@@ -15,6 +15,7 @@ struct AppTabBarView: View {
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(red: 0.925, green: 0.925, blue: 0.925, alpha: 1)
+        UITabBar.appearance().unselectedItemTintColor = UIColor(named: "UnselectedTabColor")
       }
     
     var body: some View {

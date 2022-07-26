@@ -12,6 +12,7 @@ struct PopularDestinationsView: View {
     
     var body: some View {
         Text("Popular destinations in the USA")
+            .foregroundColor(Color("Background"))
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
                 ForEach(topLocations) { location in

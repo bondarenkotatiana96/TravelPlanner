@@ -13,7 +13,7 @@ struct RandomDestinationView: View {
     
     var body: some View {
         Text("Feeling adventurous?")
-            .foregroundColor(Color("BackgroundYellow"))
+            .foregroundColor(Color("Background"))
         Button {
             withAnimation(.linear.delay(0.3)) {
                 if isHidden {
@@ -37,7 +37,7 @@ struct RandomDestinationView: View {
         }
             
         Text("\(randomDestination.city), \(randomDestination.country)")
-            .foregroundColor(Color("BackgroundYellow"))
+            .foregroundColor(Color("Background"))
             .font(.system(size: 20))
             .isHidden(isHidden, remove: isHidden)
     }
