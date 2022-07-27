@@ -42,6 +42,7 @@ struct AppTabBarView: View {
         .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
             OnboardingView(shouldShowOnboarding: $shouldShowOnboarding)
         })
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

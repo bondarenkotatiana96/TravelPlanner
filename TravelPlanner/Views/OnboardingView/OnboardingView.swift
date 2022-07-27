@@ -55,6 +55,8 @@ struct PageView: View {
     var body: some View {
         ZStack {
             Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
                 .overlay(Color.black.opacity(0.4))
             VStack {
