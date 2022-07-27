@@ -7,54 +7,54 @@
 */
 
 // HomeView
-"explore_title" = "Explore the world!";
-"adventurous_question" = "Feeling adventurous?";
-"get_destination" = "Get a random destination";
-"close" = "Close";
-"popular_destinations" = "Popular destinations in the USA";
-"popular_places" = "Popular local places";
+"explore_title" = "¡Explorar el mundo!";
+"adventurous_question" = "¿Te sientes aventurero?";
+"get_destination" = "Obtener un destino aleatorio";
+"close" = "Cerrar";
+"popular_destinations" = "Destinos populares en Estados Unidos";
+"popular_places" = "Lugares locales populares";
 
 // TripListView
-"searching" = "Searching";
-"my_trips" = "My Trips";
-"cancel" = "Cancel";
-"empty_trips" = "Search for a destination and plan your next trip!";
-"search_field" = "I want to go to...";
+"searching" = "Buscando";
+"my_trips" = "Mis viajes";
+"cancel" = "Cancelar";
+"empty_trips" = "¡Busca un destino y planifica tu próximo viaje!";
+"search_field" = "Quiero ir a...";
 
 // TripDetailsView
-"share" = "Share";
-"to_pack" = "Things to pack";
-"add" = "Add...";
-"to_visit" = "Places to visit";
-"see_map" = "See a map";
-"from" = "From:";
-"to" = "To:";
-"notes" = "Notes:";
-"save" = "Save";
+"share" = "Cuota";
+"to_pack" = "Cosas para empacar";
+"add" = "Agregar...";
+"to_visit" = "Lugares para visitar";
+"see_map" = "Un mapa";
+"from" = "De:";
+"to" = "A:";
+"notes" = "Notas:";
+"save" = "Ahorrar";
 
 // ProfileView
-"bucket_list" = "My Bucket List";
-"help" = "Help & how-to";
-"feedback" = "Feedback & support";
-"settings" = "Settings";
-"profile_title" = "My Profile";
+"bucket_list" = "Mi lista de deseos";
+"help" = "Ayuda";
+"feedback" = "El soporte";
+"settings" = "Ajustes";
+"profile_title" = "Mi perfil";
 
 // BucketListView
-"empty_bucket_list" = "Search for a destination and add it to your bucket list!";
+"empty_bucket_list" = "¡Busque un destino y agréguelo a su lista de deseos!";
 
 // Onboarding
-"onboarding_1" = "Search for destinations, add them to the list and change trip details";
-"onboarding_2" = "Look up places to visit and pin them on the map";
-"onboarding_3" = "Explore the most popular destinations and local places";
-"onboarding_4" = "Enjoy your trip and don't worry about forgetting anything";
-"skip" = "Skip";
+"onboarding_1" = "Busque destinos, agréguelos a la lista y cambie los detalles del viaje";
+"onboarding_2" = "Buscar lugares para visitar y fijarlos en el mapa";
+"onboarding_3" = "Explore los destinos más populares y los lugares locales";
+"onboarding_4" = "Disfruta de tu viaje y no te preocupes por olvidar nada";
+"skip" = "Saltar";
 "start_button" = "Get Started";
 
 // SettingsView
-"settings_language" = "Language";
-"settings_language_footer" = "Choose interface language.";
+"settings_language" = "Idioma";
+"settings_language_footer" = "Elija el idioma de la interfaz.";
 
 // TabBarView
-"tab_explore" = "Explore";
-"tab_trips" = "My Trips";
-"tab_profile" = "Profile";
+"tab_explore" = "Explorar";
+"tab_trips" = "Mis viajes";
+"tab_profile" = "Mi perfil";

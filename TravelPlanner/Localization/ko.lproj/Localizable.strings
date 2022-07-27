@@ -7,37 +7,37 @@
 */
 
 // HomeView
-"explore_title" = "Explore the world!";
+"explore_title" = "탐구하다";
 "adventurous_question" = "Feeling adventurous?";
 "get_destination" = "Get a random destination";
-"close" = "Close";
+"close" = "닫다";
 "popular_destinations" = "Popular destinations in the USA";
 "popular_places" = "Popular local places";
 
 // TripListView
-"searching" = "Searching";
-"my_trips" = "My Trips";
-"cancel" = "Cancel";
+"searching" = "수색";
+"my_trips" = "나의 여행";
+"cancel" = "취소하다";
 "empty_trips" = "Search for a destination and plan your next trip!";
 "search_field" = "I want to go to...";
 
 // TripDetailsView
-"share" = "Share";
+"share" = "공유하다";
 "to_pack" = "Things to pack";
 "add" = "Add...";
 "to_visit" = "Places to visit";
-"see_map" = "See a map";
-"from" = "From:";
-"to" = "To:";
-"notes" = "Notes:";
-"save" = "Save";
+"see_map" = "지도";
+"from" = "에서:";
+"to" = "에게:";
+"notes" = "메모:";
+"save" = "구하다";
 
 // ProfileView
-"bucket_list" = "My Bucket List";
-"help" = "Help & how-to";
-"feedback" = "Feedback & support";
-"settings" = "Settings";
-"profile_title" = "My Profile";
+"bucket_list" = "내 버킷리스트";
+"help" = "사용하는 방법";
+"feedback" = "피드백";
+"settings" = "조절";
+"profile_title" = "프로필";
 
 // BucketListView
 "empty_bucket_list" = "Search for a destination and add it to your bucket list!";
@@ -47,14 +47,14 @@
 "onboarding_2" = "Look up places to visit and pin them on the map";
 "onboarding_3" = "Explore the most popular destinations and local places";
 "onboarding_4" = "Enjoy your trip and don't worry about forgetting anything";
-"skip" = "Skip";
-"start_button" = "Get Started";
+"skip" = "건너뛰다";
+"start_button" = "시작하다";
 
 // SettingsView
-"settings_language" = "Language";
-"settings_language_footer" = "Choose interface language.";
+"settings_language" = "언어";
+"settings_language_footer" = "인터페이스 언어를 선택하십시오.";
 
 // TabBarView
-"tab_explore" = "Explore";
-"tab_trips" = "My Trips";
-"tab_profile" = "Profile";
+"tab_explore" = "탐구하다";
+"tab_trips" = "나의 여행";
+"tab_profile" = "프로필";
