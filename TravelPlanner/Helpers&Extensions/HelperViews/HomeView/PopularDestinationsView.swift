@@ -61,6 +61,24 @@ struct PopularDestinationsView: View {
                                 .tint(Color("Background"))
                                 .scaleEffect(2)
                         }
+                        ZStack {
+                            Rectangle().fill(.ultraThinMaterial)
+                                .frame(width: 230, height: 190)
+                                .cornerRadius(15)
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .tint(Color("Background"))
+                                .scaleEffect(2)
+                        }
+                        ZStack {
+                            Rectangle().fill(.ultraThinMaterial)
+                                .frame(width: 230, height: 190)
+                                .cornerRadius(15)
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .tint(Color("Background"))
+                                .scaleEffect(2)
+                        }
                     }
                 }
                 .padding(.bottom)

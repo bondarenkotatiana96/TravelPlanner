@@ -70,6 +70,24 @@ struct PopularLocalPlacesView: View {
                                 .tint(Color("Background"))
                                 .scaleEffect(2)
                         }
+                        ZStack {
+                            Rectangle().fill(Color.black.opacity(0.3))
+                                .frame(width: 250, height: 170)
+                                .cornerRadius(15)
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .tint(Color("Background"))
+                                .scaleEffect(2)
+                        }
+                        ZStack {
+                            Rectangle().fill(Color.black.opacity(0.3))
+                                .frame(width: 250, height: 170)
+                                .cornerRadius(15)
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .tint(Color("Background"))
+                                .scaleEffect(2)
+                        }
                     }
                 }
                 .padding(.bottom)

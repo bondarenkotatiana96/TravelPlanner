@@ -23,13 +23,16 @@ struct HomeView: View {
     @State var businesses: [Business] = []
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 BackgroundAnimation(hueAdjust: hueAdjust)
-                VStack {
-                    PopularDestinationsView(topLocations: topLocations)
-                    PopularLocalPlacesView(locationManager: locationManager, businesses: businesses)
-                    RandomDestinationView(randomDestination: randomDestination, isHidden: isHidden)
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack {
+                        PopularDestinationsView(topLocations: topLocations)
+                        PopularLocalPlacesView(locationManager: locationManager, businesses: businesses)
+                        RandomDestinationView(randomDestination: randomDestination, isHidden: isHidden)
+                    }
+                    .padding(.top, 40)
                 }
                 .navigationTitle("explore_title".localized(language))
                 .navigationBarTitleDisplayMode(.inline)

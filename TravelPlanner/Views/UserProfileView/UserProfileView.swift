@@ -20,34 +20,36 @@ struct UserProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .center, spacing: 40) {
-                Image("avatar")
-                    .padding(.bottom)
-                NavigationLink {
-                    BucketListView()
-                } label: {
-                    ButtonLabel(text: "bucket_list".localized(language), imageName: "heart.circle", width: 300, height: 50, imageSize: 32)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center, spacing: 40) {
+                    Spacer()
+                    Image("avatar")
+                    NavigationLink {
+                        BucketListView()
+                    } label: {
+                        ButtonLabel(text: "bucket_list".localized(language), imageName: "heart.circle", width: 300, height: 50, imageSize: 32)
+                    }
+                    
+                    Button {
+                        shouldShowOnboarding.toggle()
+                    } label: {
+                        ButtonLabel(text: "help".localized(language), imageName: "questionmark.circle", width: 300, height: 50, imageSize: 32)
+                    }
+                    
+                    Button {
+                        email.send(openURL: openURL)
+                    } label: {
+                        ButtonLabel(text: "feedback".localized(language), imageName: "envelope.circle", width: 300, height: 50, imageSize: 32)
+                    }
+                    
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        ButtonLabel(text: "settings".localized(language), imageName: "gear.circle", width: 300, height: 50, imageSize: 32)
+                    }
+                    .navigationTitle("profile_title".localized(language))
+                    .navigationBarTitleDisplayMode(.inline)
                 }
-                
-                Button {
-                    shouldShowOnboarding.toggle()
-                } label: {
-                    ButtonLabel(text: "help".localized(language), imageName: "questionmark.circle", width: 300, height: 50, imageSize: 32)
-                }
-                
-                Button {
-                    email.send(openURL: openURL)
-                } label: {
-                    ButtonLabel(text: "feedback".localized(language), imageName: "envelope.circle", width: 300, height: 50, imageSize: 32)
-                }
-                
-                NavigationLink {
-                    SettingsView()
-                } label: {
-                    ButtonLabel(text: "settings".localized(language), imageName: "gear.circle", width: 300, height: 50, imageSize: 32)
-                }
-                .navigationTitle("profile_title".localized(language))
-                .navigationBarTitleDisplayMode(.inline)
             }
         }
     }
