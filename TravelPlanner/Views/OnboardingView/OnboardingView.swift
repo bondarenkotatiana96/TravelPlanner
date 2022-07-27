@@ -13,9 +13,9 @@ struct OnboardingView: View {
     
     var body: some View {
         TabView {
-            PageView(text: "Search for destinations, add them to your trips list and change trip details", imageName: "page1", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
+            PageView(text: "Search for destinations, add them to the list and change trip details", imageName: "page1", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             
-            PageView(text: "Look up interesting places to visit and save them", imageName: "page2", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
+            PageView(text: "Look up places to visit and pin them on the map", imageName: "page2", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             
             PageView(text: "Explore the most popular destinations and local places", imageName: "page4", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             
