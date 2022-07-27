@@ -9,6 +9,9 @@ import SwiftUI
 
 struct BucketListView: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @ObservedObject var bucketListVM = BucketListViewModel()
     @StateObject private var cityListVM = CityListViewModel()
     
@@ -37,11 +40,11 @@ struct BucketListView: View {
                         cityListVM.cities.removeAll()
                     }
                 }
-            .navigationTitle(searching ? "Searching" : "My Bucket List")
+            .navigationTitle(searching ? "searching".localized(language) : "bucket_list".localized(language))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 if searching {
-                    Button("Cancel") {
+                    Button("cancel".localized(language)) {
                         withAnimation {
                             searchText = ""
                             searching = false
@@ -58,8 +61,8 @@ struct BucketListView: View {
             )
             } else {
                 if bucketListVM.destinations.isEmpty {
-                    EmptyListTile(text: "Search for a destination and add it to your bucket list!")
-                        .navigationTitle(searching ? "Searching" : "My Bucket List")
+                    EmptyListTile(text: "empty_bucket_list".localized(language))
+                        .navigationTitle(searching ? "searching".localized(language) : "bucket_list".localized(language))
                         .navigationBarTitleDisplayMode(.inline)
                 } else {
                     BucketList(bucketListVM: bucketListVM, searching: searching)

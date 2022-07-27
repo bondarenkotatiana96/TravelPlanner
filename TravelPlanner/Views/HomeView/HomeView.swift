@@ -10,6 +10,9 @@ import MapKit
 
 struct HomeView: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @ObservedObject private var locationManager = LocationManager()
     
     @State private var hueAdjust = true
@@ -28,7 +31,7 @@ struct HomeView: View {
                     PopularLocalPlacesView(locationManager: locationManager, businesses: businesses)
                     RandomDestinationView(randomDestination: randomDestination, isHidden: isHidden)
                 }
-                .navigationTitle("Explore the world!")
+                .navigationTitle("explore_title".localized(language))
                 .navigationBarTitleDisplayMode(.inline)
             }
         }

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct BucketList: View {
+    
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @ObservedObject var bucketListVM: BucketListViewModel
     @State var searching: Bool
     var body: some View {
@@ -30,7 +34,7 @@ struct BucketList: View {
             .listRowSeparatorTint(Color("AccentColor"), edges: .bottom)
         }
         .listStyle(.plain)
-        .navigationTitle(searching ? "Searching" : "My Bucket List")
+        .navigationTitle(searching ? "searching".localized(language) : "bucket_list".localized(language))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct NoteView: View {
+    
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     var trip: Trip
     var tripListVM: TripListViewModel
     
@@ -15,7 +19,7 @@ struct NoteView: View {
     @State var tripNotesText: String
     
     var body: some View {
-        Text("Notes:")
+        Text("notes".localized(language))
             .bold()
         TextEditor(text: $tripNotesText)
             .background(Color("SecondaryLight"))
@@ -25,7 +29,7 @@ struct NoteView: View {
             noteViewModel.updateNote(notes: tripNotesText, trip: trip, tripListViewModel: tripListVM)
             UIApplication.shared.dismissKeyboard()
         } label: {
-            ButtonLabel(text: "Save", width: 110, height: 25, imageSize: 17)
+            ButtonLabel(text: "save".localized(language), width: 110, height: 25, imageSize: 17)
         }
         .onAppear {
             tripNotesText = trip.notes

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct AppTabBarView: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
     
     @State private var selection = 1
@@ -22,17 +25,17 @@ struct AppTabBarView: View {
         TabView(selection:$selection) {
             HomeView()
                 .tabItem {
-                    Label("Explore", systemImage: "globe.europe.africa.fill")
+                    Label("tab_explore".localized(language), systemImage: "globe.europe.africa.fill")
                 }
                 .tag(3)
             TripListView()
                 .tabItem {
-                    Label("My Trips", systemImage: "map.circle.fill")
+                    Label("tab_trips".localized(language), systemImage: "map.circle.fill")
                 }
                 .tag(2)
             UserProfileView(shouldShowOnboarding: _shouldShowOnboarding)
                 .tabItem {
-                    Label("Profile", systemImage: "person.circle.fill")
+                    Label("tab_profile".localized(language), systemImage: "person.circle.fill")
                 }
                 .tag(1)
         }

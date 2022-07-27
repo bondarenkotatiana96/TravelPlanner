@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  TravelPlanner
+
+  Created by Tatiana Bondarenko on 7/27/22.
+  
+*/
+// HomeView
+"explore_title" = "Исследуй мир";
+"adventurous_question" = "Хочется приключений?";
+"get_destination" = "Случайная локация";
+"close" = "Закрыть";
+"popular_destinations" = "Популярные направления";
+"popular_places" = "Популярные места рядом";
+
+// TripListView
+"searching" = "Поиск";
+"my_trips" = "Мои Поездки";
+"cancel" = "Отменить";
+"empty_trips" = "Находи новые локации и планируй следующую поездку!";
+"search_field" = "Я хочу поехать...";
+
+// TripDetailsView
+"share" = "Соц.сети";
+"to_pack" = "Взять с собой";
+"add" = "Добавить...";
+"to_visit" = "Хочу посетить";
+"see_map" = "Карта";
+"from" = "Дата начала:";
+"to" = "Дата окончания:";
+"notes" = "Заметки:";
+"save" = "Готово";
+
+// ProfileView
+"bucket_list" = "Список желаний";
+"help" = "Помощь";
+"feedback" = "Поддержка";
+"settings" = "Настройки";
+"profile_title" = "Мой профиль";
+
+// BucketListView
+"empty_bucket_list" = "Находи новые локации и добавляй их в список желаний";
+
+// Onboarding
+"onboarding_1" = "Находи новые локации, добавляй в список поездок и планируй свои путешествия";
+"onboarding_2" = "Ищи места, которые хочешь посетить и сохраняй их на карте";
+"onboarding_3" = "Исследуй популярные наплавления и популярные места рядом с тобой";
+"onboarding_4" = "Наслаждайся путешествиями!";
+"skip" = "Пропустить";
+"start_button" = "Начать";
+
+// SettingsView
+"settings_language" = "Язык";
+"settings_language_footer" = "Выберите язык интерфейса";
+
+// TabBarView
+"tab_explore" = "Популярное";
+"tab_trips" = "Поездки";
+"tab_profile" = "Профиль";

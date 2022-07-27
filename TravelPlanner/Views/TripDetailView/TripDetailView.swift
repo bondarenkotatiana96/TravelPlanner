@@ -10,6 +10,9 @@ import MapKit
 
 struct TripDetailView: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @Binding var trip: Trip
     var tripListVM: TripListViewModel
     
@@ -46,7 +49,7 @@ struct TripDetailView: View {
                     Button {
                         self.showShareSheet = true
                     } label: {
-                        ButtonLabel(text: "Share", imageName: "arrowshape.turn.up.forward", width: 110, height: 25, imageSize: 17)
+                        ButtonLabel(text: "share".localized(language), imageName: "arrowshape.turn.up.forward", width: 110, height: 25, imageSize: 17)
                     }
                 }
                 .frame(height: 80)
@@ -59,8 +62,8 @@ struct TripDetailView: View {
                 NoteView(trip: trip, tripListVM: tripListVM, noteViewModel: noteViewModel, tripNotesText: tripNotesText)
             
                 List {
-                    Section("Things to pack") {
-                        TextField("Add...", text: $thingToPackName)
+                    Section("to_pack".localized(language)) {
+                        TextField("add".localized(language), text: $thingToPackName)
                             .onSubmit {
                                 thingToPackVM.createThingToPack(thingToPack: ThingToPack(name: thingToPackName, isPacked: false), trip: trip, tripListViewModel: tripListVM)
                                 thingToPackName = ""
@@ -82,7 +85,7 @@ struct TripDetailView: View {
                             thingToPackVM.deleteThingToPack(trip: trip, tripListViewModel: tripListVM, at: indexSet)
                         }
                     }
-                    Section("Places to visit") {
+                    Section("to_visit".localized(language)) {
                         SearchBar(searchText: $placeSearchVM.poiText, searching: $searching)
                         if searching {
                             ForEach(placeSearchVM.viewData) { place in
@@ -115,7 +118,7 @@ struct TripDetailView: View {
                         Button {
                             showMap()
                         } label: {
-                            ButtonLabel(text: "See a map", imageName: "map", width: 150, height: 25, imageSize: 17)
+                            ButtonLabel(text: "see_map".localized(language), imageName: "map", width: 150, height: 25, imageSize: 17)
                         }
                     }
                 }
@@ -140,7 +143,7 @@ struct TripDetailView: View {
                         Button {
                             showMap()
                         } label: {
-                            ButtonLabel(text: "Close", imageName: "xmark.circle.fill", width: 100, height: 30, imageSize: 20)
+                            ButtonLabel(text: "close".localized(language), imageName: "xmark.circle.fill", width: 100, height: 30, imageSize: 20)
                         }
                         .padding(.top, 150)
                         Spacer()

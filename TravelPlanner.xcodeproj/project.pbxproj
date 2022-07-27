@@ -17,6 +17,11 @@
 		541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B36288105140052BD23 /* NotesViewModel.swift */; };
 		541A7B392881331A0052BD23 /* DatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B382881331A0052BD23 /* DatesViewModel.swift */; };
 		541E815D288F7863008DCFC4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541E815C288F7863008DCFC4 /* OnboardingView.swift */; };
+		543063342891BA7B009B0C72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 543063362891BA7B009B0C72 /* Localizable.strings */; };
+		543063392891BEF5009B0C72 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543063382891BEF5009B0C72 /* Language.swift */; };
+		5430633C2891BF33009B0C72 /* Strings+Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430633B2891BF33009B0C72 /* Strings+Localizations.swift */; };
+		5430633E2891BFBB009B0C72 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430633D2891BFBB009B0C72 /* LocalizationService.swift */; };
+		543063402891C006009B0C72 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430633F2891C006009B0C72 /* SettingsView.swift */; };
 		543DE0B42886089A00576C1B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DE0B32886089A00576C1B /* Coordinates.swift */; };
 		5462B7E02889D14800D59904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5462B7DF2889D14800D59904 /* LocationManager.swift */; };
 		547EC6B0288A001600593707 /* TopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547EC6AF288A001600593707 /* TopLocation.swift */; };
@@ -72,6 +77,14 @@
 		541A7B36288105140052BD23 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		541A7B382881331A0052BD23 /* DatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesViewModel.swift; sourceTree = "<group>"; };
 		541E815C288F7863008DCFC4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		543063352891BA7B009B0C72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		543063372891BA9B009B0C72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		543063382891BEF5009B0C72 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		5430633A2891BF0C009B0C72 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5430633B2891BF33009B0C72 /* Strings+Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Localizations.swift"; sourceTree = "<group>"; };
+		5430633D2891BFBB009B0C72 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		5430633F2891C006009B0C72 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		543063422891D305009B0C72 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		543DE0B32886089A00576C1B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		5462B7DF2889D14800D59904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		547EC6AF288A001600593707 /* TopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLocation.swift; sourceTree = "<group>"; };
@@ -203,6 +216,25 @@
 			path = OnboardingView;
 			sourceTree = "<group>";
 		};
+		543063312891BA27009B0C72 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				543063362891BA7B009B0C72 /* Localizable.strings */,
+				543063382891BEF5009B0C72 /* Language.swift */,
+				5430633B2891BF33009B0C72 /* Strings+Localizations.swift */,
+				5430633D2891BFBB009B0C72 /* LocalizationService.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		543063412891C9ED009B0C72 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				5430633F2891C006009B0C72 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		5462B7DB2889C51200D59904 /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +306,7 @@
 		549184FA287E165000A22F5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				543063412891C9ED009B0C72 /* SettingsView */,
 				541E815B288F7810008DCFC4 /* OnboardingView */,
 				541A7B2E2880FC5A0052BD23 /* BucketListView */,
 				5485EB1B2888633200A1B608 /* HomeView */,
@@ -304,8 +337,9 @@
 		54CCEDAB287CFC4E00C62679 /* TravelPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				54CC04BE2890BBED00BA4717 /* Info.plist */,
 				54CCEDAC287CFC4E00C62679 /* TravelPlannerApp.swift */,
+				54CC04BE2890BBED00BA4717 /* Info.plist */,
+				543063312891BA27009B0C72 /* Localization */,
 				549184F8287E164600A22F5C /* Models */,
 				549184FA287E165000A22F5C /* Views */,
 				541A7B232880DF3D0052BD23 /* Networking */,
@@ -449,6 +483,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				es,
+				ko,
 			);
 			mainGroup = 54CCEDA0287CFC4E00C62679;
 			packageReferences = (
@@ -468,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */,
+				543063342891BA7B009B0C72 /* Localizable.strings in Resources */,
 				54CCEDB1287CFC5000C62679 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +538,7 @@
 				541A7B1E2880A52F0052BD23 /* BucketListView.swift in Sources */,
 				549E6DF4287F7D9500085BDA /* CityListViewModel.swift in Sources */,
 				54CCEDAD287CFC4E00C62679 /* TravelPlannerApp.swift in Sources */,
+				543063402891C006009B0C72 /* SettingsView.swift in Sources */,
 				5485EB1D2888634D00A1B608 /* HomeView.swift in Sources */,
 				5462B7E02889D14800D59904 /* LocationManager.swift in Sources */,
 				5485EB242888AF0100A1B608 /* NetworkError.swift in Sources */,
@@ -521,18 +560,35 @@
 				54918500287E29BB00A22F5C /* TripListView.swift in Sources */,
 				541A7B37288105140052BD23 /* NotesViewModel.swift in Sources */,
 				54918504287E41B500A22F5C /* ThingToPack.swift in Sources */,
+				543063392891BEF5009B0C72 /* Language.swift in Sources */,
 				549E6DF2287F74F600085BDA /* City.swift in Sources */,
 				541E815D288F7863008DCFC4 /* OnboardingView.swift in Sources */,
 				54E3AECF288CA41C0027B393 /* BackgroundAnimation.swift in Sources */,
 				5485EB202888ADF700A1B608 /* RandomDestinationService.swift in Sources */,
 				547EC6B3288A00BE00593707 /* TopLocationService.swift in Sources */,
+				5430633E2891BFBB009B0C72 /* LocalizationService.swift in Sources */,
 				54E3AEBB288C757F0027B393 /* DatePickerTile.swift in Sources */,
 				54918502287E417800A22F5C /* Place.swift in Sources */,
 				54A3EAFD28822F4100A3D1AE /* ShareSheet.swift in Sources */,
+				5430633C2891BF33009B0C72 /* Strings+Localizations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		543063362891BA7B009B0C72 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				543063352891BA7B009B0C72 /* en */,
+				543063372891BA9B009B0C72 /* ru */,
+				5430633A2891BF0C009B0C72 /* es */,
+				543063422891D305009B0C72 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		54CCEDB5287CFC5000C62679 /* Debug */ = {

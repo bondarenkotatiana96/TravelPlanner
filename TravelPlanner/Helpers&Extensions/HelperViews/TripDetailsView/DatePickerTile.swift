@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct DatePickerTile: View {
+    
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     var datesViewModel: DatesViewModel
     @State var dateFrom: Date
     @State var dateTo: Date
@@ -24,9 +28,9 @@ struct DatePickerTile: View {
                     .foregroundColor(Color("CardText"))
                 HStack(spacing: 5) {
                     VStack(spacing: 16) {
-                        Text("From:")
+                        Text("from".localized(language))
                             .foregroundColor(Color("CardText"))
-                        Text("To:")
+                        Text("to".localized(language))
                             .foregroundColor(Color("CardText"))
                     }
                     VStack {

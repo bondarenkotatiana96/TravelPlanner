@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct RandomDestinationView: View {
+    
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @State var randomDestination: RandomDestination
     @State var isHidden: Bool
     
     var body: some View {
-        Text("Feeling adventurous?")
+        Text("adventurous_question".localized(language))
             .foregroundColor(Color("Background"))
         Button {
             withAnimation(.linear.delay(0.3)) {
@@ -33,7 +37,7 @@ struct RandomDestinationView: View {
                 }
             }
         } label: {
-            ButtonLabel(text: isHidden ? "Get a random destination" : "Close", imageName: "airplane", width: 280, height: 50, imageSize: 25)
+            ButtonLabel(text: isHidden ? "get_destination".localized(language) : "close".localized(language), imageName: "airplane", width: 280, height: 50, imageSize: 25)
         }
             
         Text("\(randomDestination.city), \(randomDestination.country)")

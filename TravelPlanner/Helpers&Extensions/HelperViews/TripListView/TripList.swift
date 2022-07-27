@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TripList: View {
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @ObservedObject var tripListVM: TripListViewModel
     @State var searching: Bool
     var body: some View {
@@ -30,7 +33,7 @@ struct TripList: View {
             .listRowSeparatorTint(Color("AccentColor"), edges: .bottom)
         }
         .listStyle(.plain)
-        .navigationTitle(searching ? "Searching" : "My Trips")
+        .navigationTitle(searching ? "searching".localized(language) : "my_trips".localized(language))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

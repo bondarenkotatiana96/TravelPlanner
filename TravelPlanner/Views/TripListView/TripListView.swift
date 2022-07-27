@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TripListView: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @ObservedObject var tripListVM = TripListViewModel()
     @StateObject private var cityListVM = CityListViewModel()
     
@@ -51,11 +54,11 @@ struct TripListView: View {
                             cityListVM.cities.removeAll()
                         }
                     }
-                .navigationTitle(searching ? "Searching" : "My Trips")
+                .navigationTitle(searching ? "searching".localized(language) : "my_trips".localized(language))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     if searching {
-                        Button("Cancel") {
+                        Button("Cancel".localized(language)) {
                             withAnimation {
                                 searchText = ""
                                 searching = false
@@ -73,8 +76,8 @@ struct TripListView: View {
                 } else {
                 
                 if tripListVM.trips.isEmpty {
-                    EmptyListTile(text: "Search for a destination and plan your next trip!")
-                        .navigationTitle(searching ? "Searching" : "My Trips")
+                    EmptyListTile(text: "empty_trips".localized(language))
+                        .navigationTitle(searching ? "searching".localized(language) : "my_trips".localized(language))
                         .navigationBarTitleDisplayMode(.inline)
                 } else {
                     TripList(tripListVM: tripListVM, searching: searching)

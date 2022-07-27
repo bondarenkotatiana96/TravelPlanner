@@ -9,6 +9,9 @@ import SwiftUI
 
 struct UserProfileView: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @Environment(\.openURL) var openURL
     
     var email = SupportEmail(toAddress: "96bondarenkotatiana@gmail.com", subject: "Feedback Email", messageHeader: "Please describe your feedback/issue below.")
@@ -23,21 +26,27 @@ struct UserProfileView: View {
                 NavigationLink {
                     BucketListView()
                 } label: {
-                    ButtonLabel(text: "My Bucket List", imageName: "heart.circle", width: 300, height: 50, imageSize: 32)
+                    ButtonLabel(text: "bucket_list".localized(language), imageName: "heart.circle", width: 300, height: 50, imageSize: 32)
                 }
                 
                 Button {
                     shouldShowOnboarding.toggle()
                 } label: {
-                    ButtonLabel(text: "Help & how-to", imageName: "questionmark.circle", width: 300, height: 50, imageSize: 32)
+                    ButtonLabel(text: "help".localized(language), imageName: "questionmark.circle", width: 300, height: 50, imageSize: 32)
                 }
                 
                 Button {
                     email.send(openURL: openURL)
                 } label: {
-                    ButtonLabel(text: "Feedback & support", imageName: "envelope.circle", width: 300, height: 50, imageSize: 32)
+                    ButtonLabel(text: "feedback".localized(language), imageName: "envelope.circle", width: 300, height: 50, imageSize: 32)
                 }
-                .navigationTitle("My Profile")
+                
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    ButtonLabel(text: "settings".localized(language), imageName: "gear.circle", width: 300, height: 50, imageSize: 32)
+                }
+                .navigationTitle("profile_title".localized(language))
                 .navigationBarTitleDisplayMode(.inline)
             }
         }

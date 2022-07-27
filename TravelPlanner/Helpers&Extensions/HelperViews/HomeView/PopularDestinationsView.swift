@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct PopularDestinationsView: View {
+    
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @State var topLocations: [TopLocation]
     @State private var isLoading = false
     
     var body: some View {
-        Text("Popular destinations in the USA")
+        Text("popular_destinations".localized(language))
             .foregroundColor(Color("Background"))
         ZStack {
             ScrollView(.horizontal, showsIndicators: false) {

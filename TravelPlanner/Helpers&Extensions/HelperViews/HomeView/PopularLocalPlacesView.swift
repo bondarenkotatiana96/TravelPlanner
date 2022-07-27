@@ -9,6 +9,10 @@ import SwiftUI
 import MapKit
 
 struct PopularLocalPlacesView: View {
+    
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @ObservedObject var locationManager: LocationManager
     @State var businesses: [Business]
     @State private var isLoading = false
@@ -16,7 +20,7 @@ struct PopularLocalPlacesView: View {
     var body: some View {
         
         
-        Text("Popular local places")
+        Text("popular_places".localized(language))
             .foregroundColor(Color("Background"))
         ZStack {
             ScrollView(.horizontal, showsIndicators: false) {

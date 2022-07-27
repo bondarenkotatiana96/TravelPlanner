@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  TravelPlanner
+
+  Created by Tatiana Bondarenko on 7/27/22.
+  
+*/
+
+// HomeView
+"explore_title" = "Explore the world!";
+"adventurous_question" = "Feeling adventurous?";
+"get_destination" = "Get a random destination";
+"close" = "Close";
+"popular_destinations" = "Popular destinations in the USA";
+"popular_places" = "Popular local places";
+
+// TripListView
+"searching" = "Searching";
+"my_trips" = "My Trips";
+"cancel" = "Cancel";
+"empty_trips" = "Search for a destination and plan your next trip!";
+"search_field" = "I want to go to...";
+
+// TripDetailsView
+"share" = "Share";
+"to_pack" = "Things to pack";
+"add" = "Add...";
+"to_visit" = "Places to visit";
+"see_map" = "See a map";
+"from" = "From:";
+"to" = "To:";
+"notes" = "Notes:";
+"save" = "Save";
+
+// ProfileView
+"bucket_list" = "My Bucket List";
+"help" = "Help & how-to";
+"feedback" = "Feedback & support";
+"settings" = "Settings";
+"profile_title" = "My Profile";
+
+// BucketListView
+"empty_bucket_list" = "Search for a destination and add it to your bucket list!";
+
+// Onboarding
+"onboarding_1" = "Search for destinations, add them to the list and change trip details";
+"onboarding_2" = "Look up places to visit and pin them on the map";
+"onboarding_3" = "Explore the most popular destinations and local places";
+"onboarding_4" = "Enjoy your trip and don't worry about forgetting anything";
+"skip" = "Skip";
+"start_button" = "Get Started";
+
+// SettingsView
+"settings_language" = "Language";
+"settings_language_footer" = "Choose interface language.";
+
+// TabBarView
+"tab_explore" = "Explore";
+"tab_trips" = "My Trips";
+"tab_profile" = "Profile";

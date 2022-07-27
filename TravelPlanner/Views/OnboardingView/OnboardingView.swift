@@ -9,17 +9,20 @@ import SwiftUI
 
 struct OnboardingView: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @Binding var shouldShowOnboarding: Bool
     
     var body: some View {
         TabView {
-            PageView(text: "Search for destinations, add them to the list and change trip details", imageName: "page1", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
+            PageView(text: "onboarding_1".localized(language), imageName: "page1", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             
-            PageView(text: "Look up places to visit and pin them on the map", imageName: "page2", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
+            PageView(text: "onboarding_2".localized(language), imageName: "page2", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             
-            PageView(text: "Explore the most popular destinations and local places", imageName: "page4", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
+            PageView(text: "onboarding_3".localized(language), imageName: "page4", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             
-            PageView(text: "Enjoy your trip and don't worry about forgetting anything", imageName: "page5", showsDismissButton: true, shouldShowOnboarding: $shouldShowOnboarding)
+            PageView(text: "onboarding_4".localized(language), imageName: "page5", showsDismissButton: true, shouldShowOnboarding: $shouldShowOnboarding)
         }
         .ignoresSafeArea()
         .tabViewStyle(PageTabViewStyle())
@@ -41,6 +44,9 @@ struct OnboardingView_Previews: PreviewProvider {
 }
 
 struct PageView: View {
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     var text: String
     var imageName: String
     let showsDismissButton: Bool
@@ -55,7 +61,7 @@ struct PageView: View {
                 Button {
                     shouldShowOnboarding.toggle()
                 } label: {
-                    Text("Skip")
+                    Text("skip".localized(language))
                 }
                 .offset(x: 150, y: -200)
                 
@@ -71,7 +77,7 @@ struct PageView: View {
                     Button {
                         shouldShowOnboarding.toggle()
                     } label: {
-                        ButtonLabel(text: "Get Started", imageName: "", width: 200, height: 50, imageSize: 0)
+                        ButtonLabel(text: "start_button".localized(language), imageName: "", width: 200, height: 50, imageSize: 0)
                     }
                 }
             }

@@ -10,6 +10,9 @@ import SwiftUI
 
 struct SearchBar: View {
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    
     @Binding var searchText: String
     @Binding var searching: Bool
     
@@ -19,7 +22,7 @@ struct SearchBar: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color("AccentText"))
-                TextField("I want to go to...", text: $searchText) { startedEditing in
+                TextField("search_field".localized(language), text: $searchText) { startedEditing in
                     if startedEditing {
                         withAnimation {
                             searching = true
