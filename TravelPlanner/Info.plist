@@ -9,7 +9,7 @@
 		<key>UIImageName</key>
 		<string>avatar</string>
 		<key>UIImageRespectsSafeAreaInsets</key>
-		<true/>
+		<false/>
 	</dict>
 </dict>
 </plist>

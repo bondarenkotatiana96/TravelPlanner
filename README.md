@@ -45,6 +45,10 @@ Pin places you want to visit on the map
 Explore the most popular cities and local places
   
 // Add screenshot
+<br/><br/><br/>
+Share your trip details on social media
+  
+// Add screenshot
 
 ## <a name="installation"></a>Setup/Installation ⌨️
 

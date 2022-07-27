@@ -10,7 +10,7 @@ import Foundation
 struct Businesses: Decodable {
     let businesses: [Business]
 }
-struct Business: Decodable, Identifiable {
+struct Business: Decodable, Identifiable, Equatable {
     let id: String
     let name: String
     let url: String

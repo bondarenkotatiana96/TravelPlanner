@@ -11,7 +11,7 @@ struct Results: Decodable {
     let results: [TopLocation]
 }
 
-struct TopLocation: Decodable, Identifiable {
+struct TopLocation: Decodable, Identifiable, Equatable {
     let id: String
     let name: String
     let snippet: String

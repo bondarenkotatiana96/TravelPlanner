@@ -142,7 +142,7 @@ struct TripDetailView: View {
                         } label: {
                             ButtonLabel(text: "Close", imageName: "xmark.circle.fill", width: 100, height: 30, imageSize: 20)
                         }
-                        .padding(.top, 120)
+                        .padding(.top, 150)
                         Spacer()
                     }
                 }

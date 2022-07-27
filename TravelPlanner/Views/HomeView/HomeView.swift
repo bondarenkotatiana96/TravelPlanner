@@ -12,7 +12,7 @@ struct HomeView: View {
     
     @ObservedObject private var locationManager = LocationManager()
     
-    @State private var hueAdjust = false
+    @State private var hueAdjust = true
     @State var isHidden = true
     
     @State var randomDestination: RandomDestination = RandomDestination(city: "", country: "", latitude: 0.0, longitude: 0.0)
