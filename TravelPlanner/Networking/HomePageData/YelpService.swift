@@ -22,7 +22,7 @@ class YelpService {
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
-                completion(.failure(.thrownError))
+                completion(.failure(.thrownError(error)))
                 print(error.localizedDescription)
             }
             
@@ -35,7 +35,7 @@ class YelpService {
                 let topBusinesses = businesses.businesses
                 return completion(.success(topBusinesses))
             } catch {
-                return completion(.failure(.unableToDecode))
+                return completion(.failure(.unableToDecode(error)))
             }
         }.resume()
     }

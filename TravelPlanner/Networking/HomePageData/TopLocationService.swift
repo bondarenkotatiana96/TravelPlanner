@@ -28,7 +28,7 @@ class TopLocationService {
         
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
             if let error = error {
-                completion(.failure(.thrownError))
+                completion(.failure(.thrownError(error)))
                 print(error.localizedDescription)
             }
             
@@ -41,7 +41,7 @@ class TopLocationService {
                 let topLocations = results.results
                 return completion(.success(topLocations))
             } catch {
-                return completion(.failure(.unableToDecode))
+                return completion(.failure(.unableToDecode(error)))
             }
         }.resume()
     }

@@ -24,7 +24,7 @@ class CitySearchService {
         
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
             if let error = error {
-                completion(.failure(.thrownError))
+                completion(.failure(.thrownError(error)))
                 print(error.localizedDescription)
             }
             
@@ -45,7 +45,7 @@ class CitySearchService {
                 }
                 return completion(.success(arrayOfCities))
             } catch {
-                return completion(.failure(.unableToDecode))
+                return completion(.failure(.unableToDecode(error)))
             }
         }.resume()
     }
@@ -65,7 +65,7 @@ class CitySearchService {
         
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
             if let error = error {
-                completion(.failure(.thrownError))
+                completion(.failure(.thrownError(error)))
                 print(error.localizedDescription)
             }
             
@@ -81,7 +81,7 @@ class CitySearchService {
                 let cityCoordinates = coordinates.coordinates
                 return completion(.success(cityCoordinates))
             } catch {
-                return completion(.failure(.unableToDecode))
+                return completion(.failure(.unableToDecode(error)))
             }
         }.resume()
     }

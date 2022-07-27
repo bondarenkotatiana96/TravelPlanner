@@ -16,7 +16,7 @@ class RandomDestinationService {
         
         URLSession.shared.dataTask(with: baseURL) { data, _, error in
             if let error = error {
-                completion(.failure(.thrownError))
+                completion(.failure(.thrownError(error)))
                 print(error.localizedDescription)
             }
             
@@ -28,7 +28,7 @@ class RandomDestinationService {
                 let randomDestination = try JSONDecoder().decode(RandomDestination.self, from: data)
                 return completion(.success(randomDestination))
             } catch {
-                return completion(.failure(.unableToDecode))
+                return completion(.failure(.unableToDecode(error)))
             }
         }.resume()
     }
