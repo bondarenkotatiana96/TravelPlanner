@@ -1,5 +1,5 @@
 # TravelPlanner
-# <img src="/TravelPlanner/Resources/Assets/Icons/avatar.imageset/Untitled design (1).png">
+# <img src="/README/logo.png">
 
 ## Summary
 
