@@ -54,9 +54,11 @@ class CitySearchService {
         
         guard let baseURL = URL(string: "https://api.geocodify.com/v2/geocode") else { return completion(.failure(.badURL))}
         
+        guard let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String else { return completion(.failure(.badURL))}
+        
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         components?.queryItems = [
-            URLQueryItem(name: "api_key", value: "409d4fcfaaeebd8287c435fe52ddbbf5b27f13f7"),
+            URLQueryItem(name: "api_key", value: apiKey),
             URLQueryItem(name: "q", value: location)
         ]
         
