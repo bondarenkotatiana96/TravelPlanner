@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		540F186928933136006F2B18 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F186828933136006F2B18 /* OnboardingPageView.swift */; };
+		540F186E28934150006F2B18 /* Handwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 540F186D28934150006F2B18 /* Handwriting.ttf */; };
 		541A7B1E2880A52F0052BD23 /* BucketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B1D2880A52F0052BD23 /* BucketListView.swift */; };
 		541A7B202880A5700052BD23 /* BucketListDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B1F2880A5700052BD23 /* BucketListDestination.swift */; };
 		541A7B222880A6050052BD23 /* BucketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B212880A6050052BD23 /* BucketListViewModel.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		540F1867289329A3006F2B18 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		540F186828933136006F2B18 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		540F186D28934150006F2B18 /* Handwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handwriting.ttf; sourceTree = "<group>"; };
 		541A7B1D2880A52F0052BD23 /* BucketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListView.swift; sourceTree = "<group>"; };
 		541A7B1F2880A5700052BD23 /* BucketListDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListDestination.swift; sourceTree = "<group>"; };
 		541A7B212880A6050052BD23 /* BucketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewModel.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		549184F7287E15E700A22F5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				540F186D28934150006F2B18 /* Handwriting.ttf */,
 				54CCEDB0287CFC5000C62679 /* Assets.xcassets */,
 				54CCEDB2287CFC5000C62679 /* Preview Content */,
 			);
@@ -510,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CCEDB4287CFC5000C62679 /* Preview Assets.xcassets in Resources */,
+				540F186E28934150006F2B18 /* Handwriting.ttf in Resources */,
 				543063342891BA7B009B0C72 /* Localizable.strings in Resources */,
 				54CCEDB1287CFC5000C62679 /* Assets.xcassets in Resources */,
 			);

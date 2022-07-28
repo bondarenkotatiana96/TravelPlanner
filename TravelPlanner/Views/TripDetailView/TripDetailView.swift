@@ -48,7 +48,7 @@ struct TripDetailView: View {
                 HStack(spacing: 20) {
                     Text(trip.name)
                         .bold()
-                        .font(.system(size: 25))
+                        .font(.system(size: 22))
                         .foregroundColor(Color("AccentText"))
                     Button {
                         self.showShareSheet = true
@@ -56,7 +56,7 @@ struct TripDetailView: View {
                         ButtonLabel(
                             text: "share".localized(language),
                             imageName: "arrowshape.turn.up.forward",
-                            width: 110, height: 25, imageSize: 17
+                            width: 115, height: 25, imageSize: 17
                         )
                     }
                 }
@@ -73,6 +73,7 @@ struct TripDetailView: View {
                     // Things to pack list section
                     Section("to_pack".localized(language)) {
                         TextField("add".localized(language), text: $thingToPackName)
+                            .font(Font.custom("EduNSWACTFoundation-Medium", size: 20.0))
                             .onSubmit {
                                 thingToPackVM.createThingToPack(thingToPack: ThingToPack(name: thingToPackName, isPacked: false), trip: trip, tripListViewModel: tripListVM)
                                 thingToPackName = ""
@@ -88,6 +89,7 @@ struct TripDetailView: View {
                                         .frame(width: 23, height: 23)
                                 }
                                 Text(item.name)
+                                    .font(Font.custom("EduNSWACTFoundation-Medium", size: 20.0))
                             }
                         }
                         .onDelete { indexSet in
@@ -138,7 +140,7 @@ struct TripDetailView: View {
             }
                 // Map is showed when user clicks on "Show a map button"
                 ZStack{
-                    Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit){
+                    Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit) {
                         place in
                         MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)) {
                             Image(systemName: "mappin").foregroundColor(Color("AccentPink"))

@@ -10,6 +10,10 @@
 	<string>$(TOKEN)</string>
 	<key>ACCOUNT</key>
 	<string>$(ACCOUNT)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Handwriting.ttf</string>
+	</array>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

@@ -22,6 +22,7 @@ struct NoteView: View {
         Text("notes".localized(language))
             .bold()
         TextEditor(text: $tripNotesText)
+            .font(Font.custom("EduNSWACTFoundation-Medium", size: 20.0))
             .background(Color("SecondaryLight"))
             .frame(width: UIScreen.main.bounds.width - 50, height: 80)
             .cornerRadius(15)
