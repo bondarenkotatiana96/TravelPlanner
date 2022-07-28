@@ -32,23 +32,23 @@ Search for cities/countries, add them to the list of your future trips and get n
 <br/><br/><br/>
 Change your trip details by adding notes, dates and things to pack
   
-// Add screenshot
+![Trip List](/README/2screen.png)
 <br/><br/><br/>
 Create your own bucket list to save places you want to visit
   
-// Add screenshot
+![Trip List](/README/5screen.png)
 <br/><br/><br/>
 Pin places you want to visit on the map
   
-// Add screenshot
+![Trip List](/README/4screen.png)
 <br/><br/><br/>
 Explore the most popular cities and local places
   
-// Add screenshot
+![Trip List](/README/6screen.png)
 <br/><br/><br/>
 Share your trip details on social media
   
-// Add screenshot
+![Trip List](/README/7screen.png)
 <br/><br/><br/>
 The app, also, has support for English, Russian, Spanish and Korean languages; Onboarding; and ability for users to send a feedback/support email
 
