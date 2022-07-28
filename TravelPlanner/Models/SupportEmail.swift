@@ -15,7 +15,6 @@ struct SupportEmail {
     var body: String {
     """
         Application Name: \(Bundle.main.displayName)
-        
         iOS: \(UIDevice.current.systemVersion)
         App Version: \(Bundle.main.appVersion)
         App Build: \(Bundle.main.appBuild)

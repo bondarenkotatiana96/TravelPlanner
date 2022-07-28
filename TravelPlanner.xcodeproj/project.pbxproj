@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540F186928933136006F2B18 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F186828933136006F2B18 /* OnboardingPageView.swift */; };
 		541A7B1E2880A52F0052BD23 /* BucketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B1D2880A52F0052BD23 /* BucketListView.swift */; };
 		541A7B202880A5700052BD23 /* BucketListDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B1F2880A5700052BD23 /* BucketListDestination.swift */; };
 		541A7B222880A6050052BD23 /* BucketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A7B212880A6050052BD23 /* BucketListViewModel.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		540F1867289329A3006F2B18 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		540F186828933136006F2B18 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		541A7B1D2880A52F0052BD23 /* BucketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListView.swift; sourceTree = "<group>"; };
 		541A7B1F2880A5700052BD23 /* BucketListDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListDestination.swift; sourceTree = "<group>"; };
 		541A7B212880A6050052BD23 /* BucketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewModel.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				541E815C288F7863008DCFC4 /* OnboardingView.swift */,
+				540F186828933136006F2B18 /* OnboardingPageView.swift */,
 			);
 			path = OnboardingView;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				54E3AEC3288CA0C00027B393 /* RandomDestinationView.swift in Sources */,
 				54E3AEC1288C9DBB0027B393 /* BucketList.swift in Sources */,
 				5483C58D28838C2B005E5167 /* SupportEmail.swift in Sources */,
+				540F186928933136006F2B18 /* OnboardingPageView.swift in Sources */,
 				54F6ED4028877570008BF99B /* IsHidden.swift in Sources */,
 				549E6DF6287FA24100085BDA /* TripDetailView.swift in Sources */,
 				549184FC287E1A2000A22F5C /* Trip.swift in Sources */,

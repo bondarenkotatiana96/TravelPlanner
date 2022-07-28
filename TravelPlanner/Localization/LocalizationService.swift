@@ -8,7 +8,7 @@
 import Foundation
 
 class LocalizationService {
-
+    // So that other views can listen to language change
     static let shared = LocalizationService()
     static let changedLanguage = Notification.Name("changedLanguage")
 

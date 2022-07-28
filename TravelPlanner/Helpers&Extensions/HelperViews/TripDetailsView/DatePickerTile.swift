@@ -15,6 +15,7 @@ struct DatePickerTile: View {
     var datesViewModel: DatesViewModel
     @State var dateFrom: Date
     @State var dateTo: Date
+    
     var trip: Trip
     var tripListVM: TripListViewModel
     

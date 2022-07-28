@@ -5,7 +5,6 @@
 //  Created by Tatiana Bondarenko on 7/22/22.
 //
 
-import Foundation
 import UserNotifications
 
 class NotificationScheduler {
@@ -15,7 +14,8 @@ class NotificationScheduler {
         content.title = "Ready for your trip?"
         content.body = "You are going to \(trip.name) today!"
         content.sound = UNNotificationSound.default
-
+        
+        // Push notification at 8:30 in the morning on the trip day
         var fireDateComponents = Calendar.current.dateComponents(
             [.month, .day, .year], from: trip.dates[0])
         fireDateComponents.hour = 8
@@ -31,6 +31,7 @@ class NotificationScheduler {
         }
     }
     
+    // For future: when I add notification settings
     func cancelUserNotification(for trip: Trip) {
         let id = "\(trip.id)"
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])

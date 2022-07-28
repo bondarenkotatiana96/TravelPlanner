@@ -40,6 +40,7 @@ struct PopularDestinationsView: View {
             .padding(.bottom)
             .padding(.horizontal, 10)
             
+            // Show empty tiles while info is loading
             if isLoading {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -85,11 +86,11 @@ struct PopularDestinationsView: View {
                 .padding(.horizontal, 10)
             }
         }
-        
         .onAppear {
             fetchCities()
         }
     }
+    
     func fetchCities() {
         if topLocations == [] {isLoading = true}
         TopLocationService().getTopLocations() { result in

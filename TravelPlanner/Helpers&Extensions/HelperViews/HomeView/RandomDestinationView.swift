@@ -37,7 +37,11 @@ struct RandomDestinationView: View {
                 }
             }
         } label: {
-            ButtonLabel(text: isHidden ? "get_destination".localized(language) : "close".localized(language), imageName: "airplane", width: 280, height: 50, imageSize: 25)
+            ButtonLabel(
+                text: isHidden ? "get_destination".localized(language) : "close".localized(language),
+                imageName: "airplane",
+                width: 280, height: 50, imageSize: 25
+            )
         }
             
         Text("\(randomDestination.city), \(randomDestination.country)")

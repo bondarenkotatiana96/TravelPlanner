@@ -5,7 +5,6 @@
 //  Created by Tatiana Bondarenko on 7/15/22.
 //
 
-import Foundation
 import SwiftUI
 
 struct ShareSheet: UIViewControllerRepresentable {

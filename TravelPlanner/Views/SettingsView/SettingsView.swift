@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-
+    
     @AppStorage("language")
     private var language = LocalizationService.shared.language
     

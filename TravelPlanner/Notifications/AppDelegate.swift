@@ -5,7 +5,6 @@
 //  Created by Tatiana Bondarenko on 7/22/22.
 //
 
-import Foundation
 import UIKit
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {

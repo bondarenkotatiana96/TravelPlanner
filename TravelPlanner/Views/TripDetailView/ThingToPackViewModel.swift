@@ -9,10 +9,10 @@ import Foundation
 
 class ThingToPackViewModel: ObservableObject {
     
-    // MARK: - CRUD
+    // MARK: - CRUD Functions
     
     func createThingToPack(thingToPack: ThingToPack, trip: Trip, tripListViewModel: TripListViewModel) {
-      guard let index = tripListViewModel.trips.firstIndex(of: trip) else { return }
+        guard let index = tripListViewModel.trips.firstIndex(of: trip) else { return }
         tripListViewModel.trips[index].thingsToPack.append(thingToPack)
         tripListViewModel.saveToPersistenceStore()
     }
@@ -25,9 +25,8 @@ class ThingToPackViewModel: ObservableObject {
     }
 
     func deleteThingToPack(trip: Trip, tripListViewModel: TripListViewModel, at indexSet: IndexSet) {
-      guard let index = tripListViewModel.trips.firstIndex(of: trip) else { return }
+        guard let index = tripListViewModel.trips.firstIndex(of: trip) else { return }
         tripListViewModel.trips[index].thingsToPack.remove(atOffsets: indexSet)
         tripListViewModel.saveToPersistenceStore()
-    } 
-    
+    }
 }

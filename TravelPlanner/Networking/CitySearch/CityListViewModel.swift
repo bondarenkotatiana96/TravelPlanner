@@ -36,5 +36,4 @@ struct CityViewModel {
     var id: String {
         city.id
     }
-    
 }

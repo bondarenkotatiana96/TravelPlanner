@@ -18,12 +18,9 @@ class YelpService {
         request.allHTTPHeaderFields = ["Authorization": "Bearer " + apiKey]
         request.httpMethod = "GET"
         
-        print(request)
-        
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 completion(.failure(.thrownError(error)))
-                print(error.localizedDescription)
             }
             
             guard let data = data else {

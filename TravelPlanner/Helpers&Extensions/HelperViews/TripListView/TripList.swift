@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct TripList: View {
+    
     @AppStorage("language")
     private var language = LocalizationService.shared.language
     
     @ObservedObject var tripListVM: TripListViewModel
     @State var searching: Bool
+    
     var body: some View {
         List {
             ForEach(tripListVM.trips) { trip in

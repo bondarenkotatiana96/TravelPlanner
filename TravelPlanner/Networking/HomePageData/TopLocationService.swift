@@ -27,18 +27,16 @@ class TopLocationService {
         ]
         
         guard let finalURL = components?.url else { return completion(.failure(.badURL))}
-        print(finalURL)
         
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
             if let error = error {
                 completion(.failure(.thrownError(error)))
-                print(error.localizedDescription)
             }
             
             guard let data = data else {
                 return completion(.failure(.noData))
             }
-            print(data)
+            
             do {
                 let results = try JSONDecoder().decode(Results.self, from: data)
                 let topLocations = results.results

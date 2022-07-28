@@ -16,6 +16,7 @@ struct TripDetailView: View {
     @Binding var trip: Trip
     var tripListVM: TripListViewModel
     
+    // Updating trip details
     @StateObject var noteViewModel = NotesViewModel()
     @State var tripNotesText: String = ""
     
@@ -36,7 +37,10 @@ struct TripDetailView: View {
     
     @StateObject private var placeSearchVM = LocalSearchViewModel()
     
-    @State private var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.75773, longitude: -73.985708), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 40.75773, longitude: -73.985708),
+        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    )
     
     var body: some View {
         ZStack {
@@ -49,19 +53,24 @@ struct TripDetailView: View {
                     Button {
                         self.showShareSheet = true
                     } label: {
-                        ButtonLabel(text: "share".localized(language), imageName: "arrowshape.turn.up.forward", width: 110, height: 25, imageSize: 17)
+                        ButtonLabel(
+                            text: "share".localized(language),
+                            imageName: "arrowshape.turn.up.forward",
+                            width: 110, height: 25, imageSize: 17
+                        )
                     }
                 }
                 .frame(height: 80)
+                // Showing share sheet by clicking on "Share" button
                 .sheet(isPresented: $showShareSheet) {
-                    ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
+                        ShareSheet(activityItems: ["I'm going to \(trip.name) in \(trip.dates[0].formatted(.dateTime.month().year()))!"])
                     }
                 
                 DatePickerTile(datesViewModel: datesViewModel, dateFrom: dateFrom, dateTo: dateTo, trip: trip, tripListVM: tripListVM)
-                
                 NoteView(trip: trip, tripListVM: tripListVM, noteViewModel: noteViewModel, tripNotesText: tripNotesText)
-            
+                
                 List {
+                    // Things to pack list section
                     Section("to_pack".localized(language)) {
                         TextField("add".localized(language), text: $thingToPackName)
                             .onSubmit {
@@ -85,6 +94,7 @@ struct TripDetailView: View {
                             thingToPackVM.deleteThingToPack(trip: trip, tripListViewModel: tripListVM, at: indexSet)
                         }
                     }
+                    // Places to visit list section + search for places to visit
                     Section("to_visit".localized(language)) {
                         SearchBar(searchText: $placeSearchVM.poiText, searching: $searching)
                         if searching {
@@ -126,7 +136,7 @@ struct TripDetailView: View {
                 .frame(minHeight: 400)
                 .edgesIgnoringSafeArea(.bottom)
             }
-                
+                // Map is showed when user clicks on "Show a map button"
                 ZStack{
                     Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, annotationItems: trip.placesToVisit){
                         place in

@@ -7,8 +7,8 @@
 
 import Foundation
 
-import Foundation
 extension Bundle {
+    // Information for feedback/support email
     var displayName: String {
         object(forInfoDictionaryKey: "CFBundleName") as? String ?? "Could not determine the application name"
     }

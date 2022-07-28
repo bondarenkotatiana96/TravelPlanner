@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct TravelPlannerApp: App {
-    
+    // Delegate for local push notifications
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
@@ -18,4 +18,3 @@ struct TravelPlannerApp: App {
         }
     }
 }
-

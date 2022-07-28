@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 struct TopLevel: Decodable {
     let response: SecondLevel
 }

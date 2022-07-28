@@ -5,7 +5,6 @@
 //  Created by Tatiana Bondarenko on 7/19/22.
 //
 
-import Foundation
 import MapKit
 import Combine
 
@@ -23,10 +22,7 @@ final class LocalSearchViewModel: ObservableObject {
     var service: LocalSearchService
     
     init() {
-//        let center = CLLocationCoordinate2D(latitude: 55.741469, longitude: 37.615561)
-//        service = LocalSearchService(in: center)
         service = LocalSearchService()
-        
         cancellable = service.localSearchPublisher.sink { mapItems in
             self.viewData = mapItems.map({ LocalSearchData(mapItem: $0) })
         }

@@ -19,7 +19,6 @@ struct PopularLocalPlacesView: View {
     
     var body: some View {
         
-        
         Text("popular_places".localized(language))
             .foregroundColor(Color("Background"))
         ZStack {
@@ -49,6 +48,7 @@ struct PopularLocalPlacesView: View {
             .padding(.bottom)
             .padding(.horizontal, 10)
             
+            // Show empty tiles while info is loading
             if isLoading {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -94,11 +94,11 @@ struct PopularLocalPlacesView: View {
                 .padding(.horizontal, 10)
             }
         }
-        
         .onAppear {
             fetchPlaces()
         }
     }
+    
     func fetchPlaces() {
         let coordinate = self.locationManager.location != nil ? self.locationManager.location!.coordinate : CLLocationCoordinate2D()
         

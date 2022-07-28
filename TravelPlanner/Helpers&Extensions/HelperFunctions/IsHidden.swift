@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-
 extension View {
     func isHidden(_ hidden: Bool, remove: Bool = false) -> some View {
         modifier(HiddenModifier(isHidden: hidden, remove: remove))
     }
 }
+
 private struct HiddenModifier: ViewModifier {
     private let isHidden: Bool
     private let remove: Bool

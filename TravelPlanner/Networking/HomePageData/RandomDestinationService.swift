@@ -12,18 +12,15 @@ class RandomDestinationService {
         
         guard let baseURL = URL(string: "https://random-data-api.com/api/address/random_address") else { return completion(.failure(.badURL))}
         
-        print(baseURL)
-        
         URLSession.shared.dataTask(with: baseURL) { data, _, error in
             if let error = error {
                 completion(.failure(.thrownError(error)))
-                print(error.localizedDescription)
             }
             
             guard let data = data else {
                 return completion(.failure(.noData))
             }
-            print(data)
+            
             do {
                 let randomDestination = try JSONDecoder().decode(RandomDestination.self, from: data)
                 return completion(.success(randomDestination))
