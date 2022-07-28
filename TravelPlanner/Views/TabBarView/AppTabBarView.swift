@@ -33,6 +33,11 @@ struct AppTabBarView: View {
                     Label("tab_trips".localized(language), systemImage: "map.circle.fill")
                 }
                 .tag(2)
+            BucketListView()
+                .tabItem {
+                    Label("tab_bucket".localized(language), systemImage: "heart.circle.fill")
+                }
+                .tag(4)
             UserProfileView(shouldShowOnboarding: _shouldShowOnboarding)
                 .tabItem {
                     Label("tab_profile".localized(language), systemImage: "person.circle.fill")

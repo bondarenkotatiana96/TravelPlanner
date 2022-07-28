@@ -26,17 +26,10 @@ struct UserProfileView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 40) {
+                    
                     Spacer()
                     Image("avatar")
-                    NavigationLink {
-                        BucketListView()
-                    } label: {
-                        ButtonLabel(
-                            text: "bucket_list".localized(language),
-                            imageName: "heart.circle",
-                            width: 300, height: 50, imageSize: 32
-                        )
-                    }
+                    Spacer()
                     
                     Button {
                         shouldShowOnboarding.toggle()
@@ -48,6 +41,15 @@ struct UserProfileView: View {
                         )
                     }
                     
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        ButtonLabel(
+                            text: "settings".localized(language),
+                            imageName: "gear.circle", width: 300, height: 50, imageSize: 32
+                        )
+                    }
+                    
                     Button {
                         email.send(openURL: openURL)
                     } label: {
@@ -55,15 +57,6 @@ struct UserProfileView: View {
                             text: "feedback".localized(language),
                             imageName: "envelope.circle",
                             width: 300, height: 50, imageSize: 32
-                        )
-                    }
-                    
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        ButtonLabel(
-                            text: "settings".localized(language),
-                            imageName: "gear.circle", width: 300, height: 50, imageSize: 32
                         )
                     }
                     .navigationTitle("profile_title".localized(language))
