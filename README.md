@@ -28,7 +28,7 @@ __APIs:__ Yelp, random-data-api, Triposo, Geocodify <br/>
 
 Search for cities/countries, add them to the list of your future trips and get notified about your upcoming trips
   
-![Trip List](README/qscreen.png)
+![Trip List](/README/1screen.png)
 <br/><br/><br/>
 Change your trip details by adding notes, dates and things to pack
   
