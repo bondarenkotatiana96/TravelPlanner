@@ -67,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540F1866289326BB006F2B18 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		541A7B1D2880A52F0052BD23 /* BucketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListView.swift; sourceTree = "<group>"; };
 		541A7B1F2880A5700052BD23 /* BucketListDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListDestination.swift; sourceTree = "<group>"; };
 		541A7B212880A6050052BD23 /* BucketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewModel.swift; sourceTree = "<group>"; };
@@ -346,6 +347,7 @@
 				54DF3C82288B59CB00EB6C8E /* Notifications */,
 				541A7B262880DFC00052BD23 /* Helpers&Extensions */,
 				549184F7287E15E700A22F5C /* Resources */,
+				540F1866289326BB006F2B18 /* Config.xcconfig */,
 			);
 			path = TravelPlanner;
 			sourceTree = "<group>";
