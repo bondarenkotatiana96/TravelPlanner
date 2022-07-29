@@ -27,7 +27,7 @@ struct AppTabBarView: View {
                 .tabItem {
                     Label("tab_explore".localized(language), systemImage: "globe.europe.africa.fill")
                 }
-                .tag(3)
+                .tag(1)
             TripListView()
                 .tabItem {
                     Label("tab_trips".localized(language), systemImage: "map.circle.fill")
@@ -37,12 +37,12 @@ struct AppTabBarView: View {
                 .tabItem {
                     Label("tab_bucket".localized(language), systemImage: "heart.circle.fill")
                 }
-                .tag(4)
+                .tag(3)
             UserProfileView(shouldShowOnboarding: _shouldShowOnboarding)
                 .tabItem {
                     Label("tab_profile".localized(language), systemImage: "person.circle.fill")
                 }
-                .tag(1)
+                .tag(4)
         }
         .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
             OnboardingView(shouldShowOnboarding: $shouldShowOnboarding)
